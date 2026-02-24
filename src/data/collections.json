@@ -1,0 +1,20 @@
+[
+  {
+    "id": "col-001",
+    "slug": "fall-essentials",
+    "title": "Fall Essentials",
+    "description": "The building blocks of a considered autumn wardrobe. Layering, texture, and earth tones.",
+    "heroImage": "/outfits/lisbon-layers.jpg",
+    "season": "Fall 2025",
+    "outfitIds": ["outfit-1771862436917", "outfit-1771863790940", "outfit-1771865251140", "outfit-1771887596161", "outfit-1771889025544", "outfit-1771890586081", "outfit-1771890871135"]
+  },
+  {
+    "id": "col-002",
+    "slug": "summer-ease",
+    "title": "Summer Ease",
+    "description": "Effortless warm-weather dressing. Light fabrics, natural palettes, and relaxed silhouettes.",
+    "heroImage": "/outfits/summer-street-style.jpg",
+    "season": "Summer 2025",
+    "outfitIds": ["outfit-1771863385130", "outfit-1771864970516", "outfit-1771887908949", "outfit-1771888456724", "outfit-1771888795068", "outfit-1771888932436", "outfit-1771889104255", "outfit-1771889238070"]
+  }
+]

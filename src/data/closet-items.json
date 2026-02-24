@@ -1,0 +1,553 @@
+[
+  {
+    "id": "item-shared-wrancher-dress-jean",
+    "name": "Wrancher Dress Jean",
+    "brand": "Wrangler",
+    "category": "pants",
+    "color": "Brown",
+    "colorHex": "#5C4A3A",
+    "images": []
+  },
+  {
+    "id": "item-shared-dark-wash-jorts",
+    "name": "Dark Wash Jorts",
+    "brand": "Carhartt",
+    "category": "pants",
+    "color": "Indigo",
+    "colorHex": "#2B4A6F",
+    "images": []
+  },
+  {
+    "id": "item-shared-black-loafers",
+    "name": "Black Leather Horsebit Loafers",
+    "brand": "Blackstock & Weber",
+    "category": "shoes",
+    "color": "Black",
+    "colorHex": "#0A0A0A",
+    "images": []
+  },
+  {
+    "id": "item-shared-sacai-blazer-low",
+    "name": "Sacai x Nike Blazer Low",
+    "brand": "Nike",
+    "category": "shoes",
+    "color": "White",
+    "colorHex": "#FFFFFF",
+    "images": []
+  },
+  {
+    "id": "item-shared-adidas-sambas",
+    "name": "Adidas Sambas",
+    "brand": "Adidas",
+    "category": "shoes",
+    "color": "Cream and Blue",
+    "colorHex": "#F5E6D3",
+    "images": []
+  },
+  {
+    "id": "item-shared-light-wash-jeans",
+    "name": "Light Wash Jeans",
+    "brand": "Levi's",
+    "category": "pants",
+    "color": "Light Blue",
+    "colorHex": "#7BA5C8",
+    "images": []
+  },
+  {
+    "id": "item-shared-brown-leather-blazer",
+    "name": "Brown Leather Blazer",
+    "category": "blazers",
+    "color": "Brown",
+    "colorHex": "#3B2A1A",
+    "images": []
+  },
+  {
+    "id": "item-1771862436917-0",
+    "name": "Dark Green Turtleneck",
+    "brand": "32 Degrees",
+    "category": "tops",
+    "color": "Forest Green",
+    "colorHex": "#1F3A3A",
+    "images": []
+  },
+  {
+    "id": "item-1771862436917-2",
+    "name": "Turquoise Crossbody",
+    "category": "bags",
+    "color": "Turquoise",
+    "colorHex": "#5EBDBD",
+    "images": []
+  },
+  {
+    "id": "item-1771862436917-3",
+    "name": "Taupe Wide-Leg Trousers",
+    "category": "pants",
+    "color": "Taupe",
+    "colorHex": "#C4B5A0",
+    "images": []
+  },
+  {
+    "id": "item-1771862436917-4",
+    "name": "Black Leather Combat Boots",
+    "brand": "Doc Martens",
+    "category": "shoes",
+    "color": "Black",
+    "colorHex": "#2C2C2C",
+    "images": []
+  },
+  {
+    "id": "item-1771863385130-0",
+    "name": "Floral Head Scarf",
+    "brand": "Mango",
+    "category": "accessories",
+    "color": "Beige",
+    "colorHex": "#D4C5A8",
+    "images": []
+  },
+  {
+    "id": "item-1771863385130-2",
+    "name": "White Linen Short Sleeve Shirt",
+    "brand": "Abercrombie",
+    "category": "shirts",
+    "color": "White",
+    "colorHex": "#F5F0E8",
+    "images": []
+  },
+  {
+    "id": "item-1771863385130-3",
+    "name": "Black Crossbody Bag",
+    "category": "bags",
+    "color": "Black",
+    "colorHex": "#1A1A1A",
+    "images": []
+  },
+  {
+    "id": "item-1771863385130-4",
+    "name": "Charcoal Tailored Shorts",
+    "category": "pants",
+    "color": "Charcoal",
+    "colorHex": "#4A4A4A",
+    "images": []
+  },
+  {
+    "id": "item-1771863385130-6",
+    "name": "Flyknit Runners",
+    "brand": "Nike",
+    "category": "shoes",
+    "color": "White",
+    "colorHex": "#F5F5F5",
+    "images": []
+  },
+  {
+    "id": "item-1771863790940-1",
+    "name": "Black Turtleneck",
+    "brand": "J.Crew",
+    "category": "tops",
+    "color": "Black",
+    "colorHex": "#000000",
+    "images": []
+  },
+  {
+    "id": "item-1771863790940-2",
+    "name": "Black Leather Belt",
+    "category": "accessories",
+    "color": "Black",
+    "colorHex": "#1C1C1C",
+    "images": []
+  },
+  {
+    "id": "item-1771864195524-0",
+    "name": "Atlanta Dri-FIT Cap",
+    "brand": "Nike",
+    "category": "hats",
+    "color": "Black",
+    "colorHex": "#000000",
+    "images": []
+  },
+  {
+    "id": "item-1771864195524-1",
+    "name": "Red Bull Racing Jacket",
+    "brand": "Red Bull Racing",
+    "category": "jackets",
+    "color": "Navy",
+    "colorHex": "#000080",
+    "images": []
+  },
+  {
+    "id": "item-1771864777486-0",
+    "name": "Atlanta Braves Baseball Cap",
+    "brand": "'47",
+    "category": "hats",
+    "color": "White and Blue",
+    "colorHex": "#FFFFFF",
+    "images": []
+  },
+  {
+    "id": "item-1771864777486-2",
+    "name": "Olive Graphic Sweatshirt",
+    "brand": "Sangiev",
+    "category": "tops",
+    "color": "Olive",
+    "colorHex": "#7A8B6F",
+    "images": []
+  },
+  {
+    "id": "item-1771864970516-0",
+    "name": "White Graphic Tee",
+    "brand": "H&M",
+    "category": "tops",
+    "color": "White",
+    "colorHex": "#FFFFFF",
+    "images": []
+  },
+  {
+    "id": "item-1771865251140-2",
+    "name": "Cream Ribbed Sweater",
+    "brand": "J.Crew",
+    "category": "tops",
+    "color": "Cream",
+    "colorHex": "#F5F5DC",
+    "images": []
+  },
+  {
+    "id": "item-1771887596161-1",
+    "name": "Dark Brown Oversized Cropped Hoodie",
+    "brand": "MOOJIMOOJI",
+    "category": "tops",
+    "color": "Dark Brown",
+    "colorHex": "#4A3728",
+    "images": []
+  },
+  {
+    "id": "item-1771887596161-2",
+    "name": "Black Leather Pants with Orange Flames",
+    "brand": "Harley Davidson",
+    "category": "pants",
+    "color": "Black",
+    "colorHex": "#2C2C2C",
+    "images": []
+  },
+  {
+    "id": "item-1771887760261-1",
+    "name": "Medium Wash Denim Jacket",
+    "brand": "ASOS",
+    "category": "jackets",
+    "color": "Medium Blue",
+    "colorHex": "#6B9DC7",
+    "images": []
+  },
+  {
+    "id": "item-1771887908949-1",
+    "name": "Pastel Color Block Polo Shirt",
+    "brand": "YITAI",
+    "category": "shirts",
+    "color": "Multi",
+    "colorHex": "#F4C896",
+    "images": []
+  },
+  {
+    "id": "item-1771888369546-0",
+    "name": "Black Oversized Sunglasses",
+    "category": "accessories",
+    "color": "Black",
+    "colorHex": "#1A1A1A",
+    "images": []
+  },
+  {
+    "id": "item-1771888369546-1",
+    "name": "Keyboard Puffer Jacket",
+    "brand": "Liminal Work Shop",
+    "category": "jackets",
+    "color": "Cream",
+    "colorHex": "#E8E5DC",
+    "images": []
+  },
+  {
+    "id": "item-1771888369546-2",
+    "name": "Black Oversized Cropped Hoodie",
+    "brand": "MOOJIMOOJI",
+    "category": "tops",
+    "color": "Black",
+    "colorHex": "#1A1A1A",
+    "images": []
+  },
+  {
+    "id": "item-1771888369546-3",
+    "name": "Baggy Sweats",
+    "brand": "MOOJIMOOJI",
+    "category": "pants",
+    "color": "Black",
+    "colorHex": "#1A1A1A",
+    "images": []
+  },
+  {
+    "id": "item-1771888456724-0",
+    "name": "Pale Mint Linen Blazer",
+    "brand": "Bonobos",
+    "category": "blazers",
+    "color": "Mint",
+    "colorHex": "#C8DDD5",
+    "images": []
+  },
+  {
+    "id": "item-1771888456725-1",
+    "name": "White Dress Shirt",
+    "brand": "Calvin Klein",
+    "category": "shirts",
+    "color": "White",
+    "colorHex": "#FFFFFF",
+    "images": []
+  },
+  {
+    "id": "item-1771888456725-2",
+    "name": "Blue Patterned Pocket Square",
+    "category": "accessories",
+    "color": "Blue",
+    "colorHex": "#5B7FA6",
+    "images": []
+  },
+  {
+    "id": "item-1771888456725-4",
+    "name": "Pale Mint Dress Pants",
+    "brand": "Bonobos",
+    "category": "pants",
+    "color": "Mint",
+    "colorHex": "#C8DDD5",
+    "images": []
+  },
+  {
+    "id": "item-1771888648991-1",
+    "name": "Sage Embroidered Scarf",
+    "category": "accessories",
+    "color": "Sage",
+    "colorHex": "#9BA686",
+    "images": []
+  },
+  {
+    "id": "item-1771888648991-2",
+    "name": "Black Leather Biker Jacket",
+    "brand": "Xelement",
+    "category": "jackets",
+    "color": "Black",
+    "colorHex": "#2B2B2B",
+    "images": []
+  },
+  {
+    "id": "item-1771888648991-3",
+    "name": "White Base Layer Tee",
+    "brand": "Kirkland Signature",
+    "category": "tops",
+    "color": "White",
+    "colorHex": "#FFFFFF",
+    "images": []
+  },
+  {
+    "id": "item-1771888795068-0",
+    "name": "Pastel Tie-Dye Camp Collar Shirt",
+    "brand": "ALLSAINTS",
+    "category": "shirts",
+    "color": "Peach and Blue Tie-Dye",
+    "colorHex": "#E8C4B8",
+    "images": []
+  },
+  {
+    "id": "item-1771888795068-3",
+    "name": "Black Trousers",
+    "brand": "Nordstrom",
+    "category": "pants",
+    "color": "Black",
+    "colorHex": "#1A1A1A",
+    "images": []
+  },
+  {
+    "id": "item-1771888932436-1",
+    "name": "Cream Polo Shirt with Green Collar",
+    "brand": "Prince",
+    "category": "shirts",
+    "color": "Cream and Green",
+    "colorHex": "#F5F5DC",
+    "images": []
+  },
+  {
+    "id": "item-1771889025544-0",
+    "name": "Black Zip-Up Nylon Jacket",
+    "brand": "Prada",
+    "category": "jackets",
+    "color": "Black",
+    "colorHex": "#000000",
+    "images": []
+  },
+  {
+    "id": "item-1771889104255-0",
+    "name": "Embroidered Cream Sherwani",
+    "category": "tops",
+    "color": "Cream",
+    "colorHex": "#F5E6D3",
+    "images": []
+  },
+  {
+    "id": "item-1771889104255-1",
+    "name": "Burgundy Churidar Pants",
+    "category": "pants",
+    "color": "Burgundy",
+    "colorHex": "#8B1A1A",
+    "images": []
+  },
+  {
+    "id": "item-1771889104255-2",
+    "name": "Burgundy Mojari Shoes",
+    "category": "shoes",
+    "color": "Burgundy",
+    "colorHex": "#8B1A1A",
+    "images": []
+  },
+  {
+    "id": "item-1771889238070-0",
+    "name": "Oxford Boxy Cropped Shirt",
+    "brand": "Uniqlo x JW Anderson",
+    "category": "shirts",
+    "color": "Light Blue",
+    "colorHex": "#A8B8C8",
+    "images": []
+  },
+  {
+    "id": "item-1771889479369-0",
+    "name": "White Linen Button-Up Shirt",
+    "brand": "Quince",
+    "category": "shirts",
+    "color": "White",
+    "colorHex": "#F5F5F0",
+    "images": []
+  },
+  {
+    "id": "item-1771889479369-1",
+    "name": "Charcoal Knit Tie",
+    "category": "accessories",
+    "color": "Charcoal",
+    "colorHex": "#4A4A4A",
+    "images": []
+  },
+  {
+    "id": "item-1771890586081-0",
+    "name": "Navy Suit Jacket",
+    "brand": "BOSS",
+    "category": "blazers",
+    "color": "Navy",
+    "colorHex": "#1B2A4A",
+    "images": []
+  },
+  {
+    "id": "item-1771890586081-1",
+    "name": "French Cuff Shirt",
+    "brand": "Calvin Klein",
+    "category": "shirts",
+    "color": "White",
+    "colorHex": "#ffffff",
+    "images": []
+  },
+  {
+    "id": "item-1771890586081-2",
+    "name": "Red Silk Scarf",
+    "category": "accessories",
+    "color": "Red",
+    "colorHex": "#b91c1c",
+    "images": []
+  },
+  {
+    "id": "item-1771890586081-3",
+    "name": "Brown Leather Belt",
+    "category": "accessories",
+    "color": "Brown",
+    "colorHex": "#8b4513",
+    "images": []
+  },
+  {
+    "id": "item-1771890586081-4",
+    "name": "Navy Suit Trousers",
+    "brand": "BOSS",
+    "category": "pants",
+    "color": "Navy",
+    "colorHex": "#1B2A4A",
+    "images": []
+  },
+  {
+    "id": "item-1771890586081-5",
+    "name": "Navy Tassel Loafers",
+    "brand": "J.McLaughlin",
+    "category": "shoes",
+    "color": "Navy",
+    "colorHex": "#1B2A4A",
+    "images": []
+  },
+  {
+    "id": "item-1771890871135-0",
+    "name": "Arsenal F.C. Cap",
+    "brand": "'47",
+    "category": "hats",
+    "color": "Black",
+    "colorHex": "#1C1C1C",
+    "images": []
+  },
+  {
+    "id": "item-1771890871135-1",
+    "name": "Indigo Carpenter Jacket",
+    "brand": "GLORYDAYS",
+    "category": "jackets",
+    "color": "Indigo",
+    "colorHex": "#2C3E50",
+    "images": []
+  },
+  {
+    "id": "item-1771890871135-3",
+    "name": "Black Denim Jeans",
+    "brand": "GAP",
+    "category": "pants",
+    "color": "Black",
+    "colorHex": "#1C1C1C",
+    "images": []
+  },
+  {
+    "id": "item-shared-prada-sunglasses",
+    "name": "Prada Sunglasses",
+    "brand": "Prada",
+    "category": "accessories",
+    "color": "Black",
+    "colorHex": "#000000"
+  },
+  {
+    "id": "item-shared-white-crew-socks",
+    "name": "White Crew Socks",
+    "category": "accessories",
+    "color": "White",
+    "colorHex": "#FFFFFF"
+  },
+  {
+    "id": "item-shared-orange-lens-sunglasses",
+    "name": "Black Sunglasses with Orange Lenses",
+    "category": "accessories",
+    "color": "Black and Orange",
+    "colorHex": "#1A1A1A"
+  },
+  {
+    "id": "item-shared-gold-watch",
+    "name": "Gold Watch",
+    "brand": "Solios",
+    "category": "accessories",
+    "color": "Gold",
+    "colorHex": "#D4AF37"
+  },
+  {
+    "id": "item-shared-gold-chain-necklace",
+    "name": "Gold Chain Necklace",
+    "category": "jewelry",
+    "color": "Gold",
+    "colorHex": "#D4AF37"
+  },
+  {
+    "id": "item-shared-gold-ring",
+    "name": "Gold Ring",
+    "category": "jewelry",
+    "color": "Gold",
+    "colorHex": "#D4AF37"
+  }
+]

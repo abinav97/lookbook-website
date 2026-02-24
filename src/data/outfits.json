@@ -1,0 +1,1423 @@
+[
+  {
+    "id": "outfit-1771862436917",
+    "slug": "lisbon-layers",
+    "title": "Lisbon Layers",
+    "date": "2026-02-23",
+    "season": "fall",
+    "occasion": [
+      "casual",
+      "weekend",
+      "travel",
+      "brunch"
+    ],
+    "description": "A sophisticated layered look combining neutral tones with a pop of turquoise. The relaxed tailoring and turtleneck base create an effortlessly elegant ensemble perfect for European city exploring.",
+    "images": [
+      {
+        "src": "/outfits/lisbon-layers.jpg",
+        "alt": "Lisbon Layers",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771862436917-0",
+            "closetItemId": "item-1771862436917-0",
+            "position": {
+              "x": 50.5,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771862436917-1",
+            "closetItemId": "item-shared-brown-leather-blazer",
+            "position": {
+              "x": 50.5,
+              "y": 43.5
+            }
+          },
+          {
+            "id": "tag-1771862436917-2",
+            "closetItemId": "item-1771862436917-2",
+            "position": {
+              "x": 50.5,
+              "y": 51.5
+            }
+          },
+          {
+            "id": "tag-1771862436917-3",
+            "closetItemId": "item-1771862436917-3",
+            "position": {
+              "x": 50.5,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771862436917-4",
+            "closetItemId": "item-1771862436917-4",
+            "position": {
+              "x": 50.5,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#4A4238",
+      "#1F3A3A",
+      "#5EBDBD",
+      "#C4B5A0",
+      "#2C2C2C"
+    ],
+    "featured": true
+  },
+  {
+    "id": "outfit-1771863385130",
+    "slug": "summer-street-style",
+    "title": "Summer Street Style",
+    "date": "2026-02-23",
+    "season": "summer",
+    "occasion": [
+      "casual",
+      "weekend",
+      "travel"
+    ],
+    "description": "A relaxed summer street look featuring a crisp linen shirt paired with tailored shorts and classic white sneakers. The neutral palette and head scarf create an effortless, vacation-ready aesthetic perfect for warm weather city exploring.",
+    "images": [
+      {
+        "src": "/outfits/summer-street-style.jpg",
+        "alt": "Summer Street Style",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771863385130-0",
+            "closetItemId": "item-1771863385130-0",
+            "position": {
+              "x": 51.6,
+              "y": 13.5
+            }
+          },
+          {
+            "id": "tag-1771863385130-1",
+            "closetItemId": "item-1771888369546-0",
+            "position": {
+              "x": 51.6,
+              "y": 18.5
+            }
+          },
+          {
+            "id": "tag-1771863385130-2",
+            "closetItemId": "item-1771863385130-2",
+            "position": {
+              "x": 51.6,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771863385130-3",
+            "closetItemId": "item-1771863385130-3",
+            "position": {
+              "x": 51.6,
+              "y": 51.5
+            }
+          },
+          {
+            "id": "tag-1771863385130-4",
+            "closetItemId": "item-1771863385130-4",
+            "position": {
+              "x": 51.6,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771863385130-5",
+            "closetItemId": "item-shared-white-crew-socks",
+            "position": {
+              "x": 51.6,
+              "y": 83.5
+            }
+          },
+          {
+            "id": "tag-1771863385130-6",
+            "closetItemId": "item-1771863385130-6",
+            "position": {
+              "x": 51.6,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#F5F0E8",
+      "#4A4A4A",
+      "#FFFFFF",
+      "#D4C5A8"
+    ],
+    "featured": true
+  },
+  {
+    "id": "outfit-1771863790940",
+    "slug": "refined-casual-elegance",
+    "title": "Refined Casual Elegance",
+    "date": "2026-02-23",
+    "season": "fall",
+    "occasion": [
+      "casual",
+      "date",
+      "weekend",
+      "evening",
+      "dinner"
+    ],
+    "description": "A sophisticated yet relaxed ensemble featuring a brown leather blazer layered over a black turtleneck, paired with light-wash jeans and polished loafers. The combination balances structured tailoring with vintage-inspired denim for effortless style.",
+    "images": [
+      {
+        "src": "/outfits/refined-casual-elegance.jpg",
+        "alt": "Refined Casual Elegance",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771863790941-1",
+            "closetItemId": "item-1771863790940-1",
+            "position": {
+              "x": 49.1,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771863790941-0",
+            "closetItemId": "item-shared-brown-leather-blazer",
+            "position": {
+              "x": 49.1,
+              "y": 43.5
+            }
+          },
+          {
+            "id": "tag-1771863790941-2",
+            "closetItemId": "item-1771863790940-2",
+            "position": {
+              "x": 49.1,
+              "y": 57.5
+            }
+          },
+          {
+            "id": "tag-1771863790941-3",
+            "closetItemId": "item-shared-light-wash-jeans",
+            "position": {
+              "x": 49.1,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771863790941-4",
+            "closetItemId": "item-shared-black-loafers",
+            "position": {
+              "x": 49.1,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#6B5544",
+      "#000000",
+      "#7BA5C8",
+      "#2C2420"
+    ],
+    "featured": true
+  },
+  {
+    "id": "outfit-1771864195524",
+    "slug": "racing-spirit",
+    "title": "Racing Spirit",
+    "date": "2026-02-23",
+    "season": "fall",
+    "occasion": [
+      "casual",
+      "weekend",
+      "travel",
+      "evening"
+    ],
+    "description": "A motorsport-inspired look featuring a Red Bull Racing jacket adorned with colorful sponsor patches including Casio, Infiniti, and Red Bull. The navy racing jacket is styled with blue jeans and a branded cap for a cohesive streetwear-meets-racing aesthetic.",
+    "images": [
+      {
+        "src": "/outfits/racing-spirit.jpg",
+        "alt": "Racing Spirit",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771864195524-0",
+            "closetItemId": "item-1771864195524-0",
+            "position": {
+              "x": 50.4,
+              "y": 10
+            }
+          },
+          {
+            "id": "tag-1771864195524-1",
+            "closetItemId": "item-1771864195524-1",
+            "position": {
+              "x": 50.4,
+              "y": 43
+            }
+          },
+          {
+            "id": "tag-1771864195524-2",
+            "closetItemId": "item-shared-light-wash-jeans",
+            "position": {
+              "x": 50.4,
+              "y": 70
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#000080",
+      "#7BA5C8",
+      "#DC2626",
+      "#FBBF24",
+      "#000000"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771864777486",
+    "slug": "relaxed-weekend-vibes",
+    "title": "Relaxed Weekend Vibes",
+    "date": "2026-02-23",
+    "season": "spring",
+    "occasion": [
+      "casual",
+      "weekend",
+      "brunch"
+    ],
+    "description": "A laid-back streetwear look featuring a vintage-inspired graphic sweatshirt paired with classic light-wash denim and retro sneakers. The colorblock baseball cap adds a sporty finishing touch to this effortlessly cool ensemble.",
+    "images": [
+      {
+        "src": "/outfits/relaxed-weekend-vibes.jpg",
+        "alt": "Relaxed Weekend Vibes",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771864777486-0",
+            "closetItemId": "item-1771864777486-0",
+            "position": {
+              "x": 51.1,
+              "y": 10
+            }
+          },
+          {
+            "id": "tag-1771864777486-1",
+            "closetItemId": "item-shared-gold-chain-necklace",
+            "position": {
+              "x": 51.1,
+              "y": 30
+            }
+          },
+          {
+            "id": "tag-1771864777486-2",
+            "closetItemId": "item-1771864777486-2",
+            "position": {
+              "x": 51.1,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771864777486-3",
+            "closetItemId": "item-shared-light-wash-jeans",
+            "position": {
+              "x": 51.1,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771864777486-4",
+            "closetItemId": "item-shared-adidas-sambas",
+            "position": {
+              "x": 51.1,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#7A8B6F",
+      "#89BFEB",
+      "#FFFFFF",
+      "#E8DCC4",
+      "#4A90E2"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771864970516",
+    "slug": "casual-weekend-comfort",
+    "title": "Casual Weekend Comfort",
+    "date": "2026-02-23",
+    "season": "summer",
+    "occasion": [
+      "casual",
+      "weekend",
+      "brunch"
+    ],
+    "description": "A relaxed summer outfit featuring a graphic tee paired with classic denim shorts and high-top sneakers. The white and blue color palette keeps things fresh and effortless for warm-weather activities.",
+    "images": [
+      {
+        "src": "/outfits/casual-weekend-comfort.jpg",
+        "alt": "Casual Weekend Comfort",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771864970516-0",
+            "closetItemId": "item-1771864970516-0",
+            "position": {
+              "x": 48.7,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771864970516-1",
+            "closetItemId": "item-shared-dark-wash-jorts",
+            "position": {
+              "x": 48.7,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771864970516-2",
+            "closetItemId": "item-shared-white-crew-socks",
+            "position": {
+              "x": 48.7,
+              "y": 83.5
+            }
+          },
+          {
+            "id": "tag-1771864970516-3",
+            "closetItemId": "item-shared-sacai-blazer-low",
+            "position": {
+              "x": 48.7,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#FFFFFF",
+      "#2B4A6F",
+      "#4A7BA7",
+      "#F5F5F5"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771865251140",
+    "slug": "tailored-statement",
+    "title": "Tailored Statement",
+    "date": "2026-02-23",
+    "season": "fall",
+    "occasion": [
+      "dinner",
+      "evening",
+      "date"
+    ],
+    "description": "A sophisticated ensemble featuring an oversized brown blazer paired with dark tailoring and sleek sunglasses. The rich earth tones and structured silhouette create an effortlessly cool, fashion-forward look.",
+    "images": [
+      {
+        "src": "/outfits/tailored-statement.jpg",
+        "alt": "Tailored Statement",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771865251140-0",
+            "closetItemId": "item-shared-prada-sunglasses",
+            "position": {
+              "x": 48.9,
+              "y": 18.5
+            }
+          },
+          {
+            "id": "tag-1771865251140-1",
+            "closetItemId": "item-shared-gold-chain-necklace",
+            "position": {
+              "x": 48.9,
+              "y": 30
+            }
+          },
+          {
+            "id": "tag-1771865251140-2",
+            "closetItemId": "item-1771865251140-2",
+            "position": {
+              "x": 48.9,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771865251140-3",
+            "closetItemId": "item-shared-brown-leather-blazer",
+            "position": {
+              "x": 48.9,
+              "y": 43.5
+            }
+          },
+          {
+            "id": "tag-1771865251140-4",
+            "closetItemId": "item-shared-gold-ring",
+            "position": {
+              "x": 48.9,
+              "y": 63.5
+            }
+          },
+          {
+            "id": "tag-1771865251140-5",
+            "closetItemId": "item-shared-wrancher-dress-jean",
+            "position": {
+              "x": 48.9,
+              "y": 70
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#6B5544",
+      "#F5F5DC",
+      "#332421",
+      "#C9B88A"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771887596161",
+    "slug": "urban-edge",
+    "title": "Urban Edge",
+    "date": "2026-02-23",
+    "season": "fall",
+    "occasion": [
+      "casual",
+      "weekend",
+      "brunch"
+    ],
+    "description": "A contemporary street style look balancing cozy comfort with edgy details. The oversized taupe sweatshirt pairs effortlessly with flame-detailed leather pants and crisp white sneakers for an effortlessly cool urban aesthetic.",
+    "images": [
+      {
+        "src": "/outfits/urban-edge.jpg",
+        "alt": "Urban Edge",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771887596161-0",
+            "closetItemId": "item-shared-orange-lens-sunglasses",
+            "position": {
+              "x": 51.9,
+              "y": 18.5
+            }
+          },
+          {
+            "id": "tag-1771887596161-1",
+            "closetItemId": "item-1771887596161-1",
+            "position": {
+              "x": 51.9,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771887596161-2",
+            "closetItemId": "item-1771887596161-2",
+            "position": {
+              "x": 52,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771887596161-3",
+            "closetItemId": "item-shared-sacai-blazer-low",
+            "position": {
+              "x": 52,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#A8957A",
+      "#2C2C2C",
+      "#FFFFFF",
+      "#D4704A"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771887760261",
+    "slug": "denim-on-denim",
+    "title": "Denim on Denim",
+    "date": "2026-02-23",
+    "season": "spring",
+    "occasion": [
+      "casual",
+      "weekend",
+      "brunch",
+      "travel",
+      "dinner",
+      "evening"
+    ],
+    "description": "A classic Canadian tuxedo featuring a medium wash denim jacket paired with light wash jeans, elevated with black leather loafers and sunglasses for a relaxed yet polished urban look.",
+    "images": [
+      {
+        "src": "/outfits/denim-on-denim.jpg",
+        "alt": "Denim on Denim",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771887760261-0",
+            "closetItemId": "item-shared-orange-lens-sunglasses",
+            "position": {
+              "x": 50.1,
+              "y": 18.5
+            }
+          },
+          {
+            "id": "tag-1771887760261-1",
+            "closetItemId": "item-1771887760261-1",
+            "position": {
+              "x": 50.1,
+              "y": 43
+            }
+          },
+          {
+            "id": "tag-1771887760261-2",
+            "closetItemId": "item-shared-light-wash-jeans",
+            "position": {
+              "x": 50.1,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771887760261-3",
+            "closetItemId": "item-shared-black-loafers",
+            "position": {
+              "x": 50.1,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#6B9DC7",
+      "#A4C4DD",
+      "#2C2C2C",
+      "#F5F5F5"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771887908949",
+    "slug": "sunny-color-block",
+    "title": "Sunny Color Block",
+    "date": "2026-02-23",
+    "season": "summer",
+    "occasion": [
+      "casual",
+      "travel",
+      "weekend",
+      "brunch"
+    ],
+    "description": "A vibrant color-blocked collared shirt in cheerful pastels paired with relaxed light-wash denim creates an effortless vacation-ready look, perfect for exploring Mediterranean streets.",
+    "images": [
+      {
+        "src": "/outfits/sunny-color-block.jpg",
+        "alt": "Sunny Color Block",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771887908949-0",
+            "closetItemId": "item-shared-prada-sunglasses",
+            "position": {
+              "x": 51.9,
+              "y": 18.5
+            }
+          },
+          {
+            "id": "tag-1771887908949-1",
+            "closetItemId": "item-1771887908949-1",
+            "position": {
+              "x": 51.9,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771887908949-3",
+            "closetItemId": "item-shared-gold-watch",
+            "position": {
+              "x": 51.9,
+              "y": 56.5
+            }
+          },
+          {
+            "id": "tag-1771887908949-2",
+            "closetItemId": "item-shared-light-wash-jeans",
+            "position": {
+              "x": 51.9,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771887908949-4",
+            "closetItemId": "item-shared-adidas-sambas",
+            "position": {
+              "x": 51.9,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#F4C896",
+      "#F5B3B3",
+      "#5DBFD9",
+      "#9CB8D9",
+      "#FFFFFF"
+    ],
+    "featured": true
+  },
+  {
+    "id": "outfit-1771888369546",
+    "slug": "urban-winter-nights",
+    "title": "Urban Winter Nights",
+    "date": "2026-02-23",
+    "season": "winter",
+    "occasion": [
+      "casual",
+      "weekend",
+      "evening",
+      "travel"
+    ],
+    "description": "The outfit relies on a streetwear foundation, using baggy sweatpants and a hoodie to balance the extreme proportions of the statement jacket. That keyboard puffer aligns with glitchcore by treating digital interfaces as wearable art, turning the body into a surreal input device. Y2K influences appear in the wrap-around sunglasses and the retro-tech visual language of the keys. The segmented, padded construction mimics the articulated armor of techwear, merging functional aesthetics with cyberpunk themes.",
+    "images": [
+      {
+        "src": "/outfits/urban-winter-nights.jpg",
+        "alt": "Urban Winter Nights",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771888369546-0",
+            "closetItemId": "item-1771888369546-0",
+            "position": {
+              "x": 51.6,
+              "y": 18.5
+            }
+          },
+          {
+            "id": "tag-1771888369546-2",
+            "closetItemId": "item-1771888369546-2",
+            "position": {
+              "x": 51.6,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771888369546-1",
+            "closetItemId": "item-1771888369546-1",
+            "position": {
+              "x": 51.6,
+              "y": 43.5
+            }
+          },
+          {
+            "id": "tag-1771888369546-3",
+            "closetItemId": "item-1771888369546-3",
+            "position": {
+              "x": 51.6,
+              "y": 70
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#E8E5DC",
+      "#2B3E50",
+      "#1A1F28",
+      "#4A5F7A"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771888456724",
+    "slug": "coastal-ceremony",
+    "title": "Coastal Ceremony",
+    "date": "2026-02-23",
+    "season": "summer",
+    "occasion": [
+      "evening",
+      "date",
+      "dinner",
+      "weekend"
+    ],
+    "description": "A refined beach wedding look featuring a pale mint suit paired with a crisp white shirt and coordinating pocket square. The lightweight fabrication and soft color palette create an elegant yet relaxed aesthetic perfect for seaside celebrations.",
+    "images": [
+      {
+        "src": "/outfits/coastal-ceremony.jpg",
+        "alt": "Coastal Ceremony",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771888456725-2",
+            "closetItemId": "item-1771888456725-2",
+            "position": {
+              "x": 48.8,
+              "y": 37.5
+            }
+          },
+          {
+            "id": "tag-1771888456725-1",
+            "closetItemId": "item-1771888456725-1",
+            "position": {
+              "x": 48.8,
+              "y": 42.5
+            }
+          },
+          {
+            "id": "tag-1771888456725-0",
+            "closetItemId": "item-1771888456724-0",
+            "position": {
+              "x": 48.8,
+              "y": 47.5
+            }
+          },
+          {
+            "id": "tag-1771888456725-3",
+            "closetItemId": "item-shared-gold-ring",
+            "position": {
+              "x": 48.8,
+              "y": 63.5
+            }
+          },
+          {
+            "id": "tag-1771888456725-4",
+            "closetItemId": "item-1771888456725-4",
+            "position": {
+              "x": 48.8,
+              "y": 70
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#C8DDD5",
+      "#FFFFFF",
+      "#5B7FA6",
+      "#F5E6D3"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771888648990",
+    "slug": "layered-edge",
+    "title": "Layered Edge",
+    "date": "2026-02-23",
+    "season": "winter",
+    "occasion": [
+      "casual",
+      "weekend",
+      "travel"
+    ],
+    "description": "A rebellious layered look combining a black leather biker jacket with a sage embroidered scarf, creating an eclectic streetwear-meets-bohemian aesthetic perfect for cool-weather adventures.",
+    "images": [
+      {
+        "src": "/outfits/layered-edge.jpg",
+        "alt": "Layered Edge",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771888648991-0",
+            "closetItemId": "item-shared-prada-sunglasses",
+            "position": {
+              "x": 51.9,
+              "y": 18.5
+            }
+          },
+          {
+            "id": "tag-1771888648991-3",
+            "closetItemId": "item-1771888648991-3",
+            "position": {
+              "x": 51.9,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771888648991-1",
+            "closetItemId": "item-1771888648991-1",
+            "position": {
+              "x": 51.9,
+              "y": 43.5
+            }
+          },
+          {
+            "id": "tag-1771888648991-2",
+            "closetItemId": "item-1771888648991-2",
+            "position": {
+              "x": 51.9,
+              "y": 48.5
+            }
+          },
+          {
+            "id": "tag-1771888648991-5",
+            "closetItemId": "item-shared-gold-ring",
+            "position": {
+              "x": 51.9,
+              "y": 63.5
+            }
+          },
+          {
+            "id": "tag-1771888648991-4",
+            "closetItemId": "item-shared-light-wash-jeans",
+            "position": {
+              "x": 51.9,
+              "y": 70
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#2C2C2C",
+      "#8B9174",
+      "#E8E4D9",
+      "#5C697A"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771888795068",
+    "slug": "sunset-rooftop",
+    "title": "Sunset Rooftop",
+    "date": "2026-02-23",
+    "season": "summer",
+    "occasion": [
+      "casual",
+      "evening",
+      "date",
+      "travel"
+    ],
+    "description": "A relaxed yet refined summer evening look featuring a pastel tie-dye camp collar shirt paired with dark trousers, perfect for rooftop gatherings and warm-weather socializing.",
+    "images": [
+      {
+        "src": "/outfits/sunset-rooftop.jpg",
+        "alt": "Sunset Rooftop",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771888795068-1",
+            "closetItemId": "item-shared-gold-chain-necklace",
+            "position": {
+              "x": 51.6,
+              "y": 30
+            }
+          },
+          {
+            "id": "tag-1771888795068-0",
+            "closetItemId": "item-1771888795068-0",
+            "position": {
+              "x": 51.6,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771888795068-2",
+            "closetItemId": "item-shared-gold-watch",
+            "position": {
+              "x": 51.6,
+              "y": 56.5
+            }
+          },
+          {
+            "id": "tag-1771888795068-3",
+            "closetItemId": "item-1771888795068-3",
+            "position": {
+              "x": 51.6,
+              "y": 70
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#E8B4A8",
+      "#C4D5E0",
+      "#F5E6D3",
+      "#2C3E2F",
+      "#1A1A1A"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771888932436",
+    "slug": "retro-polo-sophistication",
+    "title": "Retro Polo Sophistication",
+    "date": "2026-02-23",
+    "season": "summer",
+    "occasion": [
+      "casual",
+      "weekend",
+      "brunch",
+      "travel",
+      "date"
+    ],
+    "description": "A refined vintage-inspired look featuring a contrast-collar polo shirt paired with tailored brown trousers and cream sneakers. The black sunglasses and crossbody bag add contemporary edge to this effortlessly cool ensemble.",
+    "images": [
+      {
+        "src": "/outfits/retro-polo-sophistication.jpg",
+        "alt": "Retro Polo Sophistication",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771888932436-0",
+            "closetItemId": "item-shared-prada-sunglasses",
+            "position": {
+              "x": 51.8,
+              "y": 18.5
+            }
+          },
+          {
+            "id": "tag-1771888932436-1",
+            "closetItemId": "item-1771888932436-1",
+            "position": {
+              "x": 51.8,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771888932436-2",
+            "closetItemId": "item-1771863385130-3",
+            "position": {
+              "x": 51.8,
+              "y": 51.5
+            }
+          },
+          {
+            "id": "tag-1771888932436-3",
+            "closetItemId": "item-shared-wrancher-dress-jean",
+            "position": {
+              "x": 51.8,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771888932436-4",
+            "closetItemId": "item-shared-adidas-sambas",
+            "position": {
+              "x": 51.8,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#F5F5DC",
+      "#006D5B",
+      "#5C4A3A",
+      "#000000",
+      "#F5E6D3"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771889025544",
+    "slug": "evening-on-the-water",
+    "title": "Evening on the Water",
+    "date": "2026-02-23",
+    "season": "fall",
+    "occasion": [
+      "casual",
+      "evening",
+      "weekend",
+      "date"
+    ],
+    "description": "A sleek monochromatic look centered around a black zip-up jacket with subtle luxury branding, perfect for urban exploration during golden hour. The minimalist styling emphasizes clean lines and understated sophistication.",
+    "images": [
+      {
+        "src": "/outfits/evening-on-the-water.jpg",
+        "alt": "Evening on the Water",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771889025545-0",
+            "closetItemId": "item-1771889025544-0",
+            "position": {
+              "x": 48.4,
+              "y": 43
+            }
+          },
+          {
+            "id": "tag-1771889025545-1",
+            "closetItemId": "item-shared-gold-ring",
+            "position": {
+              "x": 48.4,
+              "y": 63.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#000000",
+      "#1a1a1a",
+      "#2d2d2d",
+      "#c0a080"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771889104255",
+    "slug": "festive-elegance",
+    "title": "Festive Elegance",
+    "date": "2026-02-23",
+    "season": "summer",
+    "occasion": [
+      "evening",
+      "dinner"
+    ],
+    "description": "A traditional South Asian ensemble featuring an ornately embroidered cream sherwani paired with rich burgundy churidar pants and coordinating mojari shoes, perfect for celebratory occasions.",
+    "images": [
+      {
+        "src": "/outfits/festive-elegance.jpg",
+        "alt": "Festive Elegance",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771889104255-0",
+            "closetItemId": "item-1771889104255-0",
+            "position": {
+              "x": 51,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771889104255-1",
+            "closetItemId": "item-1771889104255-1",
+            "position": {
+              "x": 51,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771889104255-2",
+            "closetItemId": "item-1771889104255-2",
+            "position": {
+              "x": 51,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#F5E6D3",
+      "#8B1A1A",
+      "#D4AF37",
+      "#C19A6B"
+    ],
+    "featured": true
+  },
+  {
+    "id": "outfit-1771889238070",
+    "slug": "relaxed-stripes",
+    "title": "Relaxed Stripes",
+    "date": "2026-02-23",
+    "season": "summer",
+    "occasion": [
+      "casual",
+      "weekend",
+      "brunch",
+      "date"
+    ],
+    "description": "A laid-back summer look pairing a classic pinstripe button-down with denim shorts and retro sneakers. The relaxed silhouette and neutral palette create an effortlessly cool weekend vibe.",
+    "images": [
+      {
+        "src": "/outfits/relaxed-stripes.jpg",
+        "alt": "Relaxed Stripes",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771889238070-0",
+            "closetItemId": "item-1771889238070-0",
+            "position": {
+              "x": 51.1,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771889238070-1",
+            "closetItemId": "item-shared-dark-wash-jorts",
+            "position": {
+              "x": 51.1,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771889238070-2",
+            "closetItemId": "item-shared-white-crew-socks",
+            "position": {
+              "x": 51.1,
+              "y": 83.5
+            }
+          },
+          {
+            "id": "tag-1771889238070-3",
+            "closetItemId": "item-shared-adidas-sambas",
+            "position": {
+              "x": 51.1,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#E8E4DC",
+      "#4A5A6A",
+      "#2C3E50",
+      "#F5E6D3",
+      "#D4C5A0"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771889479369",
+    "slug": "streetwear-business-casual",
+    "title": "Streetwear Business Casual",
+    "date": "2026-02-23",
+    "season": "spring",
+    "occasion": [
+      "work",
+      "casual",
+      "brunch"
+    ],
+    "description": "A streetwear take on office dressing, pairing a crisp white linen shirt and charcoal tie, styled both over and under the collar, for that post-work drip.",
+    "images": [
+      {
+        "src": "/outfits/streetwear-business-casual.jpg",
+        "alt": "Streetwear Business Casual",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771889479369-0",
+            "closetItemId": "item-1771889479369-0",
+            "position": {
+              "x": 50.7,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771889479369-1",
+            "closetItemId": "item-1771889479369-1",
+            "position": {
+              "x": 50.7,
+              "y": 43.5
+            }
+          },
+          {
+            "id": "tag-1771889479369-2",
+            "closetItemId": "item-shared-light-wash-jeans",
+            "position": {
+              "x": 50.7,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771889479369-3",
+            "closetItemId": "item-shared-black-loafers",
+            "position": {
+              "x": 50.7,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#F5F5F0",
+      "#4A4A4A",
+      "#A8C5DA",
+      "#2C2C2C"
+    ],
+    "featured": false
+  },
+  {
+    "id": "outfit-1771890586081",
+    "slug": "statement-suit",
+    "title": "Statement Suit",
+    "date": "2026-02-23",
+    "season": "fall",
+    "occasion": [
+      "work",
+      "dinner",
+      "evening",
+      "date"
+    ],
+    "description": "A classic navy suit paired with a crisp white shirt and red silk scarf tied around the neck creates a fun flair on a formal look. The tassel loafers add a modern edge to traditional suiting.",
+    "images": [
+      {
+        "src": "/outfits/statement-suit.jpg",
+        "alt": "Statement Suit",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771890586081-1",
+            "closetItemId": "item-1771890586081-1",
+            "position": {
+              "x": 51.2,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771890586081-2",
+            "closetItemId": "item-1771890586081-2",
+            "position": {
+              "x": 51.2,
+              "y": 43.5
+            }
+          },
+          {
+            "id": "tag-1771890586081-0",
+            "closetItemId": "item-1771890586081-0",
+            "position": {
+              "x": 51.2,
+              "y": 48.5
+            }
+          },
+          {
+            "id": "tag-1771890586081-3",
+            "closetItemId": "item-1771890586081-3",
+            "position": {
+              "x": 51.2,
+              "y": 57.5
+            }
+          },
+          {
+            "id": "tag-1771890586081-4",
+            "closetItemId": "item-1771890586081-4",
+            "position": {
+              "x": 51.2,
+              "y": 70
+            }
+          },
+          {
+            "id": "tag-1771890586081-5",
+            "closetItemId": "item-1771890586081-5",
+            "position": {
+              "x": 51.2,
+              "y": 91.5
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#1a1a1a",
+      "#ffffff",
+      "#b91c1c",
+      "#8b4513"
+    ],
+    "featured": true
+  },
+  {
+    "id": "outfit-1771890871135",
+    "slug": "utility-layers",
+    "title": "Utility Layers",
+    "date": "2026-02-23",
+    "season": "fall",
+    "occasion": [
+      "casual",
+      "weekend",
+      "travel",
+      "evening"
+    ],
+    "description": "A modern workwear-inspired look featuring a navy denim jacket over charcoal hoodie, paired with black denim for an effortlessly cool, utilitarian aesthetic.",
+    "images": [
+      {
+        "src": "/outfits/utility-layers.jpg",
+        "alt": "Utility Layers",
+        "width": 800,
+        "height": 1200,
+        "tags": [
+          {
+            "id": "tag-1771890871135-0",
+            "closetItemId": "item-1771890871135-0",
+            "position": {
+              "x": 48.9,
+              "y": 10
+            }
+          },
+          {
+            "id": "tag-1771890871135-2",
+            "closetItemId": "item-1771888369546-2",
+            "position": {
+              "x": 48.9,
+              "y": 38.5
+            }
+          },
+          {
+            "id": "tag-1771890871135-1",
+            "closetItemId": "item-1771890871135-1",
+            "position": {
+              "x": 48.9,
+              "y": 43.5
+            }
+          },
+          {
+            "id": "tag-1771890871135-4",
+            "closetItemId": "item-shared-gold-ring",
+            "position": {
+              "x": 49,
+              "y": 63.5
+            }
+          },
+          {
+            "id": "tag-1771890871135-3",
+            "closetItemId": "item-1771890871135-3",
+            "position": {
+              "x": 48.9,
+              "y": 70
+            }
+          }
+        ]
+      }
+    ],
+    "colorPalette": [
+      "#2C3E50",
+      "#34495E",
+      "#1C1C1C",
+      "#4A4A4A"
+    ],
+    "featured": false
+  }
+]
