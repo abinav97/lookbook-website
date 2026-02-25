@@ -34,7 +34,7 @@ export default function ClosetClient({
       </ScrollFadeIn>
 
       {/* Layout: sidebar + grid */}
-      <div className="flex gap-16">
+      <div className="lg:flex lg:gap-16">
         <CategoryNav categories={categories} counts={counts} />
 
         <div className="flex-1 min-w-0">

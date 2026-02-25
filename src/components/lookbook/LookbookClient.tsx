@@ -60,7 +60,7 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
             <span className="text-[9px] tracking-[0.15em] text-text-muted mr-3">
               SEASON
             </span>
-            <div className="flex gap-1">
+            <div className="flex flex-wrap gap-1">
               {SEASONS.map((s) => (
                 <button
                   key={s.value}
@@ -82,7 +82,7 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
             <span className="text-[9px] tracking-[0.15em] text-text-muted mr-3 shrink-0">
               OCCASION
             </span>
-            <div className="flex gap-1">
+            <div className="flex flex-wrap gap-1">
               {OCCASIONS.map((o) => (
                 <button
                   key={o}
