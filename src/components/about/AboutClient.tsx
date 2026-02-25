@@ -19,27 +19,19 @@ export default function AboutClient() {
           </h1>
         </ScrollFadeIn>
 
-        {/* Portrait placeholder */}
+        {/* Portrait */}
         <ScrollFadeIn delay={0.15}>
-          <div className="mt-12 relative overflow-hidden aspect-[3/2] max-w-lg">
-            <motion.div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(135deg, #C4A882, #8B7355, #C19A6B)",
-              }}
+          <div className="mt-12 relative overflow-hidden aspect-[3/2] max-w-2xl">
+            <motion.img
+              src="/abi-portrait.jpg"
+              alt="Abi"
+              className="absolute inset-0 w-full h-full object-cover object-center"
               initial={{ scale: 1.05 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{
                 duration: 1,
                 ease: [0.22, 1, 0.36, 1],
-              }}
-            />
-            <div
-              className="absolute inset-0 opacity-[0.05] pointer-events-none"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
               }}
             />
           </div>
@@ -89,8 +81,7 @@ export default function AboutClient() {
                 costume changes.
               </p>
               <p className="text-text-muted text-sm leading-relaxed mt-4">
-                Quality over quantity. Earth tones over neon. Structure over
-                trend. But never so rigid that it becomes a uniform.
+                Structure over trend. But never so rigid that it becomes a uniform.
               </p>
             </div>
           </div>
@@ -129,22 +120,17 @@ export default function AboutClient() {
               </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8">
               {[
                 {
                   label: "EMAIL",
-                  value: "hello@abislookbook.com",
-                  href: "mailto:hello@abislookbook.com",
+                  value: "abinav@wharton.upenn.edu",
+                  href: "mailto:abinav@wharton.upenn.edu",
                 },
                 {
                   label: "LINKEDIN",
-                  value: "linkedin.com/in/abi",
-                  href: "https://linkedin.com",
-                },
-                {
-                  label: "INSTAGRAM",
-                  value: "@abi",
-                  href: "https://instagram.com",
+                  value: "linkedin.com/in/abinav-bharadwaj",
+                  href: "https://www.linkedin.com/in/abinav-bharadwaj/",
                 },
               ].map((link, i) => (
                 <motion.a

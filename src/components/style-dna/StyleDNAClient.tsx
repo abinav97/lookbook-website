@@ -286,14 +286,12 @@ export default function StyleDNAClient({
 
           <div className="max-w-2xl mt-8">
             <blockquote className="font-serif text-2xl md:text-3xl font-light leading-relaxed text-text tracking-[0.01em]">
-              &ldquo;A wardrobe built on considered neutrals and structured
-              silhouettes. Earth tones dominate — camel, charcoal, olive — with
-              an emphasis on layering and textural contrast. The approach is
-              intentional without being rigid: classic pieces remixed across
-              seasons, dressed up or down by context rather than costume.&rdquo;
+              &ldquo;The approach is intentional without being rigid: classic
+              pieces remixed across seasons, dressed up or down by context
+              rather than costume.&rdquo;
             </blockquote>
             <p className="text-[10px] tracking-[0.15em] text-text-muted mt-6">
-              WRITTEN BY ABI &middot; UPDATED QUARTERLY
+              &mdash;ABI
             </p>
           </div>
         </section>

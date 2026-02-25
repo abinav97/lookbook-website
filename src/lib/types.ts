@@ -51,6 +51,7 @@ export interface ClosetItem {
   color?: string;
   colorHex?: string;
   images: string[];
+  imageUrl?: string;
   purchaseUrl?: string;
   notes?: string;
 }

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Outfit } from "@/lib/types";
-import { formatDateShort } from "@/lib/utils";
+import { formatSeasonYear } from "@/lib/utils";
 
 interface OutfitCardProps {
   outfit: Outfit;
@@ -65,7 +65,7 @@ export default function OutfitCard({ outfit, index = 0 }: OutfitCardProps) {
                 {outfit.title}
               </p>
               <p className="text-white/70 text-[10px] tracking-[0.15em] mt-1.5">
-                {formatDateShort(outfit.date)} &middot;{" "}
+                {formatSeasonYear(outfit.season, outfit.date)} &middot;{" "}
                 {outfit.occasion.map((o) => o.toUpperCase()).join(" / ")}
               </p>
             </div>
@@ -78,7 +78,7 @@ export default function OutfitCard({ outfit, index = 0 }: OutfitCardProps) {
             {outfit.title}
           </h3>
           <p className="text-[10px] tracking-[0.12em] text-text-muted mt-0.5">
-            {formatDateShort(outfit.date)} &middot; {outfit.season.toUpperCase()}
+            {formatSeasonYear(outfit.season, outfit.date)}
           </p>
         </div>
       </Link>

@@ -3,7 +3,7 @@
     "id": "outfit-1771862436917",
     "slug": "lisbon-layers",
     "title": "Lisbon Layers",
-    "date": "2026-02-23",
+    "date": "2021-10-15",
     "season": "fall",
     "occasion": [
       "casual",
@@ -75,7 +75,7 @@
     "id": "outfit-1771863385130",
     "slug": "summer-street-style",
     "title": "Summer Street Style",
-    "date": "2026-02-23",
+    "date": "2022-07-08",
     "season": "summer",
     "occasion": [
       "casual",
@@ -155,13 +155,13 @@
       "#FFFFFF",
       "#D4C5A8"
     ],
-    "featured": true
+    "featured": false
   },
   {
     "id": "outfit-1771863790940",
     "slug": "refined-casual-elegance",
     "title": "Refined Casual Elegance",
-    "date": "2026-02-23",
+    "date": "2022-10-08",
     "season": "fall",
     "occasion": [
       "casual",
@@ -227,13 +227,13 @@
       "#7BA5C8",
       "#2C2420"
     ],
-    "featured": true
+    "featured": false
   },
   {
     "id": "outfit-1771864195524",
     "slug": "racing-spirit",
     "title": "Racing Spirit",
-    "date": "2026-02-23",
+    "date": "2023-10-05",
     "season": "fall",
     "occasion": [
       "casual",
@@ -289,7 +289,7 @@
     "id": "outfit-1771864777486",
     "slug": "relaxed-weekend-vibes",
     "title": "Relaxed Weekend Vibes",
-    "date": "2026-02-23",
+    "date": "2023-04-08",
     "season": "spring",
     "occasion": [
       "casual",
@@ -360,7 +360,7 @@
     "id": "outfit-1771864970516",
     "slug": "casual-weekend-comfort",
     "title": "Casual Weekend Comfort",
-    "date": "2026-02-23",
+    "date": "2023-07-15",
     "season": "summer",
     "occasion": [
       "casual",
@@ -422,7 +422,7 @@
     "id": "outfit-1771865251140",
     "slug": "tailored-statement",
     "title": "Tailored Statement",
-    "date": "2026-02-23",
+    "date": "2023-10-14",
     "season": "fall",
     "occasion": [
       "dinner",
@@ -500,7 +500,7 @@
     "id": "outfit-1771887596161",
     "slug": "urban-edge",
     "title": "Urban Edge",
-    "date": "2026-02-23",
+    "date": "2023-10-20",
     "season": "fall",
     "occasion": [
       "casual",
@@ -562,7 +562,7 @@
     "id": "outfit-1771887760261",
     "slug": "denim-on-denim",
     "title": "Denim on Denim",
-    "date": "2026-02-23",
+    "date": "2023-04-15",
     "season": "spring",
     "occasion": [
       "casual",
@@ -627,7 +627,7 @@
     "id": "outfit-1771887908949",
     "slug": "sunny-color-block",
     "title": "Sunny Color Block",
-    "date": "2026-02-23",
+    "date": "2023-07-22",
     "season": "summer",
     "occasion": [
       "casual",
@@ -699,7 +699,7 @@
     "id": "outfit-1771888369546",
     "slug": "urban-winter-nights",
     "title": "Urban Winter Nights",
-    "date": "2026-02-23",
+    "date": "2024-12-14",
     "season": "winter",
     "occasion": [
       "casual",
@@ -756,13 +756,13 @@
       "#1A1F28",
       "#4A5F7A"
     ],
-    "featured": false
+    "featured": true
   },
   {
     "id": "outfit-1771888456724",
     "slug": "coastal-ceremony",
     "title": "Coastal Ceremony",
-    "date": "2026-02-23",
+    "date": "2023-07-28",
     "season": "summer",
     "occasion": [
       "evening",
@@ -827,13 +827,13 @@
       "#5B7FA6",
       "#F5E6D3"
     ],
-    "featured": false
+    "featured": true
   },
   {
     "id": "outfit-1771888648990",
     "slug": "layered-edge",
     "title": "Layered Edge",
-    "date": "2026-02-23",
+    "date": "2023-12-18",
     "season": "winter",
     "occasion": [
       "casual",
@@ -911,7 +911,7 @@
     "id": "outfit-1771888795068",
     "slug": "sunset-rooftop",
     "title": "Sunset Rooftop",
-    "date": "2026-02-23",
+    "date": "2024-07-28",
     "season": "summer",
     "occasion": [
       "casual",
@@ -975,7 +975,7 @@
     "id": "outfit-1771888932436",
     "slug": "retro-polo-sophistication",
     "title": "Retro Polo Sophistication",
-    "date": "2026-02-23",
+    "date": "2024-07-12",
     "season": "summer",
     "occasion": [
       "casual",
@@ -1048,7 +1048,7 @@
     "id": "outfit-1771889025544",
     "slug": "evening-on-the-water",
     "title": "Evening on the Water",
-    "date": "2026-02-23",
+    "date": "2024-11-02",
     "season": "fall",
     "occasion": [
       "casual",
@@ -1085,9 +1085,9 @@
     ],
     "colorPalette": [
       "#000000",
-      "#1a1a1a",
-      "#2d2d2d",
-      "#c0a080"
+      "#1A1A1A",
+      "#2D2D2D",
+      "#C0A080"
     ],
     "featured": false
   },
@@ -1095,7 +1095,7 @@
     "id": "outfit-1771889104255",
     "slug": "festive-elegance",
     "title": "Festive Elegance",
-    "date": "2026-02-23",
+    "date": "2024-08-10",
     "season": "summer",
     "occasion": [
       "evening",
@@ -1148,7 +1148,7 @@
     "id": "outfit-1771889238070",
     "slug": "relaxed-stripes",
     "title": "Relaxed Stripes",
-    "date": "2026-02-23",
+    "date": "2025-08-16",
     "season": "summer",
     "occasion": [
       "casual",
@@ -1212,7 +1212,7 @@
     "id": "outfit-1771889479369",
     "slug": "streetwear-business-casual",
     "title": "Streetwear Business Casual",
-    "date": "2026-02-23",
+    "date": "2025-05-10",
     "season": "spring",
     "occasion": [
       "work",
@@ -1274,7 +1274,7 @@
     "id": "outfit-1771890586081",
     "slug": "statement-suit",
     "title": "Statement Suit",
-    "date": "2026-02-23",
+    "date": "2025-11-15",
     "season": "fall",
     "occasion": [
       "work",
@@ -1339,13 +1339,39 @@
             }
           }
         ]
+      },
+      {
+        "src": "/outfits/statement-suit-detail-1.jpg",
+        "alt": "Statement Suit — Red silk scarf detail",
+        "width": 4160,
+        "height": 3120,
+        "tags": [
+          {
+            "id": "tag-1771890586081-2d",
+            "closetItemId": "item-1771890586081-2",
+            "position": { "x": 50, "y": 50 }
+          }
+        ]
+      },
+      {
+        "src": "/outfits/statement-suit-detail-2.jpg",
+        "alt": "Statement Suit — AB cufflinks detail",
+        "width": 1036,
+        "height": 1565,
+        "tags": [
+          {
+            "id": "tag-1771890586081-6d",
+            "closetItemId": "item-1771890586081-6",
+            "position": { "x": 50, "y": 50 }
+          }
+        ]
       }
     ],
     "colorPalette": [
-      "#1a1a1a",
-      "#ffffff",
-      "#b91c1c",
-      "#8b4513"
+      "#1A1A1A",
+      "#FFFFFF",
+      "#B91C1C",
+      "#8B4513"
     ],
     "featured": true
   },
@@ -1353,7 +1379,7 @@
     "id": "outfit-1771890871135",
     "slug": "utility-layers",
     "title": "Utility Layers",
-    "date": "2026-02-23",
+    "date": "2025-11-24",
     "season": "fall",
     "occasion": [
       "casual",

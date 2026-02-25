@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Outfit, OutfitTag, ClosetItem } from "@/lib/types";
-import { formatDate } from "@/lib/utils";
-import TagIndicator from "./TagIndicator";
+import { Outfit, OutfitTag, ClosetItem, OutfitImage } from "@/lib/types";
+import { formatSeasonYear } from "@/lib/utils";
+
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 
 interface TagWithItem {
@@ -17,11 +17,19 @@ interface OutfitDetailClientProps {
   tagItems: TagWithItem[];
 }
 
+/** Extract the caption portion after " — " from an alt string */
+function getDetailCaption(alt: string): string | null {
+  const sep = alt.indexOf(" — ");
+  return sep !== -1 ? alt.slice(sep + 3) : null;
+}
+
 export default function OutfitDetailClient({
   outfit,
   tagItems,
 }: OutfitDetailClientProps) {
-  const image = outfit.images[0];
+  const heroImage = outfit.images[0];
+  const detailImages = outfit.images.slice(1);
+  const hasDetails = detailImages.length > 0;
   const colors = outfit.colorPalette || ["#C4A882", "#8B7355"];
   const gradient = `linear-gradient(160deg, ${colors.join(", ")})`;
 
@@ -34,12 +42,10 @@ export default function OutfitDetailClient({
   return (
     <div className="pb-20">
       {/* ============================================ */}
-      {/* HERO IMAGE with tags */}
+      {/* HERO IMAGE */}
       {/* ============================================ */}
       <section className="relative">
-        {/* Full-bleed hero gradient */}
         <div className="relative w-full max-w-4xl mx-auto">
-          {/* Real photo or gradient fallback */}
           <motion.div
             className="relative w-full"
             style={{ background: gradient }}
@@ -47,37 +53,37 @@ export default function OutfitDetailClient({
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            {image?.src ? (
+            {heroImage?.src ? (
               <img
-                src={image.src}
-                alt={image.alt}
+                src={heroImage.src}
+                alt={heroImage.alt}
                 className="w-full h-auto block"
               />
             ) : (
-              <div style={{ aspectRatio: `${image?.width || 800}/${image?.height || 1200}` }} />
+              <div style={{ aspectRatio: `${heroImage?.width || 800}/${heroImage?.height || 1200}` }} />
             )}
           </motion.div>
 
-          {/* Tag indicators */}
-          {image?.tags.map((tag) => {
-            const item = tagItems.find((t) => t.tag.id === tag.id)?.item;
-            return <TagIndicator key={tag.id} tag={tag} item={item} />;
-          })}
-
-          {/* Bottom gradient for readability */}
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent" />
-
-          {/* Tap hint on mobile */}
-          <motion.div
-            className="absolute bottom-6 right-6 text-white/50 text-[9px] tracking-[0.15em] md:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-          >
-            TAP DOTS TO EXPLORE
-          </motion.div>
         </div>
       </section>
+
+      {/* ============================================ */}
+      {/* DETAIL PHOTOS — editorial strip */}
+      {/* ============================================ */}
+      {hasDetails && (
+        <section className="px-[var(--page-margin)] pt-12 md:pt-16">
+          <ScrollFadeIn>
+            <div className="section-divider mb-8">
+              <span className="text-[10px] tracking-[0.25em] text-text-muted font-light">
+                THE DETAILS
+              </span>
+            </div>
+          </ScrollFadeIn>
+
+          <DetailGallery images={detailImages} colors={colors} />
+        </section>
+      )}
 
       {/* ============================================ */}
       {/* OUTFIT INFO */}
@@ -99,9 +105,7 @@ export default function OutfitDetailClient({
               </h1>
 
               <div className="flex items-center gap-4 mt-4 text-[10px] tracking-[0.12em] text-text-muted">
-                <span>{formatDate(outfit.date)}</span>
-                <span className="w-px h-3 bg-border" />
-                <span>{outfit.season.toUpperCase()}</span>
+                <span>{formatSeasonYear(outfit.season, outfit.date)}</span>
               </div>
 
               {outfit.description && (
@@ -165,15 +169,25 @@ export default function OutfitDetailClient({
                       ease: [0.22, 1, 0.36, 1],
                     }}
                   >
-                    {/* Item swatch */}
-                    <div
-                      className="aspect-square mb-2 relative overflow-hidden"
-                      style={{
-                        background: item.colorHex
-                          ? `linear-gradient(135deg, ${item.colorHex}, ${item.colorHex}BB)`
-                          : "linear-gradient(135deg, #C4A882, #8B7355)",
-                      }}
-                    >
+                    {/* Item image or gradient fallback */}
+                    <div className="aspect-square mb-2 relative overflow-hidden">
+                      {item.images?.[0] ? (
+                        <img
+                          src={item.images[0]}
+                          alt={`${item.name}${item.brand ? ` by ${item.brand}` : ""}`}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div
+                          className="absolute inset-0"
+                          style={{
+                            background: item.colorHex
+                              ? `linear-gradient(135deg, ${item.colorHex}, ${item.colorHex}BB)`
+                              : "linear-gradient(135deg, #C4A882, #8B7355)",
+                          }}
+                        />
+                      )}
                       <div
                         className="absolute inset-0 opacity-[0.05] pointer-events-none"
                         style={{
@@ -190,7 +204,7 @@ export default function OutfitDetailClient({
                       </p>
                     )}
                     <Link
-                      href="/closet"
+                      href={`/closet/${item.category}#${item.id}`}
                       className="text-[9px] tracking-[0.1em] text-accent-dark hover:text-accent transition-colors mt-1 inline-block"
                     >
                       VIEW IN CLOSET &rarr;
@@ -203,5 +217,113 @@ export default function OutfitDetailClient({
         </div>
       </section>
     </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────
+   Detail Gallery — asymmetric editorial grid
+   ───────────────────────────────────────────────── */
+function DetailGallery({
+  images,
+  colors,
+}: {
+  images: OutfitImage[];
+  colors: string[];
+}) {
+  // Determine layout based on number of detail shots
+  if (images.length === 1) {
+    return (
+      <div className="max-w-2xl mx-auto">
+        <DetailImage image={images[0]} colors={colors} index={0} />
+      </div>
+    );
+  }
+
+  if (images.length === 2) {
+    // Asymmetric two-up: staggered with different sizes
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-start max-w-5xl mx-auto">
+        <div className="md:col-span-7">
+          <DetailImage image={images[0]} colors={colors} index={0} />
+        </div>
+        <div className="md:col-span-5 md:mt-16">
+          <DetailImage image={images[1]} colors={colors} index={1} />
+        </div>
+      </div>
+    );
+  }
+
+  // 3+ images: staggered masonry-style grid
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 items-start max-w-5xl mx-auto">
+      {images.map((img, i) => (
+        <div
+          key={i}
+          className={i % 2 === 1 ? "mt-8 md:mt-12" : ""}
+        >
+          <DetailImage image={img} colors={colors} index={i} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function DetailImage({
+  image,
+  colors,
+  index,
+}: {
+  image: OutfitImage;
+  colors: string[];
+  index: number;
+}) {
+  const caption = getDetailCaption(image.alt);
+  const fallbackGradient = `linear-gradient(135deg, ${colors.join(", ")})`;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-30px" }}
+      transition={{
+        duration: 0.7,
+        delay: index * 0.12,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      <div className="relative overflow-hidden group">
+        <motion.div
+          className="relative w-full"
+          style={{
+            aspectRatio: `${image.width}/${image.height}`,
+            background: fallbackGradient,
+          }}
+          whileHover={{ scale: 1.03 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {image.src && (
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          )}
+
+          {/* Subtle noise overlay */}
+          <div
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+            }}
+          />
+        </motion.div>
+      </div>
+
+      {caption && (
+        <p className="text-[10px] tracking-[0.12em] text-text-muted mt-3 italic">
+          {caption}
+        </p>
+      )}
+    </motion.div>
   );
 }

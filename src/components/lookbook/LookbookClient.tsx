@@ -79,10 +79,10 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
 
           {/* Occasion filter */}
           <div className="flex items-center gap-1">
-            <span className="text-[9px] tracking-[0.15em] text-text-muted mr-3">
+            <span className="text-[9px] tracking-[0.15em] text-text-muted mr-3 shrink-0">
               OCCASION
             </span>
-            <div className="flex gap-1 flex-wrap">
+            <div className="flex gap-1">
               {OCCASIONS.map((o) => (
                 <button
                   key={o}

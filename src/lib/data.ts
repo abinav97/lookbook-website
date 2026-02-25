@@ -99,7 +99,7 @@ export function getAllColorPalettes(): string[] {
   const colors: string[] = [];
   for (const outfit of outfits) {
     if (outfit.colorPalette) {
-      colors.push(...outfit.colorPalette);
+      colors.push(...outfit.colorPalette.map((c) => c.toUpperCase()));
     }
   }
   return colors;

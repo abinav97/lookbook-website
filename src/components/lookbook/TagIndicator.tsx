@@ -55,7 +55,7 @@ export default function TagIndicator({ tag, item }: TagIndicatorProps) {
                   </p>
                 )}
                 <Link
-                  href="/closet"
+                  href={`/closet/${item.category}#${item.id}`}
                   className="text-[9px] tracking-[0.12em] text-accent-dark hover:text-accent transition-colors mt-1"
                 >
                   VIEW IN CLOSET &rarr;

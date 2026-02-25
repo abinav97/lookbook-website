@@ -2,19 +2,17 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Outfit, Collection } from "@/lib/types";
-import { formatDateShort } from "@/lib/utils";
+import { Outfit } from "@/lib/types";
+import { formatSeasonYear } from "@/lib/utils";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 
 interface HomeClientProps {
   featured: Outfit[];
-  collections: Collection[];
   totalOutfits: number;
 }
 
 export default function HomeClient({
   featured,
-  collections,
   totalOutfits,
 }: HomeClientProps) {
   const heroOutfit = featured[0];
@@ -98,8 +96,7 @@ export default function HomeClient({
             transition={{ duration: 0.8, delay: 1 }}
           >
             <span>{totalOutfits} LOOKS</span>
-            <span>{collections.length} COLLECTIONS</span>
-            <span>EST. 2025</span>
+            <span>EST. 2026</span>
           </motion.div>
         </div>
 
@@ -180,7 +177,7 @@ export default function HomeClient({
                           {outfit.title}
                         </p>
                         <p className="text-white/60 text-[10px] tracking-[0.12em] mt-1">
-                          {formatDateShort(outfit.date)}
+                          {formatSeasonYear(outfit.season, outfit.date)}
                         </p>
                       </div>
                     </div>
@@ -208,69 +205,6 @@ export default function HomeClient({
             VIEW ALL LOOKS &rarr;
           </Link>
         </ScrollFadeIn>
-      </section>
-
-      {/* ============================================ */}
-      {/* COLLECTIONS */}
-      {/* ============================================ */}
-      <section className="bg-bg-alt py-20 md:py-32">
-        <div className="px-[var(--page-margin)]">
-          <ScrollFadeIn>
-            <div className="section-divider">
-              <span className="text-[10px] tracking-[0.25em] text-text-muted font-light">
-                COLLECTIONS
-              </span>
-            </div>
-          </ScrollFadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-10">
-            {collections.map((collection, i) => {
-              const collectionGradient =
-                i === 0
-                  ? "linear-gradient(135deg, #C19A6B, #36454F, #1A1A1A)"
-                  : "linear-gradient(135deg, #9CAF88, #556B2F, #3F5277)";
-
-              return (
-                <ScrollFadeIn key={collection.id} delay={i * 0.15}>
-                  <div className="group">
-                    <div className="relative aspect-[16/9] overflow-hidden">
-                      <motion.div
-                        className="absolute inset-0"
-                        style={{ background: collectionGradient }}
-                        whileHover={{ scale: 1.03 }}
-                        transition={{
-                          duration: 0.7,
-                          ease: [0.22, 1, 0.36, 1],
-                        }}
-                      />
-                      <div
-                        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-                        style={{
-                          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-                        }}
-                      />
-                      {/* Season label on image */}
-                      <div className="absolute top-5 left-5 text-white/60 text-[9px] tracking-[0.2em]">
-                        {collection.season?.toUpperCase()}
-                      </div>
-                    </div>
-                    <div className="mt-4">
-                      <h3 className="font-serif text-2xl md:text-3xl font-light tracking-[0.04em]">
-                        {collection.title}
-                      </h3>
-                      <p className="text-sm text-text-muted mt-2 max-w-md leading-relaxed">
-                        {collection.description}
-                      </p>
-                      <p className="text-[10px] tracking-[0.12em] text-text-muted mt-3">
-                        {collection.outfitIds.length} LOOKS
-                      </p>
-                    </div>
-                  </div>
-                </ScrollFadeIn>
-              );
-            })}
-          </div>
-        </div>
       </section>
 
       {/* ============================================ */}

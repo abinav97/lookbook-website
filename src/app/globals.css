@@ -142,6 +142,11 @@ body {
   animation-delay: 0.1s;
 }
 
+/* Scroll target offset for deep-linked items */
+[id]:target {
+  scroll-margin-top: 8rem;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

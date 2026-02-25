@@ -6,7 +6,10 @@
     "category": "pants",
     "color": "Brown",
     "colorHex": "#5C4A3A",
-    "images": []
+    "images": [
+      "/items/item-shared-wrancher-dress-jean.webp"
+    ],
+    "imageUrl": "https://i.ebayimg.com/images/g/znYAAOSwHRpmoFBR/s-l960.png"
   },
   {
     "id": "item-shared-dark-wash-jorts",
@@ -15,7 +18,10 @@
     "category": "pants",
     "color": "Indigo",
     "colorHex": "#2B4A6F",
-    "images": []
+    "images": [
+      "/items/item-shared-dark-wash-jorts.webp"
+    ],
+    "imageUrl": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQfyU3FRQLahVbLkT4V-d0oMMg31IMKAgfpZ-xBR2F0_JaIz2wqKT6mjHLPLPplbVV8SGMggKXJ"
   },
   {
     "id": "item-shared-black-loafers",
@@ -24,7 +30,10 @@
     "category": "shoes",
     "color": "Black",
     "colorHex": "#0A0A0A",
-    "images": []
+    "images": [
+      "/items/item-shared-black-loafers.webp"
+    ],
+    "imageUrl": "https://huckberry.imgix.net/spree/products/775204/original/92717_Blackstock___Weber_The_Mason_Horse_Bit_Loafer_Onyx_02_Product_on_White.jpg?auto=format%2C%20compress&crop=top&fit=fill&cs=tinysrgb&ar=4%3A5&fill=solid&fill-color=FFFFFF&ixlib=react-9.8.1"
   },
   {
     "id": "item-shared-sacai-blazer-low",
@@ -33,7 +42,10 @@
     "category": "shoes",
     "color": "White",
     "colorHex": "#FFFFFF",
-    "images": []
+    "images": [
+      "/items/item-shared-sacai-blazer-low.webp"
+    ],
+    "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2021/11/Sacai-x-Nike-Blazer-Low-White-Patent-DM6443-100-Release-Date-4-1068x784.jpeg"
   },
   {
     "id": "item-shared-adidas-sambas",
@@ -42,7 +54,10 @@
     "category": "shoes",
     "color": "Cream and Blue",
     "colorHex": "#F5E6D3",
-    "images": []
+    "imageUrl": "https://www.stadiumgoods.com/cdn/shop/files/ka70r5kp5h62pyxhhjzomhqgq3ag.png?crop=center&height=480&v=1726887541&width=480",
+    "images": [
+      "/items/item-shared-adidas-sambas.webp"
+    ]
   },
   {
     "id": "item-shared-light-wash-jeans",
@@ -51,7 +66,10 @@
     "category": "pants",
     "color": "Light Blue",
     "colorHex": "#7BA5C8",
-    "images": []
+    "images": [
+      "/items/item-shared-light-wash-jeans.webp"
+    ],
+    "imageUrl": "https://images.garmentory.com/images/13968698/xl/Levi-s-505-20260121170744.jpg?1769015266"
   },
   {
     "id": "item-shared-brown-leather-blazer",
@@ -59,7 +77,9 @@
     "category": "blazers",
     "color": "Brown",
     "colorHex": "#3B2A1A",
-    "images": []
+    "images": [
+      "/items/item-shared-brown-leather-blazer.webp"
+    ]
   },
   {
     "id": "item-1771862436917-0",
@@ -68,7 +88,10 @@
     "category": "tops",
     "color": "Forest Green",
     "colorHex": "#1F3A3A",
-    "images": []
+    "images": [
+      "/items/item-1771862436917-0.webp"
+    ],
+    "imageUrl": "https://www.jcrew.com/s7-img-facade/AU185_GR6646?hei=2000&crop=0,0,1600,0"
   },
   {
     "id": "item-1771862436917-2",
@@ -76,7 +99,10 @@
     "category": "bags",
     "color": "Turquoise",
     "colorHex": "#5EBDBD",
-    "images": []
+    "images": [
+      "/items/item-1771862436917-2.webp"
+    ],
+    "imageUrl": "https://m.media-amazon.com/images/I/81TlkKh31pL._AC_UY1000_.jpg"
   },
   {
     "id": "item-1771862436917-3",
@@ -84,7 +110,9 @@
     "category": "pants",
     "color": "Taupe",
     "colorHex": "#C4B5A0",
-    "images": []
+    "images": [
+      "/items/item-1771862436917-3.webp"
+    ]
   },
   {
     "id": "item-1771862436917-4",
@@ -93,16 +121,21 @@
     "category": "shoes",
     "color": "Black",
     "colorHex": "#2C2C2C",
-    "images": []
+    "images": [
+      "/items/item-1771862436917-4.webp"
+    ],
+    "imageUrl": "https://cdn.media.amplience.net/i/drmartens/11822006.80"
   },
   {
     "id": "item-1771863385130-0",
     "name": "Floral Head Scarf",
-    "brand": "Mango",
+    "brand": "Pull&Bear",
     "category": "accessories",
     "color": "Beige",
     "colorHex": "#D4C5A8",
-    "images": []
+    "images": [
+      "/items/item-1771863385130-0.webp"
+    ]
   },
   {
     "id": "item-1771863385130-2",
@@ -111,7 +144,9 @@
     "category": "shirts",
     "color": "White",
     "colorHex": "#F5F0E8",
-    "images": []
+    "images": [
+      "/items/item-1771863385130-2.webp"
+    ]
   },
   {
     "id": "item-1771863385130-3",
@@ -119,7 +154,10 @@
     "category": "bags",
     "color": "Black",
     "colorHex": "#1A1A1A",
-    "images": []
+    "images": [
+      "/items/item-1771863385130-3.webp"
+    ],
+    "imageUrl": "https://www.nomadix.co/cdn/shop/files/fanny-pack-raven-black-4839726.jpg?v=1761341732"
   },
   {
     "id": "item-1771863385130-4",
@@ -127,7 +165,9 @@
     "category": "pants",
     "color": "Charcoal",
     "colorHex": "#4A4A4A",
-    "images": []
+    "images": [
+      "/items/item-1771863385130-4.webp"
+    ]
   },
   {
     "id": "item-1771863385130-6",
@@ -136,7 +176,10 @@
     "category": "shoes",
     "color": "White",
     "colorHex": "#F5F5F5",
-    "images": []
+    "images": [
+      "/items/item-1771863385130-6.webp"
+    ],
+    "imageUrl": "https://cdn.flightclub.com/TEMPLATE/800583/2.jpg?w=3840"
   },
   {
     "id": "item-1771863790940-1",
@@ -145,7 +188,10 @@
     "category": "tops",
     "color": "Black",
     "colorHex": "#000000",
-    "images": []
+    "images": [
+      "/items/item-1771863790940-1.webp"
+    ],
+    "imageUrl": "https://pangaia.com/cdn/shop/files/Mens_Merino_Knit_Turtle_Neck_Black-1.png?crop=center&height=1999&v=1755512218&width=1500"
   },
   {
     "id": "item-1771863790940-2",
@@ -153,7 +199,10 @@
     "category": "accessories",
     "color": "Black",
     "colorHex": "#1C1C1C",
-    "images": []
+    "images": [
+      "/items/item-1771863790940-2.webp"
+    ],
+    "imageUrl": "https://azbelt.com/cdn/shop/products/BlackClassicSS_938x.jpg?v=1614274106"
   },
   {
     "id": "item-1771864195524-0",
@@ -162,7 +211,10 @@
     "category": "hats",
     "color": "Black",
     "colorHex": "#000000",
-    "images": []
+    "images": [
+      "/items/item-1771864195524-0.webp"
+    ],
+    "imageUrl": "https://static.nike.com/a/images/t_web_pdp_936_v2/f_auto,u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/1a89d685-7baf-4266-b33f-a50f4c5b872e/U+NK+DFADV+CLUB+CAP+S+AB+P.png"
   },
   {
     "id": "item-1771864195524-1",
@@ -171,7 +223,10 @@
     "category": "jackets",
     "color": "Navy",
     "colorHex": "#000080",
-    "images": []
+    "images": [
+      "/items/item-1771864195524-1.webp"
+    ],
+    "imageUrl": "https://jackets4racing.com/cdn/shop/files/red-bull-racing-f1-jacket-1316452_900x.png?v=1759659713"
   },
   {
     "id": "item-1771864777486-0",
@@ -180,7 +235,9 @@
     "category": "hats",
     "color": "White and Blue",
     "colorHex": "#FFFFFF",
-    "images": []
+    "images": [
+      "/items/item-1771864777486-0.webp"
+    ]
   },
   {
     "id": "item-1771864777486-2",
@@ -189,16 +246,21 @@
     "category": "tops",
     "color": "Olive",
     "colorHex": "#7A8B6F",
-    "images": []
+    "images": [
+      "/items/item-1771864777486-2.webp"
+    ],
+    "imageUrl": "https://media-assets.grailed.com/prd/listing/temp/ae1493bd556242788e891e553c8bb6cf"
   },
   {
     "id": "item-1771864970516-0",
     "name": "White Graphic Tee",
     "brand": "H&M",
-    "category": "tops",
+    "category": "shirts",
     "color": "White",
     "colorHex": "#FFFFFF",
-    "images": []
+    "images": [
+      "/items/item-1771864970516-0.webp"
+    ]
   },
   {
     "id": "item-1771865251140-2",
@@ -207,7 +269,10 @@
     "category": "tops",
     "color": "Cream",
     "colorHex": "#F5F5DC",
-    "images": []
+    "images": [
+      "/items/item-1771865251140-2.webp"
+    ],
+    "imageUrl": "https://static2.goldengoose.com/public/Style/ECOMM/GMP01338.P001703-11560.jpg"
   },
   {
     "id": "item-1771887596161-1",
@@ -216,7 +281,10 @@
     "category": "tops",
     "color": "Dark Brown",
     "colorHex": "#4A3728",
-    "images": []
+    "images": [
+      "/items/item-1771887596161-1.webp"
+    ],
+    "imageUrl": "https://images.squarespace-cdn.com/content/v1/5ef3c9211ce67177992744ae/1665175481224-3DTO0NRHXH7SC76UZOXB/9925A5DA-D531-4E8D-9D18-4884EA24DD7E?format=1000w"
   },
   {
     "id": "item-1771887596161-2",
@@ -225,7 +293,10 @@
     "category": "pants",
     "color": "Black",
     "colorHex": "#2C2C2C",
-    "images": []
+    "images": [
+      "/items/item-1771887596161-2.webp"
+    ],
+    "imageUrl": "https://u-mercari-images.mercdn.net/photos/m46223088468_1.jpg?width=2560&quality=75&_=1739749772"
   },
   {
     "id": "item-1771887760261-1",
@@ -234,7 +305,10 @@
     "category": "jackets",
     "color": "Medium Blue",
     "colorHex": "#6B9DC7",
-    "images": []
+    "images": [
+      "/items/item-1771887760261-1.webp"
+    ],
+    "imageUrl": "https://www.dant.us/cdn/shop/files/rogue-territory-15oz-medium-wash-indigo-selvedge-denim-cruiser-jacket-5.png?v=1754605970&width=1200"
   },
   {
     "id": "item-1771887908949-1",
@@ -243,7 +317,10 @@
     "category": "shirts",
     "color": "Multi",
     "colorHex": "#F4C896",
-    "images": []
+    "images": [
+      "/items/item-1771887908949-1.webp"
+    ],
+    "imageUrl": "https://i.pinimg.com/736x/74/f4/dd/74f4dd1752b40e7a5f7df43b6db86a90.jpg"
   },
   {
     "id": "item-1771888369546-0",
@@ -251,7 +328,10 @@
     "category": "accessories",
     "color": "Black",
     "colorHex": "#1A1A1A",
-    "images": []
+    "images": [
+      "/items/item-1771888369546-0.webp"
+    ],
+    "imageUrl": "https://n.nordstrommedia.com/it/d6893d94-5bcc-4b69-8afc-5df7c6047d74.jpeg?h=368&w=240&dpr=2"
   },
   {
     "id": "item-1771888369546-1",
@@ -260,7 +340,10 @@
     "category": "jackets",
     "color": "Cream",
     "colorHex": "#E8E5DC",
-    "images": []
+    "images": [
+      "/items/item-1771888369546-1.webp"
+    ],
+    "imageUrl": "https://pbs.twimg.com/media/Fs4tISEXsAAjBlg.jpg"
   },
   {
     "id": "item-1771888369546-2",
@@ -269,7 +352,10 @@
     "category": "tops",
     "color": "Black",
     "colorHex": "#1A1A1A",
-    "images": []
+    "images": [
+      "/items/item-1771888369546-2.webp"
+    ],
+    "imageUrl": "https://images.squarespace-cdn.com/content/v1/5ef3c9211ce67177992744ae/1646262951345-UNDVU335BLTS97QF6OYU/D6714198-D6E9-4144-9A24-18300A565DFF?format=1000w"
   },
   {
     "id": "item-1771888369546-3",
@@ -278,7 +364,10 @@
     "category": "pants",
     "color": "Black",
     "colorHex": "#1A1A1A",
-    "images": []
+    "images": [
+      "/items/item-1771888369546-3.webp"
+    ],
+    "imageUrl": "https://images.squarespace-cdn.com/content/5ef3c9211ce67177992744ae/1651268537674-5NLCH5WQTE0VSYQ3AVO8/IMG_4743.jpg?format=1500w&content-type=image%2Fjpeg"
   },
   {
     "id": "item-1771888456724-0",
@@ -287,7 +376,10 @@
     "category": "blazers",
     "color": "Mint",
     "colorHex": "#C8DDD5",
-    "images": []
+    "images": [
+      "/items/item-1771888456724-0.webp"
+    ],
+    "imageUrl": "https://bonobos-prod-s3.imgix.net/products/345617/original/SUIT_SUIT-BLAZER_BSU11347SG3244_40_outfitter.jpg?1726604066="
   },
   {
     "id": "item-1771888456725-1",
@@ -296,7 +388,9 @@
     "category": "shirts",
     "color": "White",
     "colorHex": "#FFFFFF",
-    "images": []
+    "images": [
+      "/items/item-1771888456725-1.webp"
+    ]
   },
   {
     "id": "item-1771888456725-2",
@@ -304,7 +398,10 @@
     "category": "accessories",
     "color": "Blue",
     "colorHex": "#5B7FA6",
-    "images": []
+    "images": [
+      "/items/item-1771888456725-2.webp"
+    ],
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0505/7019/9217/products/Silk-Opulent-light-blue-cu.jpg?v=1613766288&width=2000"
   },
   {
     "id": "item-1771888456725-4",
@@ -313,7 +410,10 @@
     "category": "pants",
     "color": "Mint",
     "colorHex": "#C8DDD5",
-    "images": []
+    "images": [
+      "/items/item-1771888456725-4.webp"
+    ],
+    "imageUrl": "https://i.ebayimg.com/images/g/MDYAAOSw36tgVQlf/s-l400.png"
   },
   {
     "id": "item-1771888648991-1",
@@ -321,7 +421,9 @@
     "category": "accessories",
     "color": "Sage",
     "colorHex": "#9BA686",
-    "images": []
+    "images": [
+      "/items/item-1771888648991-1.webp"
+    ]
   },
   {
     "id": "item-1771888648991-2",
@@ -330,16 +432,21 @@
     "category": "jackets",
     "color": "Black",
     "colorHex": "#2B2B2B",
-    "images": []
+    "images": [
+      "/items/item-1771888648991-2.webp"
+    ],
+    "imageUrl": "https://i.ebayimg.com/images/g/GkEAAeSwwxJo3zfl/s-l1200.jpg"
   },
   {
     "id": "item-1771888648991-3",
     "name": "White Base Layer Tee",
     "brand": "Kirkland Signature",
-    "category": "tops",
+    "category": "shirts",
     "color": "White",
     "colorHex": "#FFFFFF",
-    "images": []
+    "images": [
+      "/items/item-1771888648991-3.webp"
+    ]
   },
   {
     "id": "item-1771888795068-0",
@@ -348,7 +455,9 @@
     "category": "shirts",
     "color": "Peach and Blue Tie-Dye",
     "colorHex": "#E8C4B8",
-    "images": []
+    "images": [
+      "/items/item-1771888795068-0.webp"
+    ]
   },
   {
     "id": "item-1771888795068-3",
@@ -357,7 +466,10 @@
     "category": "pants",
     "color": "Black",
     "colorHex": "#1A1A1A",
-    "images": []
+    "images": [
+      "/items/item-1771888795068-3.webp"
+    ],
+    "imageUrl": "https://www.toddsnyder.com/cdn/shop/files/JE417785_BLACK_JULY_1943_R.jpg?v=1752518942&width=800"
   },
   {
     "id": "item-1771888932436-1",
@@ -366,7 +478,10 @@
     "category": "shirts",
     "color": "Cream and Green",
     "colorHex": "#F5F5DC",
-    "images": []
+    "images": [
+      "/items/item-1771888932436-1.webp"
+    ],
+    "imageUrl": "https://i.ebayimg.com/images/g/iO4AAOSw7bFms8QW/s-l400.jpg"
   },
   {
     "id": "item-1771889025544-0",
@@ -375,7 +490,10 @@
     "category": "jackets",
     "color": "Black",
     "colorHex": "#000000",
-    "images": []
+    "images": [
+      "/items/item-1771889025544-0.webp"
+    ],
+    "imageUrl": "https://image-cdn.hypb.st/https%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2F3d%2Fbf%2FJacket-1-1-f9cfa.jpg?fit=max&w=720&q=90"
   },
   {
     "id": "item-1771889104255-0",
@@ -383,7 +501,9 @@
     "category": "tops",
     "color": "Cream",
     "colorHex": "#F5E6D3",
-    "images": []
+    "images": [
+      "/items/item-1771889104255-0.webp"
+    ]
   },
   {
     "id": "item-1771889104255-1",
@@ -391,7 +511,9 @@
     "category": "pants",
     "color": "Burgundy",
     "colorHex": "#8B1A1A",
-    "images": []
+    "images": [
+      "/items/item-1771889104255-1.webp"
+    ]
   },
   {
     "id": "item-1771889104255-2",
@@ -399,7 +521,9 @@
     "category": "shoes",
     "color": "Burgundy",
     "colorHex": "#8B1A1A",
-    "images": []
+    "images": [
+      "/items/item-1771889104255-2.webp"
+    ]
   },
   {
     "id": "item-1771889238070-0",
@@ -408,7 +532,10 @@
     "category": "shirts",
     "color": "Light Blue",
     "colorHex": "#A8B8C8",
-    "images": []
+    "images": [
+      "/items/item-1771889238070-0.webp"
+    ],
+    "imageUrl": "https://i.ebayimg.com/images/g/tOwAAeSwgUpoCtwo/s-l400.jpg"
   },
   {
     "id": "item-1771889479369-0",
@@ -417,7 +544,10 @@
     "category": "shirts",
     "color": "White",
     "colorHex": "#F5F5F0",
-    "images": []
+    "images": [
+      "/items/item-1771889479369-0.webp"
+    ],
+    "imageUrl": "https://www.toddsnyder.com/cdn/shop/files/slim-fit-sea-soft-irish-linen-shirt-in-whitetodd-snyder-229793_R.jpg?v=1756821052&width=800"
   },
   {
     "id": "item-1771889479369-1",
@@ -425,7 +555,10 @@
     "category": "accessories",
     "color": "Charcoal",
     "colorHex": "#4A4A4A",
-    "images": []
+    "images": [
+      "/items/item-1771889479369-1.webp"
+    ],
+    "imageUrl": "https://www.bows-n-ties.com/30371-large_default/Uber-Skinny-Tie-in-Charcoal.jpg"
   },
   {
     "id": "item-1771890586081-0",
@@ -434,7 +567,10 @@
     "category": "blazers",
     "color": "Navy",
     "colorHex": "#1B2A4A",
-    "images": []
+    "images": [
+      "/items/item-1771890586081-0.webp"
+    ],
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0163/4002/files/1OW-1750_Flat.jpg?width=3840"
   },
   {
     "id": "item-1771890586081-1",
@@ -443,7 +579,10 @@
     "category": "shirts",
     "color": "White",
     "colorHex": "#ffffff",
-    "images": []
+    "images": [
+      "/items/item-1771890586081-1.webp"
+    ],
+    "imageUrl": "https://cdn2.propercloth.com/pic_cs/6fc6fa0bbda87f457d5596abfffac42e_size6.jpg"
   },
   {
     "id": "item-1771890586081-2",
@@ -451,7 +590,10 @@
     "category": "accessories",
     "color": "Red",
     "colorHex": "#b91c1c",
-    "images": []
+    "images": [
+      "/items/item-1771890586081-2.webp"
+    ],
+    "imageUrl": "https://annetouraine.com/cdn/shop/products/Floral-red-orange-french-silk-scarves-scarf-twill-paris-custom-designer-square_3_800x.jpg?v=1523446291"
   },
   {
     "id": "item-1771890586081-3",
@@ -459,7 +601,10 @@
     "category": "accessories",
     "color": "Brown",
     "colorHex": "#8b4513",
-    "images": []
+    "images": [
+      "/items/item-1771890586081-3.webp"
+    ],
+    "imageUrl": "https://paulevansny.com/cdn/shop/products/Belt_-_Havana_Brown.jpg?v=1527691375"
   },
   {
     "id": "item-1771890586081-4",
@@ -468,7 +613,10 @@
     "category": "pants",
     "color": "Navy",
     "colorHex": "#1B2A4A",
-    "images": []
+    "images": [
+      "/items/item-1771890586081-4.webp"
+    ],
+    "imageUrl": "https://americantall.com/cdn/shop/files/American-Tall-Men-Suit-Separates-Pants-True-Navy-Off-Fig_13abdfb2-9517-40bb-a32b-5277b3bf1358.jpg?v=1759854234&width=1500"
   },
   {
     "id": "item-1771890586081-5",
@@ -477,7 +625,20 @@
     "category": "shoes",
     "color": "Navy",
     "colorHex": "#1B2A4A",
-    "images": []
+    "images": [
+      "/items/item-1771890586081-5.webp"
+    ]
+  },
+  {
+    "id": "item-1771890586081-6",
+    "name": "AB Cufflinks",
+    "category": "jewelry",
+    "color": "Gold",
+    "colorHex": "#D4A843",
+    "images": [
+      "/items/item-1771890586081-6.webp"
+    ],
+    "imageUrl": "https://hevitbridal.com/cdn/shop/products/07.png?v=1667415520"
   },
   {
     "id": "item-1771890871135-0",
@@ -486,7 +647,10 @@
     "category": "hats",
     "color": "Black",
     "colorHex": "#1C1C1C",
-    "images": []
+    "images": [
+      "/items/item-1771890871135-0.webp"
+    ],
+    "imageUrl": "https://i1.adis.ws/i/ArsenalDirect/u06810_f1"
   },
   {
     "id": "item-1771890871135-1",
@@ -495,7 +659,10 @@
     "category": "jackets",
     "color": "Indigo",
     "colorHex": "#2C3E50",
-    "images": []
+    "images": [
+      "/items/item-1771890871135-1.webp"
+    ],
+    "imageUrl": "https://www.glorydaysclo.com/cdn/shop/files/FULL13_680b4fe1-bf9c-4ecb-a304-9512ef3ca322.jpg?v=1757849908&width=1946"
   },
   {
     "id": "item-1771890871135-3",
@@ -504,7 +671,10 @@
     "category": "pants",
     "color": "Black",
     "colorHex": "#1C1C1C",
-    "images": []
+    "images": [
+      "/items/item-1771890871135-3.webp"
+    ],
+    "imageUrl": "https://img.hollisterco.com/is/image/anf/KIC_331-4107-00097-977_prod1?policy=product-large"
   },
   {
     "id": "item-shared-prada-sunglasses",
@@ -512,21 +682,32 @@
     "brand": "Prada",
     "category": "accessories",
     "color": "Black",
-    "colorHex": "#000000"
+    "colorHex": "#000000",
+    "images": [
+      "/items/item-shared-prada-sunglasses.webp"
+    ],
+    "imageUrl": "https://assets2.sunglasshut.com/cdn-record-files-pi/a999a47d-4189-41d0-bb4d-ac7c00f1ab63/bdc03154-86b7-4c16-9212-ac7f004f60bc/0PR_17WS__1AB5S0__STD__noshad__qt.png?impolicy=SGH_bgtransparent&width=320"
   },
   {
     "id": "item-shared-white-crew-socks",
     "name": "White Crew Socks",
     "category": "accessories",
     "color": "White",
-    "colorHex": "#FFFFFF"
+    "colorHex": "#FFFFFF",
+    "images": [
+      "/items/item-shared-white-crew-socks.webp"
+    ]
   },
   {
     "id": "item-shared-orange-lens-sunglasses",
     "name": "Black Sunglasses with Orange Lenses",
     "category": "accessories",
     "color": "Black and Orange",
-    "colorHex": "#1A1A1A"
+    "colorHex": "#1A1A1A",
+    "images": [
+      "/items/item-shared-orange-lens-sunglasses.webp"
+    ],
+    "imageUrl": "https://www.tbdeyewear.com/cdn/shop/products/lino-eco-black-orange-sustainable-tbd-eyewear-front.jpg?v=1677516397"
   },
   {
     "id": "item-shared-gold-watch",
@@ -534,20 +715,31 @@
     "brand": "Solios",
     "category": "accessories",
     "color": "Gold",
-    "colorHex": "#D4AF37"
+    "colorHex": "#D4AF37",
+    "images": [
+      "/items/item-shared-gold-watch.webp"
+    ],
+    "imageUrl": "https://www.projectcece.com/static/_versions/products/solios-watches/65d17a1_large.jpg"
   },
   {
     "id": "item-shared-gold-chain-necklace",
     "name": "Gold Chain Necklace",
     "category": "jewelry",
     "color": "Gold",
-    "colorHex": "#D4AF37"
+    "colorHex": "#D4AF37",
+    "images": [
+      "/items/item-shared-gold-chain-necklace.webp"
+    ],
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1592/5969/products/MC20.294-CHN.ST.A_x1024.jpg?v=1747080744"
   },
   {
     "id": "item-shared-gold-ring",
     "name": "Gold Ring",
     "category": "jewelry",
     "color": "Gold",
-    "colorHex": "#D4AF37"
+    "colorHex": "#D4AF37",
+    "images": [
+      "/items/item-shared-gold-ring.webp"
+    ]
   }
 ]
