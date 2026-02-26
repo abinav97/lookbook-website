@@ -54,7 +54,7 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
 
       {/* Filters */}
       <ScrollFadeIn delay={0.1}>
-        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-6 mb-12">
+        <div className="flex flex-col sm:flex-row sm:flex-nowrap sm:items-center gap-6 mb-12">
           {/* Season filter */}
           <div className="flex items-start sm:items-center gap-2">
             <span className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-1.5 sm:pt-0">
