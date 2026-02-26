@@ -34,10 +34,10 @@ export default function ClosetClient({
       </ScrollFadeIn>
 
       {/* Layout: sidebar + grid */}
-      <div className="lg:flex lg:gap-16">
+      <div className="block lg:flex lg:gap-16">
         <CategoryNav categories={categories} counts={counts} />
 
-        <div className="flex-1 min-w-0">
+        <div className="w-full lg:flex-1 lg:min-w-0">
           {Object.entries(grouped).map(([category, items]) => (
             <section key={category} id={category} className="mb-16">
               <ScrollFadeIn>

@@ -176,6 +176,16 @@ body {
   display: none;
 }
 
+/* Hide scrollbar utility */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Selection color */
 ::selection {
   background: var(--accent);

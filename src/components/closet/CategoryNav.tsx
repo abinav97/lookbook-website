@@ -56,7 +56,7 @@ export default function CategoryNav({ categories, counts }: CategoryNavProps) {
       </nav>
 
       {/* Mobile horizontal pills */}
-      <div className="lg:hidden scroll-x flex gap-2 mb-8 -mx-[var(--page-margin)] px-[var(--page-margin)]">
+      <div className="lg:hidden flex flex-row flex-nowrap gap-2 mb-8 overflow-x-auto overflow-y-hidden hide-scrollbar -mx-[var(--page-margin)] px-[var(--page-margin)]">
         <Link
           href="/closet"
           className={cn(

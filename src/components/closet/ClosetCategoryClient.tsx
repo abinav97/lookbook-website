@@ -38,10 +38,10 @@ export default function ClosetCategoryClient({
       </ScrollFadeIn>
 
       {/* Layout: sidebar + grid */}
-      <div className="lg:flex lg:gap-16">
+      <div className="block lg:flex lg:gap-16">
         <CategoryNav categories={categories} counts={counts} />
 
-        <div className="flex-1 min-w-0">
+        <div className="w-full lg:flex-1 lg:min-w-0">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8">
             {items.map((item, i) => (
               <ClosetItemCard key={item.id} item={item} index={i} />

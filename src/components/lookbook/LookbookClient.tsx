@@ -56,8 +56,8 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
       <ScrollFadeIn delay={0.1}>
         <div className="flex flex-col sm:flex-row gap-6 mb-12">
           {/* Season filter */}
-          <div className="flex items-center gap-1">
-            <span className="text-[9px] tracking-[0.15em] text-text-muted mr-3">
+          <div className="flex items-start sm:items-center gap-2">
+            <span className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-1.5 sm:pt-0">
               SEASON
             </span>
             <div className="flex flex-wrap gap-1">
@@ -78,8 +78,8 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
           </div>
 
           {/* Occasion filter */}
-          <div className="flex items-center gap-1">
-            <span className="text-[9px] tracking-[0.15em] text-text-muted mr-3 shrink-0">
+          <div className="flex items-start sm:items-center gap-2">
+            <span className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-1.5 sm:pt-0">
               OCCASION
             </span>
             <div className="flex flex-wrap gap-1">
