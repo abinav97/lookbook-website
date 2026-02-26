@@ -54,18 +54,18 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
 
       {/* Filters */}
       <ScrollFadeIn delay={0.1}>
-        <div className="flex flex-col sm:flex-row gap-6 mb-12">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-6 mb-12">
           {/* Season filter */}
           <div className="flex items-start sm:items-center gap-2">
             <span className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-1.5 sm:pt-0">
               SEASON
             </span>
-            <div className="flex flex-wrap gap-1">
+            <div className="flex flex-wrap sm:flex-nowrap gap-1">
               {SEASONS.map((s) => (
                 <button
                   key={s.value}
                   onClick={() => setSeasonFilter(s.value)}
-                  className={`px-3 py-1.5 text-[10px] tracking-[0.12em] border transition-colors duration-300 ${
+                  className={`px-3 py-1.5 text-[10px] tracking-[0.12em] border transition-colors duration-300 whitespace-nowrap ${
                     seasonFilter === s.value
                       ? "bg-text text-bg border-text"
                       : "border-border text-text-muted hover:border-text hover:text-text"
@@ -82,12 +82,12 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
             <span className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-1.5 sm:pt-0">
               OCCASION
             </span>
-            <div className="flex flex-wrap gap-1">
+            <div className="flex flex-wrap sm:flex-nowrap gap-1">
               {OCCASIONS.map((o) => (
                 <button
                   key={o}
                   onClick={() => setOccasionFilter(o)}
-                  className={`px-3 py-1.5 text-[10px] tracking-[0.12em] border transition-colors duration-300 ${
+                  className={`px-3 py-1.5 text-[10px] tracking-[0.12em] border transition-colors duration-300 whitespace-nowrap ${
                     occasionFilter === o
                       ? "bg-text text-bg border-text"
                       : "border-border text-text-muted hover:border-text hover:text-text"
