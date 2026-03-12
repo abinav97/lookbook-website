@@ -11,6 +11,7 @@
     "generate-images:dry": "node scripts/generate-images.mjs --dry-run"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
     "colorthief": "^2.6.0",
     "motion": "^12.34.3",
     "next": "15.5.12",
