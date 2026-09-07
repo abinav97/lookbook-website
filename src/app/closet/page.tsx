@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Abi's Closet",
   description:
     "Every piece in the wardrobe, catalogued and categorised. Explore the items behind the looks.",
+  alternates: { canonical: "/closet" },
 };
 
 export default function ClosetPage() {

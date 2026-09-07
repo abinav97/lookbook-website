@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Style DNA",
   description:
     "A data-driven look at personal style. Color palettes, wardrobe composition, and style patterns.",
+  alternates: { canonical: "/style-dna" },
 };
 
 export default function StyleDNAPage() {

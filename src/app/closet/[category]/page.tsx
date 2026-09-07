@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${label} — Abi's Closet`,
     description: `Browse ${label.toLowerCase()} in Abi's wardrobe.`,
+    alternates: { canonical: `/closet/${category}` },
   };
 }
 

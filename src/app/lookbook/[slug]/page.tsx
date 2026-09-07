@@ -15,9 +15,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const outfit = getOutfitBySlug(slug);
   if (!outfit) return { title: "Not Found" };
+  const image = outfit.images[0];
+  const description = outfit.description || `${outfit.title} — a curated look.`;
   return {
     title: outfit.title,
-    description: outfit.description || `${outfit.title} — a curated look.`,
+    description,
+    alternates: { canonical: `/lookbook/${outfit.slug}` },
+    openGraph: {
+      title: outfit.title,
+      description,
+      type: "article",
+      url: `/lookbook/${outfit.slug}`,
+      images: image ? [{ url: image.src, alt: image.alt }] : [],
+    },
   };
 }
 
