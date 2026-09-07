@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "predev": "node scripts/optimize-images.mjs",
     "build": "next build",
+    "prebuild": "node scripts/optimize-images.mjs",
     "start": "next start",
     "lint": "eslint",
+    "images": "node scripts/optimize-images.mjs",
     "generate-images": "node scripts/generate-images.mjs",
     "generate-images:dry": "node scripts/generate-images.mjs --dry-run"
   },

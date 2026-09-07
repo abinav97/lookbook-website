@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { Outfit } from "@/lib/types";
 import { formatSeasonYear } from "@/lib/utils";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
+import { outfitSrcSet, SIZES } from "@/lib/images";
 
 interface HomeClientProps {
   featured: Outfit[];
@@ -16,6 +17,7 @@ export default function HomeClient({
   totalOutfits,
 }: HomeClientProps) {
   const heroOutfit = featured[0];
+  const heroImage = heroOutfit?.images[0];
   const heroColors = heroOutfit?.colorPalette || ["#C19A6B", "#36454F", "#1A1A1A"];
   const heroGradient = `linear-gradient(160deg, ${heroColors[0]}CC, ${heroColors[1] || heroColors[0]}99, ${heroColors[2] || "#1A1A1A"})`;
 
@@ -34,6 +36,24 @@ export default function HomeClient({
           transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
         />
 
+        {/* Hero photograph */}
+        {heroImage?.src && (
+          <motion.img
+            src={heroImage.src}
+            srcSet={outfitSrcSet(heroImage.src)}
+            sizes={SIZES.hero}
+            alt={heroImage.alt}
+            width={heroImage.width}
+            height={heroImage.height}
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover object-[50%_20%]"
+            initial={{ scale: 1.08, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+          />
+        )}
+
         {/* Noise texture */}
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -43,7 +63,7 @@ export default function HomeClient({
         />
 
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/10" />
 
         {/* Hero content */}
         <div className="relative z-10 px-[var(--page-margin)] pb-16 md:pb-24 w-full">
@@ -165,7 +185,13 @@ export default function HomeClient({
                       {outfit.images[0]?.src && (
                         <img
                           src={outfit.images[0].src}
+                          srcSet={outfitSrcSet(outfit.images[0].src)}
+                          sizes={i === 0 ? SIZES.featuredLarge : SIZES.featuredSmall}
                           alt={outfit.images[0].alt}
+                          width={outfit.images[0].width}
+                          height={outfit.images[0].height}
+                          loading={i === 0 ? "eager" : "lazy"}
+                          decoding="async"
                           className="absolute inset-0 w-full h-full object-cover"
                         />
                       )}

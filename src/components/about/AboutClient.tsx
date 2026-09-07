@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
+import { PORTRAIT_SRC, PORTRAIT_SRCSET, SIZES } from "@/lib/images";
 
 export default function AboutClient() {
   return (
@@ -23,8 +24,12 @@ export default function AboutClient() {
         <ScrollFadeIn delay={0.15}>
           <div className="mt-12 relative overflow-hidden aspect-[3/2] max-w-2xl">
             <motion.img
-              src="/abi-portrait.jpg"
-              alt="Abi"
+              src={PORTRAIT_SRC}
+              srcSet={PORTRAIT_SRCSET}
+              sizes={SIZES.portrait}
+              width={1280}
+              height={852}
+              alt="Abi adjusting a shirt cuff, photographed from the chest down"
               className="absolute inset-0 w-full h-full object-cover object-center"
               initial={{ scale: 1.05 }}
               whileInView={{ scale: 1 }}

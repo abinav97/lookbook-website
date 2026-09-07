@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { Outfit, OutfitTag, ClosetItem, OutfitImage } from "@/lib/types";
 import { formatSeasonYear } from "@/lib/utils";
+import { outfitSrcSet, SIZES } from "@/lib/images";
 
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 
@@ -56,7 +57,13 @@ export default function OutfitDetailClient({
             {heroImage?.src ? (
               <img
                 src={heroImage.src}
+                srcSet={outfitSrcSet(heroImage.src)}
+                sizes={SIZES.detailHero}
                 alt={heroImage.alt}
+                width={heroImage.width}
+                height={heroImage.height}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-auto block"
               />
             ) : (
@@ -175,8 +182,11 @@ export default function OutfitDetailClient({
                         <img
                           src={item.images[0]}
                           alt={`${item.name}${item.brand ? ` by ${item.brand}` : ""}`}
+                          width={800}
+                          height={800}
                           className="absolute inset-0 w-full h-full object-cover"
                           loading="lazy"
+                          decoding="async"
                         />
                       ) : (
                         <div
@@ -304,7 +314,13 @@ function DetailImage({
           {image.src && (
             <img
               src={image.src}
+              srcSet={outfitSrcSet(image.src)}
+              sizes={SIZES.detailGallery}
               alt={image.alt}
+              width={image.width}
+              height={image.height}
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 w-full h-full object-cover"
             />
           )}

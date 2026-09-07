@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { Outfit } from "@/lib/types";
 import { formatSeasonYear } from "@/lib/utils";
+import { outfitSrcSet, SIZES } from "@/lib/images";
 
 interface OutfitCardProps {
   outfit: Outfit;
@@ -45,7 +46,13 @@ export default function OutfitCard({ outfit, index = 0 }: OutfitCardProps) {
             {image?.src && (
               <img
                 src={image.src}
+                srcSet={outfitSrcSet(image.src)}
+                sizes={SIZES.grid3}
                 alt={image.alt}
+                width={image.width}
+                height={image.height}
+                loading={index < 3 ? "eager" : "lazy"}
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             )}

@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ClosetItem } from "@/lib/types";
 import { getItemOutfitCount, getOutfitsForItem } from "@/lib/data";
 import { formatSeasonYear } from "@/lib/utils";
+import { outfitThumb } from "@/lib/images";
 
 interface ClosetItemCardProps {
   item: ClosetItem;
@@ -37,8 +38,11 @@ export default function ClosetItemCard({ item, index = 0 }: ClosetItemCardProps)
           <motion.img
             src={item.images[0]}
             alt={`${item.name}${item.brand ? ` by ${item.brand}` : ""}`}
+            width={800}
+            height={800}
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
             whileHover={{ scale: 1.06 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           />
@@ -120,8 +124,12 @@ export default function ClosetItemCard({ item, index = 0 }: ClosetItemCardProps)
                       <div className="w-10 h-12 shrink-0 relative overflow-hidden">
                         {outfit.images[0]?.src ? (
                           <img
-                            src={outfit.images[0].src}
+                            src={outfitThumb(outfit.images[0].src)}
                             alt={outfit.title}
+                            width={40}
+                            height={48}
+                            loading="lazy"
+                            decoding="async"
                             className="absolute inset-0 w-full h-full object-cover"
                           />
                         ) : (
