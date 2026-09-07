@@ -216,7 +216,9 @@ export default function Advisor({ demos, items }: AdvisorProps) {
                   ? " "
                   : status.enabled
                   ? `${status.remainingToday} OF ${status.dailyCap} VERDICTS LEFT TODAY`
-                  : "LIVE VERDICTS ARE OFF · THE EXAMPLES STILL WORK"}
+                  : demos.some((d) => d.precomputed)
+                  ? "LIVE VERDICTS ARE OFF · THE EXAMPLES STILL WORK"
+                  : "LIVE VERDICTS ARE OFF FOR NOW"}
               </span>
             </div>
 
@@ -252,7 +254,15 @@ export default function Advisor({ demos, items }: AdvisorProps) {
       <div ref={resultRef} className="scroll-mt-28" aria-live="polite">
         <AnimatePresence mode="wait">
           {phase.kind === "loading" && <Loading key="loading" demo={phase.demo} />}
-          {phase.kind === "error" && <ErrorState key="error" code={phase.code} retryAfter={phase.retryAfter} onReset={reset} />}
+          {phase.kind === "error" && (
+            <ErrorState
+              key="error"
+              code={phase.code}
+              retryAfter={phase.retryAfter}
+              examplesWork={demos.some((d) => d.precomputed)}
+              onReset={reset}
+            />
+          )}
           {phase.kind === "result" && (
             <Result
               key="result"
@@ -303,19 +313,31 @@ function Loading({ demo }: { demo: boolean }) {
 }
 
 /* ---------------------------------------------------------------- errors */
-function ErrorState({ code, retryAfter, onReset }: { code: string; retryAfter?: number; onReset: () => void }) {
+function ErrorState({
+  code,
+  retryAfter,
+  examplesWork,
+  onReset,
+}: {
+  code: string;
+  retryAfter?: number;
+  examplesWork: boolean;
+  onReset: () => void;
+}) {
+  const examples = examplesWork ? " The examples above still answer instantly." : "";
   const copy: Record<string, { label: string; title: string; body: string }> = {
     disabled: {
       label: "PAUSED",
       title: "Live verdicts are switched off for now.",
-      body: "The examples above still answer instantly, and the closet, looks, and Style DNA are all live.",
+      body: `The closet, the looks, and Style DNA are all live.${examples}`,
     },
     rate_limited: {
       label: "ALLOWANCE",
       title: "Today's verdicts are used up.",
-      body: retryAfter
-        ? `The allowance resets in about ${Math.max(1, Math.round(retryAfter / 3600))} hour${retryAfter > 5400 ? "s" : ""}. The examples still work.`
-        : "Try again tomorrow. The examples still work.",
+      body:
+        (retryAfter
+          ? `The allowance resets in about ${Math.max(1, Math.round(retryAfter / 3600))} hour${retryAfter > 5400 ? "s" : ""}.`
+          : "Try again tomorrow.") + examples,
     },
     image_too_large: { label: "TOO LARGE", title: "That photo is too large to send.", body: "Try a smaller image, or describe the piece instead." },
     not_an_image: { label: "NOT A PHOTO", title: "That file isn't an image.", body: "JPEG, PNG or WebP, please." },
