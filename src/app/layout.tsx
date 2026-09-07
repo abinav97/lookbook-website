@@ -4,6 +4,7 @@ import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { SITE } from "@/lib/site";
 import { getFeaturedOutfits } from "@/lib/data";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -60,6 +61,7 @@ export default function RootLayout({
         <Navigation />
         <main id="main" className="min-h-screen">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

@@ -7,6 +7,7 @@ import { ClosetItem, OutfitRef } from "@/lib/types";
 import { formatSeasonYear } from "@/lib/utils";
 import { outfitThumb } from "@/lib/images";
 import { useEntrance } from "@/lib/motion";
+import { track, EVENTS } from "@/lib/analytics";
 
 interface ClosetItemCardProps {
   item: ClosetItem;
@@ -85,7 +86,12 @@ export default function ClosetItemCard({ item, appearsIn, index = 0 }: ClosetIte
       {outfitCount > 0 ? (
         <button
           type="button"
-          onClick={() => setShowOutfits((v) => !v)}
+          onClick={() => {
+            setShowOutfits((v) => {
+              if (!v) track(EVENTS.closetExpand, { itemId: item.id, count: outfitCount });
+              return !v;
+            });
+          }}
           aria-expanded={showOutfits}
           aria-controls={panelId}
           aria-label={`${showOutfits ? "Hide" : "Show"} the ${outfitCount} ${

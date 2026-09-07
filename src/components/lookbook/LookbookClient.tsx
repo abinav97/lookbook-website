@@ -6,6 +6,7 @@ import { Outfit } from "@/lib/types";
 import OutfitCard from "./OutfitCard";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 import { SEASONS, OCCASIONS, type Season } from "@/lib/constants";
+import { track, EVENTS } from "@/lib/analytics";
 
 type SeasonFilter = "all" | Season;
 
@@ -64,7 +65,10 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
                   key={s.value}
                   type="button"
                   aria-pressed={seasonFilter === s.value}
-                  onClick={() => setSeasonFilter(s.value)}
+                  onClick={() => {
+                    setSeasonFilter(s.value);
+                    track(EVENTS.filterApplied, { kind: "season", value: s.value });
+                  }}
                   className={`px-3 py-1.5 text-[10px] tracking-[0.12em] border transition-colors duration-300 whitespace-nowrap ${
                     seasonFilter === s.value
                       ? "bg-text text-bg border-text"
@@ -88,7 +92,10 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
                   key={o}
                   type="button"
                   aria-pressed={occasionFilter === o}
-                  onClick={() => setOccasionFilter(o)}
+                  onClick={() => {
+                    setOccasionFilter(o);
+                    track(EVENTS.filterApplied, { kind: "occasion", value: o });
+                  }}
                   className={`px-3 py-1.5 text-[10px] tracking-[0.12em] border transition-colors duration-300 whitespace-nowrap ${
                     occasionFilter === o
                       ? "bg-text text-bg border-text"
