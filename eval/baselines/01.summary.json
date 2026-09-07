@@ -1,0 +1,94 @@
+{
+  "run": "01",
+  "note": "baseline: original prompt and schema",
+  "ranAt": "2026-09-07T21-35-43-905Z",
+  "cases": 16,
+  "estimatedUsd": 0.477,
+  "nonOk": [],
+  "latencyMs": {
+    "p50": 15385,
+    "p90": 22529,
+    "max": 23177
+  },
+  "tokens": {
+    "in": 3149,
+    "cr": 106065,
+    "out": 14539
+  },
+  "avgUsdPerVerdict": 0.0298,
+  "summary": {
+    "candidates": 16,
+    "candidatesFullyPassing": 9,
+    "checksPassed": 101,
+    "checksTotal": 110,
+    "byCheck": {
+      "verdict": {
+        "pass": 14,
+        "total": 15
+      },
+      "grounding": {
+        "pass": 16,
+        "total": 16
+      },
+      "duplicates": {
+        "pass": 4,
+        "total": 4
+      },
+      "unlocks.wellformed": {
+        "pass": 16,
+        "total": 16
+      },
+      "candidate.notNull": {
+        "pass": 13,
+        "total": 13
+      },
+      "shape.headline": {
+        "pass": 10,
+        "total": 16
+      },
+      "shape.reasoning": {
+        "pass": 16,
+        "total": 16
+      },
+      "pairs.min": {
+        "pass": 5,
+        "total": 5
+      },
+      "unlocks.min": {
+        "pass": 2,
+        "total": 2
+      },
+      "pairs.include": {
+        "pass": 0,
+        "total": 1
+      },
+      "unlocks.max": {
+        "pass": 1,
+        "total": 1
+      },
+      "duplicates.min": {
+        "pass": 1,
+        "total": 1
+      },
+      "caveats.min": {
+        "pass": 3,
+        "total": 3
+      },
+      "candidate.null": {
+        "pass": 0,
+        "total": 1
+      }
+    }
+  },
+  "failures": [
+    "dup-light-wash-jeans: shape.headline (You already own this jean — and wear it more than anything else.)",
+    "dup-sambas: shape.headline (You already own the Samba — a second colourway isn't a new shoe)",
+    "gap-burgundy-knit: pairs.include (missing item-shared-light-wash-jeans)",
+    "off-tie-dye-hoodie: shape.headline (You already own two oversized hoodies; rainbow makes this one hard to style)",
+    "vague-nice-shirt: shape.headline (\"A nice shirt\" tells me nothing — and shirts are your deadest category.)",
+    "not-a-garment-portrait: verdict (pass not in [unclear])",
+    "not-a-garment-portrait: candidate.null",
+    "not-a-garment-portrait: shape.headline (You already own the tailored jacket — the navy BOSS does this job)",
+    "not-a-garment-scene: shape.headline (You already own this shirt — it's the AllSaints tie-dye, on a rooftop)"
+  ]
+}

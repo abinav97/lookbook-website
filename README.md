@@ -67,7 +67,7 @@ src/components/     feature-scoped components; "use client" only where interacti
 src/lib/            data access, types, image + motion + analytics helpers
 src/lib/advisor/    purchase assistant: schema, grounding context, post-validation, caps, model client
 src/app/api/advise  the only server route (POST verdict, GET status)
-eval/               evaluation candidates; runs are written to eval/runs (ignored)
+eval/               evaluation candidates, committed baselines, fixtures; runs go to eval/runs (ignored)
 src/data/           outfits.json, closet-items.json
 assets/             source photography (tracked)
 public/items/       generated product images (tracked)

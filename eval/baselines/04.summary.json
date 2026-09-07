@@ -1,0 +1,92 @@
+{
+  "run": "04",
+  "note": "prompt: no unverified counts or look attributions",
+  "ranAt": "2026-09-07T21-56-46-218Z",
+  "cases": 17,
+  "estimatedUsd": 0.499,
+  "nonOk": [],
+  "latencyMs": {
+    "p50": 13400,
+    "p90": 20675,
+    "max": 22413
+  },
+  "tokens": {
+    "in": 3602,
+    "cr": 116672,
+    "out": 15093
+  },
+  "avgUsdPerVerdict": 0.0294,
+  "summary": {
+    "candidates": 17,
+    "candidatesFullyPassing": 17,
+    "checksPassed": 143,
+    "checksTotal": 143,
+    "byCheck": {
+      "verdict": {
+        "pass": 16,
+        "total": 16
+      },
+      "grounding": {
+        "pass": 17,
+        "total": 17
+      },
+      "duplicates": {
+        "pass": 5,
+        "total": 5
+      },
+      "unlocks.wellformed": {
+        "pass": 17,
+        "total": 17
+      },
+      "candidate.notNull": {
+        "pass": 15,
+        "total": 15
+      },
+      "shape.headline": {
+        "pass": 17,
+        "total": 17
+      },
+      "shape.reasoning": {
+        "pass": 17,
+        "total": 17
+      },
+      "shape.noIdsInProse": {
+        "pass": 17,
+        "total": 17
+      },
+      "pairs.min": {
+        "pass": 5,
+        "total": 5
+      },
+      "unlocks.min": {
+        "pass": 2,
+        "total": 2
+      },
+      "unlocks.occasionVocab": {
+        "pass": 7,
+        "total": 7
+      },
+      "pairs.categories": {
+        "pass": 1,
+        "total": 1
+      },
+      "unlocks.max": {
+        "pass": 1,
+        "total": 1
+      },
+      "duplicates.min": {
+        "pass": 1,
+        "total": 1
+      },
+      "caveats.min": {
+        "pass": 4,
+        "total": 4
+      },
+      "candidate.null": {
+        "pass": 1,
+        "total": 1
+      }
+    }
+  },
+  "failures": []
+}

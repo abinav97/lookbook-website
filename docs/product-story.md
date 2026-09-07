@@ -142,6 +142,65 @@ null/not-null; caveats present; headline length; reasoning present. `npm run eva
 the set against a running site (about $1 per run) and writes the run plus its score to
 `eval/runs/`.
 
+**Results (7 September 2026, `claude-opus-5`, adaptive thinking, effort medium,
+max 2,500 output tokens, structured output, server-side refusal fallback, client
+timeout 50 s with no retry).** Seven full runs over the 16-then-17-case set, archived in
+`eval/baselines/` with raw responses, scores, and a note on what changed before each run:
+
+| Run | Fully passing | Checks | Non-200 | p50 / p90 / max (s) | Spend |
+|---|---|---|---|---|---|
+| 01 baseline | 9 / 16 | 101 / 110 | 0 | 15.4 / 22.5 / 23.2 | $0.48 |
+| 02 prompt + scorer; schema length parse-fatal | 13 / 17 | 112 / 116 | 3 (unknown) | 12.7 / 19.4 / 21.1 | $0.36 |
+| 03 lengths as guidance, 422 on parse failure, clamps, "you", occasion vocabulary | 17 / 17 | 142 / 142 | 0 | 12.8 / 23.4 / 75.5 | $0.49 |
+| 04 no unverified counts or look attributions | 17 / 17 | 143 / 143 | 0 | 13.4 / 20.7 / 22.4 | $0.50 |
+| 05 piece names beside ids in the looks list | 16 / 17 | 142 / 143 | 0 | 12.8 / 19.9 / 19.9 | $0.52 |
+| 06 ranked utility table; candidate null only when unclear | 11 / 17 | 102 / 108 | 5 (rate_limited) | 16.3 / 21.6 / 22.0 | $0.41 |
+| 07 final, same code as 06, fresh instance | 15 / 17 | 131 / 133 | 1 (upstream) | 14.7 / 21.8 / 25.0 | $0.44 |
+
+Grounding was 100% in every run: across 115 verdicts the model never cited an item id
+that does not exist. Verdict agreement with the expected set was 100% in every run from
+02 onward. The two misses in run 07 are one 13-word headline and one call that ran past
+the 50 s client timeout and failed gracefully; runs 03 and 04 were clean.
+
+What the baseline exposed, and what changed (each change was followed by a full rerun):
+
+- Raw item ids leaked into prose in most answers. A prompt rule plus a deterministic
+  safety net that substitutes piece names for ids in every prose field. Zero leaks since.
+- Six headlines ran 13 to 14 words. Tightening the schema's character cap made three
+  answers fail to parse (constrained decoding does not enforce string length), so prose
+  limits are now guidance in the prompt, a parse failure maps to the "no verdict" state
+  instead of a 500, and array sizes are clamped after the fact.
+- The model guessed a pronoun for Abi once and invented an occasion ("training") once.
+  The prompt addresses Abi as "you" and restricts occasions to the site vocabulary.
+- Demo texts contained a fabricated count ("a fifth pair of shorts") and two wrong
+  look attributions. The prompt forbids unverified counts and attributions, and the
+  looks list now shows piece names beside ids so the model does not cross-reference.
+- Demo texts misranked categories ("tops repeat least" when shirts and jackets are at
+  zero). The utility block is now a ranked table with percentages and an explicit
+  "lowest re-use" line. The next generation ranked them correctly.
+- Two evaluation cases were mis-specified: the "portrait" is a photo of a worn suit
+  jacket and the model read it correctly. They were relabelled, and a synthetic
+  non-garment image was added; the model returns "unclear" with a null candidate for it.
+- One opinionated check (a specific pair of jeans) became a structural one (a top must
+  pair with a bottom); the neon-shorts unlock ceiling went from one to two after the
+  model argued a functional training use.
+
+Latency: p50 about 13 s, p90 about 22 s; 2 of 115 calls exceeded 50 s. Those fail
+gracefully inside Vercel's 60 s function budget and refund the allowance. Follow-ups:
+enable Fluid compute for a longer budget, or evaluate effort "low".
+
+Cost: about 7,100 to 8,500 cached tokens read per call; uncached input 40 to 60 tokens
+for text and about 900 with a photo. Average $0.029 per verdict. Total evaluation and
+demo spend for this phase: about $3.50 (evaluation $3.20, demos $0.31).
+
+**Demo examples** (`src/data/advisor-demos.json`, precomputed from real inference):
+black loafers again (pass, high), burgundy merino crewneck (buy, medium), neon shorts
+(maybe, medium). Every factual claim in the three texts was checked by hand against the
+closet and look data; the one soft phrase left is "pants are among your lowest re-use
+categories" (pants rank seventh of ten). The UI serves the examples with no inference
+and no allowance consumed, and the precomputed path still works when the advisor is
+paused.
+
 **Analytics events**: `advisor_submitted` (mode), `advisor_result` (verdict,
 confidence, latency, demo), `advisor_error` (kind), `advisor_feedback` (useful, verdict).
 Success metrics: submissions per visit to the page, share of verdicts marked useful,

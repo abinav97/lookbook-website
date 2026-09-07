@@ -1,0 +1,97 @@
+{
+  "run": "06",
+  "note": "context: ranked utility table with explicit lowest; prompt: candidate null only when unclear. Run hit the dev instance daily cap (100) after 12 cases: 5 x 429",
+  "ranAt": "2026-09-07T22-07-03-972Z",
+  "cases": 17,
+  "estimatedUsd": 0.413,
+  "nonOk": [
+    "occasion-navy-suit-2:rate_limited",
+    "vague-nice-shirt:rate_limited",
+    "worn-garment-photo:rate_limited",
+    "scene-owned-shirt:rate_limited",
+    "not-a-garment-abstract:rate_limited"
+  ],
+  "latencyMs": {
+    "p50": 16270,
+    "p90": 21605,
+    "max": 22002
+  },
+  "tokens": {
+    "in": 2372,
+    "cr": 95414,
+    "out": 11978
+  },
+  "avgUsdPerVerdict": 0.0344,
+  "summary": {
+    "candidates": 17,
+    "candidatesFullyPassing": 11,
+    "checksPassed": 102,
+    "checksTotal": 108,
+    "byCheck": {
+      "verdict": {
+        "pass": 12,
+        "total": 12
+      },
+      "grounding": {
+        "pass": 12,
+        "total": 12
+      },
+      "duplicates": {
+        "pass": 4,
+        "total": 4
+      },
+      "unlocks.wellformed": {
+        "pass": 12,
+        "total": 12
+      },
+      "candidate.notNull": {
+        "pass": 12,
+        "total": 12
+      },
+      "shape.headline": {
+        "pass": 11,
+        "total": 12
+      },
+      "shape.reasoning": {
+        "pass": 12,
+        "total": 12
+      },
+      "shape.noIdsInProse": {
+        "pass": 12,
+        "total": 12
+      },
+      "pairs.min": {
+        "pass": 5,
+        "total": 5
+      },
+      "unlocks.min": {
+        "pass": 2,
+        "total": 2
+      },
+      "unlocks.occasionVocab": {
+        "pass": 6,
+        "total": 6
+      },
+      "pairs.categories": {
+        "pass": 1,
+        "total": 1
+      },
+      "unlocks.max": {
+        "pass": 1,
+        "total": 1
+      },
+      "response": {
+        "pass": 0,
+        "total": 5
+      }
+    }
+  },
+  "failures": [
+    "off-sequin-blazer: shape.headline (A one night blazer in a closet already full of one wear pieces)",
+    "occasion-navy-suit-2: response (rate_limited)",
+    "vague-nice-shirt: response (rate_limited)",
+    "worn-garment-photo: response (rate_limited)",
+    "scene-owned-shirt: response (rate_limited)",
+    "not-a-garment-abstract: response (rate_limited)"
+  ]
+}
