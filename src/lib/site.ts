@@ -7,4 +7,6 @@ export const SITE = {
   email: "abinav@wharton.upenn.edu",
   linkedin: "https://www.linkedin.com/in/abinav-bharadwaj/",
   linkedinLabel: "linkedin.com/in/abinav-bharadwaj",
+  github: "https://github.com/abinav97/lookbook-website",
+  githubLabel: "github.com/abinav97/lookbook-website",
 } as const;

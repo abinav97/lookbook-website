@@ -20,6 +20,9 @@ export default function Footer() {
           <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-text transition-colors duration-300">
             LINKEDIN
           </a>
+          <a href={SITE.github} target="_blank" rel="noopener noreferrer" className="hover:text-text transition-colors duration-300">
+            SOURCE
+          </a>
         </div>
       </div>
 

@@ -51,6 +51,20 @@ closet and documented looks. Details in section 6 once designed.
 
 ## 5. Decision log
 
+- 2026-09-07 (Phase 2): The tag positions in the data were unusable (every marker at
+  x≈50). Rather than drop hotspots, all 96 positions were re-placed against a grid overlay
+  of each photo. The hotspot layer is keyboard-reachable and clamps its card inside the
+  photo on phones.
+- 2026-09-07 (Phase 2): Wardrobe utility is computed by pure functions in
+  `src/lib/insights.ts` and unit-tested against the real data. The same functions will
+  feed the assistant's grounding context, so the numbers on the site and in the prompt
+  cannot drift apart.
+- 2026-09-07 (Phase 2): The assistant gets a first-class route and nav entry
+  (`/before-you-buy`) before it exists, with an honest "in development" state rather than
+  a fake demo. The entry point is quiet on the home page: one hairline block.
+- 2026-09-07 (Phase 2): `sharp` moved to runtime dependencies so a production install
+  that omits dev packages still runs the image step on Vercel.
+
 - 2026-09-07: Keep static export through the foundation phase; move to Vercel's Next.js
   runtime only when a server route is needed to hold the model API key.
 - 2026-09-07: Photos stay tracked at full resolution in `assets/`; derivatives are
@@ -81,6 +95,18 @@ To be written with the feature. Foundation-phase measurements:
 
 - Git history still contains the original photos and raw sources; the clone is ~120 MB.
   A history rewrite would fix it but is destructive and was deliberately not done.
+  **Safe follow-up plan** (only with explicit approval, after the feature branches are
+  merged): (1) confirm no other clones or open PRs; (2) on a fresh clone run
+  `git filter-repo --path raw-photos --path public/items/raw --invert-paths` to drop the
+  raw sources, and optionally `--path-glob 'public/outfits/*' --invert-paths` for the
+  pre-pipeline copies now living in `assets/`; (3) verify the tree still builds; (4)
+  force-push `main`, then re-clone locally and reconnect Vercel's Git integration if its
+  cached commit is gone; (5) keep the pre-rewrite clone as a backup for a week. Expected
+  result: clone size under 30 MB.
+- Vercel deployment: `sharp` is now a runtime dependency and the image step runs in
+  `prebuild`, so the standard `npm install && npm run build` on Vercel produces the
+  images. The first deploy of the branch should still be watched; if the build log shows
+  no "Optimized images" line, the `prebuild` hook did not run.
 - Dependency audit reports issues in the build-time image tooling (sharp/libvips chain);
   nothing affected ships to the browser. Fixing requires a major sharp bump.
 - Next: wire the photo hotspots, add a wardrobe-utility view to Style DNA, reframe About

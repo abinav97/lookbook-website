@@ -4,9 +4,17 @@ import { motion } from "motion/react";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 import { PORTRAIT_SRC, PORTRAIT_SRCSET, SIZES } from "@/lib/images";
 import { useEntrance } from "@/lib/motion";
+import Link from "next/link";
 import { SITE } from "@/lib/site";
 
-export default function AboutClient() {
+interface AboutClientProps {
+  totalLooks: number;
+  totalItems: number;
+  wornOnce: number;
+  workhorse?: { name: string; looks: number };
+}
+
+export default function AboutClient({ totalLooks, totalItems, wornOnce, workhorse }: AboutClientProps) {
   const zoomIn = useEntrance({ scale: 1.05 });
   const riseIn = useEntrance({ opacity: 0, y: 10 });
 
@@ -97,29 +105,114 @@ export default function AboutClient() {
           </div>
         </ScrollFadeIn>
 
-        {/* This Project */}
-        <ScrollFadeIn delay={0.1}>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-8">
-            <div className="md:col-span-4">
-              <p className="text-[10px] tracking-[0.2em] text-text-muted">
-                THIS PROJECT
-              </p>
+        {/* The product story */}
+        <div id="story" className="mt-20 border-t border-border pt-12 scroll-mt-28">
+          <ScrollFadeIn>
+            <div className="section-divider">
+              <span className="text-[10px] tracking-[0.25em] text-text-muted font-light">
+                THE PRODUCT STORY
+              </span>
             </div>
-            <div className="md:col-span-8">
-              <p className="text-text text-base leading-relaxed">
-                Built with Next.js, Tailwind CSS, and Motion. Every outfit is
-                stored as structured data with tagged items, color palettes, and
-                metadata. The closet is auto-sorted by garment type. The Style
-                DNA page generates analytics from real wardrobe data.
-              </p>
-              <p className="text-text-muted text-sm leading-relaxed mt-4">
-                The entire site is statically generated and deployable as a
-                portfolio. It&apos;s designed to demonstrate both an eye for style
-                and the technical ability to build the tools that serve it.
-              </p>
-            </div>
-          </div>
-        </ScrollFadeIn>
+          </ScrollFadeIn>
+
+          {[
+            {
+              label: "THE PROBLEM",
+              lead: `${wornOnce} of the ${totalItems} pieces in this closet have appeared in exactly one documented look.`,
+              body: (
+                <>
+                  Most people who care about clothes still buy on the strength of the piece alone,
+                  not on what it will do next to everything they already own. The evidence is in my
+                  own data: {totalLooks} looks over four years, and the majority of purchases wore
+                  once on camera.
+                  {workhorse && (
+                    <> Meanwhile one pair of {workhorse.name.toLowerCase()} carries {workhorse.looks} of them.</>
+                  )}{" "}
+                  <Link href="/style-dna#utility" className="text-accent-dark hover:text-text transition-colors">
+                    The utility data &rarr;
+                  </Link>
+                </>
+              ),
+            },
+            {
+              label: "THE THESIS",
+              lead: "The archive is the ground truth a purchase decision needs.",
+              body: (
+                <>
+                  A lookbook that tags every piece to every look is a wear history. Reasoning over
+                  it, rather than over generic style advice, is what makes an honest answer to
+                  &ldquo;should I buy this?&rdquo; possible. The judgment involved is semantic and
+                  visual: formality, silhouette, colour, season, duplication. That is a job for a
+                  model grounded in this closet, not for a filter.
+                </>
+              ),
+            },
+            {
+              label: "WHAT IS BUILT",
+              lead: "Fashion first. The product thinking sits underneath.",
+              body: (
+                <>
+                  Every look is photographed and tagged, with{" "}
+                  <Link href="/lookbook/statement-suit" className="text-text border-b border-border hover:border-text transition-colors">
+                    hotspots on the garments
+                  </Link>
+                  . Every piece in the{" "}
+                  <Link href="/closet" className="text-text border-b border-border hover:border-text transition-colors">
+                    closet
+                  </Link>{" "}
+                  links back to the looks it appears in.{" "}
+                  <Link href="/style-dna" className="text-text border-b border-border hover:border-text transition-colors">
+                    Style DNA
+                  </Link>{" "}
+                  turns that graph into wardrobe-utility insight. And{" "}
+                  <Link href="/before-you-buy" className="text-text border-b border-border hover:border-text transition-colors">
+                    Before You Buy
+                  </Link>{" "}
+                  is the assistant built on top of it.
+                </>
+              ),
+            },
+            {
+              label: "HOW IT IS BUILT",
+              lead: "The smallest architecture that gives a credible result.",
+              body: (
+                <>
+                  Next.js and TypeScript, outfits and pieces as typed JSON, a build-time image
+                  pipeline, and a test suite that checks the data and the pages on desktop and
+                  mobile. The assistant will run behind a single server route with the model key
+                  held privately and the whole closet passed as context. No vector database, no
+                  agent framework, nothing uploaded is retained.
+                </>
+              ),
+            },
+            {
+              label: "DECISIONS",
+              lead: "A few calls worth explaining.",
+              body: (
+                <ul className="flex flex-col gap-2 list-none">
+                  <li>Photographs render before JavaScript does. A visible page beats an entrance animation.</li>
+                  <li>The site stays static until a feature genuinely needs a server. The assistant is the first.</li>
+                  <li>Every claim the assistant makes must cite a piece or a look that exists. Anything it cannot see, it says so.</li>
+                  <li>The full write-up, audit, and evaluation approach live with the source.</li>
+                </ul>
+              ),
+            },
+          ].map((block, i) => (
+            <ScrollFadeIn key={block.label} delay={i * 0.05}>
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+                <div className="md:col-span-4">
+                  <p className="text-[10px] tracking-[0.2em] text-text-muted">{block.label}</p>
+                </div>
+                <div className="md:col-span-8">
+                  <p className="font-serif text-2xl md:text-[1.7rem] font-light leading-snug text-text">
+                    {block.lead}
+                  </p>
+                  <div className="text-text-muted text-sm leading-relaxed mt-4">{block.body}</div>
+                </div>
+              </div>
+            </ScrollFadeIn>
+          ))}
+        </div>
 
         {/* Contact / Links */}
         <ScrollFadeIn delay={0.1}>
@@ -130,7 +223,7 @@ export default function AboutClient() {
               </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
               {[
                 {
                   label: "EMAIL",
@@ -141,6 +234,11 @@ export default function AboutClient() {
                   label: "LINKEDIN",
                   value: SITE.linkedinLabel,
                   href: SITE.linkedin,
+                },
+                {
+                  label: "SOURCE",
+                  value: SITE.githubLabel,
+                  href: SITE.github,
                 },
               ].map((link, i) => (
                 <motion.a

@@ -56,13 +56,13 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
 
       {/* Filters */}
       <ScrollFadeIn delay={0.1}>
-        <div className="flex flex-col sm:flex-row sm:flex-nowrap sm:items-center gap-6 mb-12">
+        <div className="flex flex-col lg:flex-row lg:flex-wrap lg:items-center gap-6 lg:gap-x-10 mb-12">
           {/* Season filter */}
-          <div className="flex items-start sm:items-center gap-2" role="group" aria-labelledby="filter-season">
-            <span id="filter-season" className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-1.5 sm:pt-0">
+          <div className="flex items-start gap-2" role="group" aria-labelledby="filter-season">
+            <span id="filter-season" className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-2.5">
               SEASON
             </span>
-            <div className="flex flex-wrap sm:flex-nowrap gap-1">
+            <div className="flex flex-wrap gap-1">
               {SEASON_OPTIONS.map((s) => (
                 <button
                   key={s.value}
@@ -85,11 +85,11 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
           </div>
 
           {/* Occasion filter */}
-          <div className="flex items-start sm:items-center gap-2" role="group" aria-labelledby="filter-occasion">
-            <span id="filter-occasion" className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-1.5 sm:pt-0">
+          <div className="flex items-start gap-2" role="group" aria-labelledby="filter-occasion">
+            <span id="filter-occasion" className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-2.5">
               OCCASION
             </span>
-            <div className="flex flex-wrap sm:flex-nowrap gap-1">
+            <div className="flex flex-wrap gap-1">
               {OCCASION_OPTIONS.map((o) => (
                 <button
                   key={o}
