@@ -32,7 +32,15 @@ export default function Navigation() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
   }, [menuOpen]);
 
   const navBg = scrolled || !isHome;
@@ -48,7 +56,7 @@ export default function Navigation() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <nav className="flex items-center justify-between px-[var(--page-margin)] h-16 md:h-20">
+        <nav aria-label="Primary" className="flex items-center justify-between px-[var(--page-margin)] h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className={`font-serif text-lg md:text-xl tracking-[0.25em] font-light ${textColor} transition-colors duration-500 hover:opacity-70`}>
             ABI&apos;S LOOKBOOK
@@ -62,6 +70,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  aria-current={isActive ? "page" : undefined}
                   className={`relative text-[11px] tracking-[0.18em] font-light transition-colors duration-300 ${
                     textColor
                   } hover:opacity-70`}
@@ -84,6 +93,8 @@ export default function Navigation() {
             onClick={() => setMenuOpen(!menuOpen)}
             className={`md:hidden flex flex-col gap-[5px] p-2 ${textColor} transition-colors duration-500`}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             <motion.span
               className="block w-5 h-px bg-current"

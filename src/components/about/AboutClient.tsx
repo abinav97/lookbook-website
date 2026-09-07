@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 import { PORTRAIT_SRC, PORTRAIT_SRCSET, SIZES } from "@/lib/images";
 import { useEntrance } from "@/lib/motion";
+import { SITE } from "@/lib/site";
 
 export default function AboutClient() {
   const zoomIn = useEntrance({ scale: 1.05 });
@@ -133,13 +134,13 @@ export default function AboutClient() {
               {[
                 {
                   label: "EMAIL",
-                  value: "abinav@wharton.upenn.edu",
-                  href: "mailto:abinav@wharton.upenn.edu",
+                  value: SITE.email,
+                  href: `mailto:${SITE.email}`,
                 },
                 {
                   label: "LINKEDIN",
-                  value: "linkedin.com/in/abinav-bharadwaj",
-                  href: "https://www.linkedin.com/in/abinav-bharadwaj/",
+                  value: SITE.linkedinLabel,
+                  href: SITE.linkedin,
                 },
               ].map((link, i) => (
                 <motion.a

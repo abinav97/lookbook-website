@@ -5,6 +5,7 @@ import {
   ClosetItem,
   ClosetCategory,
   CATEGORY_ORDER,
+  OutfitRef,
 } from "./types";
 
 export function getOutfits(): Outfit[] {
@@ -62,6 +63,23 @@ export function getItemOutfitCount(itemId: string): number {
     }
   }
   return count;
+}
+
+export function toOutfitRef(outfit: Outfit): OutfitRef {
+  const img = outfit.images[0];
+  return {
+    id: outfit.id,
+    slug: outfit.slug,
+    title: outfit.title,
+    season: outfit.season,
+    date: outfit.date,
+    image: img ? { src: img.src, alt: img.alt } : undefined,
+    colorPalette: outfit.colorPalette,
+  };
+}
+
+export function getOutfitRefsForItem(itemId: string): OutfitRef[] {
+  return getOutfitsForItem(itemId).map(toOutfitRef);
 }
 
 export function getOutfitsForItem(itemId: string): Outfit[] {

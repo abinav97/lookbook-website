@@ -42,8 +42,11 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${inter.variable} bg-bg text-text antialiased`}
       >
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <Navigation />
-        <main className="min-h-screen">{children}</main>
+        <main id="main" className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

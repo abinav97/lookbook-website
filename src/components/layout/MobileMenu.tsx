@@ -17,13 +17,17 @@ interface MobileMenuProps {
 export default function MobileMenu({ onClose }: MobileMenuProps) {
   return (
     <motion.div
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menu"
       className="fixed inset-0 z-40 bg-bg flex flex-col justify-center px-[var(--page-margin)]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
     >
-      <nav className="flex flex-col gap-2">
+      <nav aria-label="Mobile" className="flex flex-col gap-2">
         {LINKS.map((link, i) => (
           <motion.div
             key={link.href}

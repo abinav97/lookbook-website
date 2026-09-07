@@ -17,10 +17,11 @@ export default function CategoryNav({ categories, counts }: CategoryNavProps) {
   return (
     <>
       {/* Desktop sidebar */}
-      <nav className="hidden lg:block w-48 flex-shrink-0 sticky top-28 self-start">
+      <nav aria-label="Closet categories" className="hidden lg:block w-48 flex-shrink-0 sticky top-28 self-start">
         <div className="flex flex-col gap-0.5">
           <Link
             href="/closet"
+            aria-current={isAll ? "page" : undefined}
             className={cn(
               "text-[11px] tracking-[0.15em] py-2 transition-colors duration-300",
               isAll
@@ -40,6 +41,7 @@ export default function CategoryNav({ categories, counts }: CategoryNavProps) {
               <Link
                 key={cat}
                 href={`/closet/${cat}`}
+                aria-current={isActive ? "page" : undefined}
                 className={cn(
                   "text-[11px] tracking-[0.15em] py-1.5 transition-colors duration-300 flex justify-between",
                   isActive
@@ -56,9 +58,10 @@ export default function CategoryNav({ categories, counts }: CategoryNavProps) {
       </nav>
 
       {/* Mobile horizontal pills */}
-      <div className="lg:hidden flex flex-row flex-nowrap gap-2 mb-8 overflow-x-auto overflow-y-hidden hide-scrollbar -mx-[var(--page-margin)] px-[var(--page-margin)]">
+      <nav aria-label="Closet categories" className="lg:hidden flex flex-row flex-nowrap gap-2 mb-8 overflow-x-auto overflow-y-hidden hide-scrollbar -mx-[var(--page-margin)] px-[var(--page-margin)]">
         <Link
           href="/closet"
+          aria-current={isAll ? "page" : undefined}
           className={cn(
             "flex-shrink-0 px-4 py-2 text-[10px] tracking-[0.12em] border transition-colors duration-300",
             isAll
@@ -74,6 +77,7 @@ export default function CategoryNav({ categories, counts }: CategoryNavProps) {
             <Link
               key={cat}
               href={`/closet/${cat}`}
+              aria-current={isActive ? "page" : undefined}
               className={cn(
                 "flex-shrink-0 px-4 py-2 text-[10px] tracking-[0.12em] border transition-colors duration-300 whitespace-nowrap",
                 isActive
@@ -85,7 +89,7 @@ export default function CategoryNav({ categories, counts }: CategoryNavProps) {
             </Link>
           );
         })}
-      </div>
+      </nav>
     </>
   );
 }

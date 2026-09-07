@@ -41,6 +41,17 @@ export interface Outfit {
   featured?: boolean;
 }
 
+/** Lightweight outfit reference passed to client components (avoids shipping outfits.json). */
+export interface OutfitRef {
+  id: string;
+  slug: string;
+  title: string;
+  season: Outfit["season"];
+  date: string;
+  image?: { src: string; alt: string };
+  colorPalette?: string[];
+}
+
 export interface ClosetItem {
   id: string;
   name: string;
