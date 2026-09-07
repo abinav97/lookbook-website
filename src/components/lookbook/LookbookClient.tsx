@@ -7,6 +7,7 @@ import OutfitCard from "./OutfitCard";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 import { SEASONS, OCCASIONS, type Season } from "@/lib/constants";
 import { track, EVENTS } from "@/lib/analytics";
+import { useEntrance } from "@/lib/motion";
 
 type SeasonFilter = "all" | Season;
 
@@ -24,6 +25,7 @@ interface LookbookClientProps {
 export default function LookbookClient({ outfits }: LookbookClientProps) {
   const [seasonFilter, setSeasonFilter] = useState<SeasonFilter>("all");
   const [occasionFilter, setOccasionFilter] = useState("all");
+  const gridInitial = useEntrance({ opacity: 0 });
 
   const filtered = useMemo(() => {
     return outfits.filter((outfit) => {
@@ -120,7 +122,7 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
         <motion.div
           key={`${seasonFilter}-${occasionFilter}`}
           className="masonry-grid"
-          initial={{ opacity: 0 }}
+          initial={gridInitial}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
