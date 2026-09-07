@@ -60,7 +60,7 @@ export async function analyzeOutfitPhoto(
       "anthropic-dangerous-direct-browser-access": "true",
     },
     body: JSON.stringify({
-      model: "claude-sonnet-4-5-20250929",
+      model: "claude-opus-5",
       max_tokens: 2048,
       system: SYSTEM_PROMPT,
       messages: [
@@ -93,7 +93,11 @@ export async function analyzeOutfitPhoto(
   }
 
   const data = await response.json();
-  const text = data.content?.[0]?.text || "";
+  // Opus 5 may return a thinking block first; read the text block explicitly.
+  const text: string =
+    (data.content as { type: string; text?: string }[] | undefined)?.find(
+      (b) => b.type === "text"
+    )?.text || "";
 
   // Parse JSON — handle potential markdown code fences
   const cleaned = text.replace(/```json?\s*/g, "").replace(/```\s*/g, "").trim();
