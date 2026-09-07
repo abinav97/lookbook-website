@@ -9,6 +9,10 @@ import { track as vercelTrack } from "@vercel/analytics";
 export const EVENTS = {
   filterApplied: "filter_applied", // { kind: "season" | "occasion", value }
   closetExpand: "closet_appears_in", // { itemId, count }
+  advisorSubmitted: "advisor_submitted", // { mode: "image" | "text" | "both" | "demo" }
+  advisorResult: "advisor_result", // { verdict, confidence, latencyMs, demo }
+  advisorError: "advisor_error", // { kind }
+  advisorFeedback: "advisor_feedback", // { useful, verdict }
 } as const;
 
 type EventName = (typeof EVENTS)[keyof typeof EVENTS];

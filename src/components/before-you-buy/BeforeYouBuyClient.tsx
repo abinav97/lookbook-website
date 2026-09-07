@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
-import Notice from "@/components/ui/Notice";
+import Advisor, { type ItemLite } from "./Advisor";
+import type { DemoSummary } from "@/lib/advisor/demos";
 
 interface Workhorse {
   id: string;
@@ -13,6 +14,8 @@ interface Workhorse {
 }
 
 interface BeforeYouBuyClientProps {
+  demos: DemoSummary[];
+  itemMap: Record<string, ItemLite>;
   totalItems: number;
   totalLooks: number;
   categories: number;
@@ -39,6 +42,8 @@ const STEPS = [
 ];
 
 export default function BeforeYouBuyClient({
+  demos,
+  itemMap,
   totalItems,
   totalLooks,
   categories,
@@ -66,6 +71,13 @@ export default function BeforeYouBuyClient({
             owned and the looks they have already made.
           </p>
         </div>
+      </ScrollFadeIn>
+
+      {/* The tool */}
+      <ScrollFadeIn>
+        <section className="mb-24" aria-label="Ask the closet">
+          <Advisor demos={demos} items={itemMap} />
+        </section>
       </ScrollFadeIn>
 
       {/* Why */}
@@ -134,7 +146,7 @@ export default function BeforeYouBuyClient({
           {workhorses.length > 0 && (
             <div className="mt-10">
               <p className="text-[9px] tracking-[0.2em] text-text-muted mb-4">
-                THE PIECES IT WILL LEAN ON MOST
+                THE PIECES IT LEANS ON MOST
               </p>
               <ul className="grid grid-cols-4 gap-3 max-w-xl">
                 {workhorses.map((w) => (
@@ -165,17 +177,13 @@ export default function BeforeYouBuyClient({
         </section>
       </ScrollFadeIn>
 
-      {/* Status */}
       <ScrollFadeIn>
-        <Notice
-          label="IN DEVELOPMENT"
-          title="The assistant is being built on this foundation."
-          action={{ label: "READ THE PRODUCT STORY", href: "/about#story" }}
-        >
-          It will run behind a private server route, with the model key held on the server and
-          nothing you show it kept afterwards. Until then, the closet, the looks, and the Style
-          DNA it draws on are all live above.
-        </Notice>
+        <p className="text-text-muted text-sm leading-relaxed max-w-xl">
+          How this was built, and why:{" "}
+          <Link href="/about#story" className="text-accent-dark hover:text-text transition-colors">
+            the product story &rarr;
+          </Link>
+        </p>
       </ScrollFadeIn>
     </div>
   );
