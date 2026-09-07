@@ -11,6 +11,7 @@ const ROUTES = [
   { path: "/closet", h1: /Abi's Closet/ },
   { path: "/closet/jackets", h1: /Jackets/ },
   { path: "/style-dna", h1: /Style DNA/ },
+  { path: "/before-you-buy", h1: /Should I buy this/ },
   { path: "/about", h1: /The person/ },
 ];
 

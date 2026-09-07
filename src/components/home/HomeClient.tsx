@@ -263,6 +263,32 @@ export default function HomeClient({
           </div>
         </ScrollFadeIn>
       </section>
+
+      {/* ============================================ */}
+      {/* BEFORE YOU BUY — quiet entry point */}
+      {/* ============================================ */}
+      <section className="px-[var(--page-margin)] pb-8 md:pb-16">
+        <ScrollFadeIn>
+          <div className="border-t border-b border-border py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center">
+            <div className="md:col-span-3">
+              <p className="text-[10px] tracking-[0.25em] text-text-muted">BEFORE YOU BUY</p>
+            </div>
+            <div className="md:col-span-6">
+              <p className="font-serif text-2xl md:text-3xl font-light leading-snug">
+                Should I buy this? A second opinion, grounded in the closet.
+              </p>
+            </div>
+            <div className="md:col-span-3 md:text-right">
+              <Link
+                href="/before-you-buy"
+                className="inline-block text-[11px] tracking-[0.2em] text-text border-b border-text pb-1 hover:text-accent hover:border-accent transition-colors duration-300"
+              >
+                HOW IT WORKS &rarr;
+              </Link>
+            </div>
+          </div>
+        </ScrollFadeIn>
+      </section>
     </div>
   );
 }

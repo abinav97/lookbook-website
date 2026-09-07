@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: "/lookbook", label: "LOOKBOOK" },
   { href: "/closet", label: "CLOSET" },
   { href: "/style-dna", label: "STYLE DNA" },
+  { href: "/before-you-buy", label: "BEFORE YOU BUY" },
   { href: "/about", label: "ABOUT" },
 ];
 
@@ -63,7 +64,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-7 lg:gap-10">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
               return (

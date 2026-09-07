@@ -8,6 +8,7 @@ import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 import { SEASONS, OCCASIONS, type Season } from "@/lib/constants";
 import { track, EVENTS } from "@/lib/analytics";
 import { useEntrance } from "@/lib/motion";
+import Notice from "@/components/ui/Notice";
 
 type SeasonFilter = "all" | Season;
 
@@ -134,20 +135,20 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
       </AnimatePresence>
 
       {filtered.length === 0 && (
-        <div className="text-center py-20">
-          <p className="font-serif text-2xl font-light text-text-muted">
-            No looks match these filters.
-          </p>
-          <button
-            type="button"
-            onClick={() => {
-              setSeasonFilter("all");
-              setOccasionFilter("all");
+        <div className="py-10">
+          <Notice
+            label="NO LOOKS"
+            title="Nothing documented for that combination yet."
+            action={{
+              label: "CLEAR FILTERS",
+              onClick: () => {
+                setSeasonFilter("all");
+                setOccasionFilter("all");
+              },
             }}
-            className="mt-4 text-[11px] tracking-[0.15em] text-accent-dark hover:text-text transition-colors"
           >
-            CLEAR FILTERS
-          </button>
+            Try a single filter, or browse every look.
+          </Notice>
         </div>
       )}
     </div>

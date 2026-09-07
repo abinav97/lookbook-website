@@ -7,6 +7,7 @@ const LINKS = [
   { href: "/lookbook", label: "Lookbook" },
   { href: "/closet", label: "Closet" },
   { href: "/style-dna", label: "Style DNA" },
+  { href: "/before-you-buy", label: "Before You Buy" },
   { href: "/about", label: "About" },
 ];
 
@@ -43,7 +44,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
             <Link
               href={link.href}
               onClick={onClose}
-              className="block font-serif text-5xl sm:text-6xl font-light text-text tracking-[0.08em] py-3 hover:text-accent transition-colors duration-300"
+              className="block font-serif text-4xl sm:text-6xl font-light text-text tracking-[0.08em] py-2.5 sm:py-3 hover:text-accent transition-colors duration-300"
             >
               {link.label}
             </Link>
