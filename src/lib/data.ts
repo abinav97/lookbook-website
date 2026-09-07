@@ -1,10 +1,8 @@
 import outfitsData from "@/data/outfits.json";
 import closetItemsData from "@/data/closet-items.json";
-import collectionsData from "@/data/collections.json";
 import {
   Outfit,
   ClosetItem,
-  Collection,
   ClosetCategory,
   CATEGORY_ORDER,
 } from "./types";
@@ -19,12 +17,6 @@ export function getOutfitBySlug(slug: string): Outfit | undefined {
 
 export function getFeaturedOutfits(): Outfit[] {
   return getOutfits().filter((o) => o.featured);
-}
-
-export function getOutfitsBySeason(
-  season: Outfit["season"]
-): Outfit[] {
-  return getOutfits().filter((o) => o.season === season);
 }
 
 export function getClosetItems(): ClosetItem[] {
@@ -78,14 +70,6 @@ export function getOutfitsForItem(itemId: string): Outfit[] {
       image.tags.some((tag) => tag.closetItemId === itemId)
     )
   );
-}
-
-export function getCollections(): Collection[] {
-  return collectionsData as Collection[];
-}
-
-export function getCollectionBySlug(slug: string): Collection | undefined {
-  return getCollections().find((c) => c.slug === slug);
 }
 
 export function getActiveCategories(): ClosetCategory[] {

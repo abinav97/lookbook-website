@@ -11,7 +11,6 @@
     "generate-images:dry": "node scripts/generate-images.mjs --dry-run"
   },
   "dependencies": {
-    "colorthief": "^2.6.0",
     "motion": "^12.34.3",
     "next": "15.5.12",
     "react": "19.1.0",

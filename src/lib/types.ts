@@ -39,7 +39,6 @@ export interface Outfit {
   images: OutfitImage[];
   colorPalette?: string[];
   featured?: boolean;
-  collectionId?: string;
 }
 
 export interface ClosetItem {
@@ -54,16 +53,6 @@ export interface ClosetItem {
   imageUrl?: string;
   purchaseUrl?: string;
   notes?: string;
-}
-
-export interface Collection {
-  id: string;
-  slug: string;
-  title: string;
-  description: string;
-  heroImage: string;
-  season?: string;
-  outfitIds: string[];
 }
 
 export const CATEGORY_LABELS: Record<ClosetCategory, string> = {
