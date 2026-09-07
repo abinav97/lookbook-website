@@ -66,7 +66,7 @@ export default function HomeClient({
         />
 
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/35" />
 
         {/* Hero content */}
         <div className="relative z-10 px-[var(--page-margin)] pb-16 md:pb-24 w-full">
