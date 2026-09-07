@@ -23,7 +23,8 @@
     "motion": "^12.34.3",
     "next": "15.5.12",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "sharp": "^0.35.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -37,7 +38,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.12",
     "openai": "^6.25.0",
-    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.1.11"

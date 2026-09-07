@@ -6,6 +6,7 @@ import {
 } from "@/lib/data";
 import type { Metadata } from "next";
 import StyleDNAClient from "@/components/style-dna/StyleDNAClient";
+import { computeUtilityInsights } from "@/lib/insights";
 
 export const metadata: Metadata = {
   title: "Style DNA",
@@ -19,6 +20,7 @@ export default function StyleDNAPage() {
   const categoryStats = getCategoryStats();
   const outfits = getOutfits();
   const closetItems = getClosetItems();
+  const utility = computeUtilityInsights(outfits, closetItems, { topN: 6 });
 
   // Season breakdown
   const seasonCounts = outfits.reduce(
@@ -36,6 +38,7 @@ export default function StyleDNAPage() {
       seasonCounts={seasonCounts}
       totalOutfits={outfits.length}
       totalItems={closetItems.length}
+      utility={utility}
     />
   );
 }

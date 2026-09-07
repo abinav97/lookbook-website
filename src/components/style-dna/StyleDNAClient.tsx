@@ -5,6 +5,9 @@ import { motion } from "motion/react";
 import { ClosetCategory, CATEGORY_LABELS } from "@/lib/types";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 import { useEntrance } from "@/lib/motion";
+import Link from "next/link";
+import type { UtilityInsights } from "@/lib/insights";
+import { serviceYears } from "@/lib/insights";
 
 interface StyleDNAClientProps {
   allColors: string[];
@@ -12,6 +15,7 @@ interface StyleDNAClientProps {
   seasonCounts: Record<string, number>;
   totalOutfits: number;
   totalItems: number;
+  utility: UtilityInsights;
 }
 
 function hexToHSL(hex: string): { h: number; s: number; l: number } {
@@ -41,6 +45,7 @@ export default function StyleDNAClient({
   seasonCounts,
   totalOutfits,
   totalItems,
+  utility,
 }: StyleDNAClientProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const riseIn = useEntrance({ opacity: 0, y: 15 });
@@ -141,6 +146,161 @@ export default function StyleDNAClient({
             </motion.div>
           ))}
         </div>
+      </ScrollFadeIn>
+
+      {/* ============================================ */}
+      {/* WARDROBE UTILITY */}
+      {/* ============================================ */}
+      <ScrollFadeIn>
+        <section className="mb-20" id="utility" aria-labelledby="utility-heading">
+          <h2 id="utility-heading" className="section-divider">
+            <span className="text-[10px] tracking-[0.25em] text-text-muted font-light">
+              WARDROBE UTILITY
+            </span>
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mt-8">
+            {/* Narrative + distribution */}
+            <div className="lg:col-span-5">
+              <p className="font-serif text-2xl md:text-3xl font-light leading-snug text-text">
+                {utility.totalItems} pieces. {utility.wornOnce} of them have appeared in exactly
+                one documented look.
+              </p>
+              <p className="text-text-muted text-sm leading-relaxed mt-4 max-w-md">
+                The other {utility.multiLook} carry the rest of the lookbook. Re-use is the
+                honest measure of whether a purchase earned its place, and it is the question
+                the wardrobe still answers badly.
+              </p>
+
+              {/* Distribution: one segment per look-count */}
+              <div className="mt-8">
+                <p className="text-[9px] tracking-[0.2em] text-text-muted mb-3">
+                  PIECES BY NUMBER OF LOOKS
+                </p>
+                <div
+                  className="flex h-2 w-full overflow-hidden border border-border bg-bg-alt"
+                  role="img"
+                  aria-label={Object.entries(utility.distribution)
+                    .map(([looks, n]) => `${n} pieces in ${looks} ${Number(looks) === 1 ? "look" : "looks"}`)
+                    .join(", ")}
+                >
+                  {Object.entries(utility.distribution)
+                    .sort((a, b) => Number(a[0]) - Number(b[0]))
+                    .map(([looks, n], i, arr) => (
+                      <motion.div
+                        key={looks}
+                        className="h-full border-r border-bg last:border-r-0"
+                        style={{
+                          width: `${(n / utility.totalItems) * 100}%`,
+                          background: `color-mix(in srgb, var(--accent) ${Math.round(((i + 1) / arr.length) * 100)}%, var(--bg-alt))`,
+                          transformOrigin: "left",
+                        }}
+                        initial={growIn}
+                        whileInView={{ scaleX: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.15 + i * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                      />
+                    ))}
+                </div>
+                <dl className="flex flex-wrap gap-x-5 gap-y-1 mt-3">
+                  {Object.entries(utility.distribution)
+                    .sort((a, b) => Number(a[0]) - Number(b[0]))
+                    .map(([looks, n]) => (
+                      <div key={looks} className="flex items-baseline gap-1.5">
+                        <dt className="text-[9px] tracking-[0.15em] text-text-muted">
+                          {looks} {Number(looks) === 1 ? "LOOK" : "LOOKS"}
+                        </dt>
+                        <dd className="font-serif text-lg font-light text-text">{n}</dd>
+                      </div>
+                    ))}
+                </dl>
+              </div>
+
+              {/* Category reuse */}
+              <div className="mt-8">
+                <p className="text-[9px] tracking-[0.2em] text-text-muted mb-3">
+                  SHARE OF PIECES RE-WORN, BY CATEGORY
+                </p>
+                <ul className="flex flex-col gap-1.5">
+                  {utility.categoryReuse.slice(0, 5).map((c) => (
+                    <li key={c.category} className="flex items-center justify-between text-[10px] tracking-[0.12em]">
+                      <span className="text-text-muted">{CATEGORY_LABELS[c.category].toUpperCase()}</span>
+                      <span className="text-text">
+                        {c.reused}/{c.items} &middot; {Math.round(c.share * 100)}%
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Workhorses */}
+            <div className="lg:col-span-7">
+              <p className="text-[9px] tracking-[0.2em] text-text-muted mb-4">THE WORKHORSES</p>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-8">
+                {utility.workhorses.map((w, i) => (
+                  <motion.li
+                    key={w.item.id}
+                    initial={riseIn}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Link href={`/closet/${w.item.category}#${w.item.id}`} className="group block">
+                      <div className="relative aspect-square overflow-hidden bg-bg-alt mb-2">
+                        {w.item.images?.[0] ? (
+                          <img
+                            src={w.item.images[0]}
+                            alt={w.item.name}
+                            width={800}
+                            height={800}
+                            loading="lazy"
+                            decoding="async"
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                          />
+                        ) : (
+                          <div className="absolute inset-0" style={{ background: w.item.colorHex || "#C4A882" }} />
+                        )}
+                        <span className="absolute bottom-2 right-2 text-[9px] tracking-[0.1em] text-white/90 bg-black/35 backdrop-blur-sm px-2 py-0.5">
+                          {w.looks} LOOKS
+                        </span>
+                      </div>
+                      <p className="text-[12px] font-medium text-text leading-snug group-hover:text-accent-dark transition-colors">
+                        {w.item.name}
+                      </p>
+                      <p className="text-[10px] tracking-[0.08em] text-text-muted mt-0.5">
+                        {w.item.brand ? `${w.item.brand} · ` : ""}
+                        {serviceYears(w.dates)}
+                      </p>
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+
+              <p className="text-text-muted text-sm leading-relaxed mt-8 max-w-md">
+                {utility.longestServing[0] && (
+                  <>
+                    The longest-serving piece, the{" "}
+                    <Link
+                      href={`/closet/${utility.longestServing[0].item.category}#${utility.longestServing[0].item.id}`}
+                      className="text-text border-b border-border hover:border-text transition-colors"
+                    >
+                      {utility.longestServing[0].item.name.toLowerCase()}
+                    </Link>
+                    , has been in rotation since {serviceYears(utility.longestServing[0].dates).slice(0, 4)}.{" "}
+                  </>
+                )}
+                This is the gap the purchase assistant is built to close.{" "}
+                <Link
+                  href="/before-you-buy"
+                  className="text-[11px] tracking-[0.15em] text-accent-dark hover:text-text transition-colors whitespace-nowrap"
+                >
+                  BEFORE YOU BUY &rarr;
+                </Link>
+              </p>
+            </div>
+          </div>
+        </section>
       </ScrollFadeIn>
 
       {/* ============================================ */}
