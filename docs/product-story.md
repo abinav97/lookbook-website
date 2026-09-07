@@ -33,7 +33,7 @@ Full audit before any change. The deployed site matched the repository exactly.
 | Accessibility | Clickable divs, no pressed/expanded states, no skip link, no focus styles | Real buttons with ARIA state, skip link, focus-visible, live region for results |
 | SEO | No sitemap, robots, canonical, or OG image | All added; each look uses its own photo as og:image |
 | Measurement | Analytics never merged; zero recorded visits | Vercel Web Analytics plus a two-event custom vocabulary |
-| Testing | None | Vitest data-integrity suite; export checker for broken links and page weight |
+| Testing | None | Vitest data-integrity suite (15), Playwright smoke suite at desktop and mobile (20), export checker for broken links and page weight |
 | Dead weight | Unused component, unused collections data, unused helpers, unused dependency, template assets, five one-off scripts | Deleted after verifying zero references |
 | Design | Home hero was a flat gradient | Featured look's photograph |
 
@@ -74,7 +74,7 @@ To be written with the feature. Foundation-phase measurements:
 | Lookbook page weight, full scroll | ~61 MB | ~3.9 MB (retina), ~1.4 MB initial |
 | Static export size | 138 MB | 28 MB |
 | Broken internal links in export | not measured | 0 of 38 pages |
-| Unit tests | 0 | 15 |
+| Automated tests | 0 | 15 unit + 20 browser smoke |
 | Publicly exposed admin | yes | no |
 
 ## 8. Limitations and next steps

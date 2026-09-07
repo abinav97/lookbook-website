@@ -33,6 +33,8 @@ npm run check        # lint, type-check, unit tests, production build, export ch
 ```
 
 - `npm test` runs the Vitest suite in `tests/` (data integrity, helpers)
+- `npm run test:e2e` runs the Playwright smoke suite at desktop and mobile widths against
+  the dev server, using the Chrome already installed on the machine
 - `npm run check:export` scans `out/` for broken internal links and reports per-page
   weight, failing if any page's initial load exceeds 1.5 MB
 
