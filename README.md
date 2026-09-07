@@ -18,8 +18,13 @@ the problem, decisions, and evaluation approach.
 
 ```bash
 npm install
-npm run dev          # generates responsive images, then starts Next on :3000
+cp .env.example .env.local   # add ANTHROPIC_API_KEY for live verdicts (optional)
+npm run dev                  # generates responsive images, then starts Next on :3000
 ```
+
+The site is statically prerendered except for one server route, `/api/advise`, which
+powers Before You Buy. Without a key the route reports itself as paused and the page
+falls back to its precomputed examples.
 
 Photos are kept at full resolution in `assets/` and converted to web-ready WebP/JPEG
 variants under `public/outfits` and `public/portrait` by `scripts/optimize-images.mjs`.
@@ -35,6 +40,9 @@ npm run check        # lint, type-check, unit tests, production build, export ch
 - `npm test` runs the Vitest suite in `tests/` (data integrity, helpers)
 - `npm run test:e2e` runs the Playwright smoke suite at desktop and mobile widths against
   the dev server, using the Chrome already installed on the machine
+- `npm run eval` runs the purchase-assistant evaluation set (`eval/candidates.json`)
+  against a running site and scores it deterministically (`scripts/lib/score.mjs`);
+  `npm run demos:precompute` fills the example verdicts on Before You Buy
 - `npm run check:export` scans `out/` for broken internal links and reports per-page
   weight, failing if any page's initial load exceeds 1.5 MB
 
@@ -57,6 +65,9 @@ Product images for closet items come from `npm run generate-images` (see
 src/app/            routes and metadata (sitemap.ts, robots.ts included)
 src/components/     feature-scoped components; "use client" only where interactive
 src/lib/            data access, types, image + motion + analytics helpers
+src/lib/advisor/    purchase assistant: schema, grounding context, post-validation, caps, model client
+src/app/api/advise  the only server route (POST verdict, GET status)
+eval/               evaluation candidates; runs are written to eval/runs (ignored)
 src/data/           outfits.json, closet-items.json
 assets/             source photography (tracked)
 public/items/       generated product images (tracked)

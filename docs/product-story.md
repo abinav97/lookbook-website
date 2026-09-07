@@ -75,13 +75,79 @@ closet and documented looks. Details in section 6 once designed.
 - 2026-09-07: TagIndicator (photo hotspots) kept in the codebase although unused; it is
   the next editorial feature to wire up.
 
-## 6. Signature feature design
+## 6. Signature feature design: Before You Buy
 
-To be written in the next phase.
+**Job.** Before spending money on a piece, know whether it duplicates something owned,
+what it pairs with, and what it would unlock, judged against this closet and how it has
+actually been worn.
+
+**Journey.** `/before-you-buy` -> show the piece (photo, description, or one of three
+examples) -> a verdict with receipts -> follow a cited piece into the closet, or ask about
+another. One screen, no account, no history.
+
+**Architecture (the smallest that gives a credible result).**
+
+- One Next.js route handler, `POST /api/advise`, Node runtime, 60 s budget. Pages stay
+  statically prerendered; this is the only server code, and the only reason static export
+  was dropped.
+- Claude Opus 5 with adaptive thinking at medium effort and a Zod-typed structured output.
+  Server-side refusal fallback is enabled so a classifier decline is retried on
+  Anthropic's recommended model rather than surfacing as an error.
+- The whole closet, every documented look, and the wardrobe-utility numbers are rendered
+  deterministically into the system prompt (about 6.5k tokens) and cached. No vector
+  store: 65 items fit in context, and the model needs all of them to reason about
+  duplication and pairing.
+- A deterministic grounding pass runs on every answer: any cited item id that does not
+  exist is removed and counted, confidence is lowered when references were dropped, and an
+  answer with no surviving evidence becomes an `unclear` verdict with a caveat. The UI
+  shows how many references were removed.
+- Photos are resized to 1024 px on the device (which also strips EXIF), sent once, and not
+  stored by the site. Server logs carry token counts and latency only, never the
+  description or the image.
+
+**Output contract.** verdict (buy / maybe / pass / unclear), a twelve-word headline,
+two-to-three-sentence reasoning, what the candidate was read as, duplicates already
+owned, pieces it pairs with, up to three looks it would unlock (built from owned ids),
+the gap it fills, confidence, and caveats about what a photo cannot tell.
+
+**States.** Idle, thinking (with the honest "ten to thirty seconds"), verdict, paused
+(no key or kill switch), allowance used up (429 with Retry-After), photo too large, not a
+photo, declined, no verdict, upstream failure. All share the editorial Notice block.
+
+**Spend control and the math.** Opus 5 pricing: $5 / $25 per million input / output
+tokens, cache reads $0.50. Worst case per request: (6,500 + 1,600 + 300) input tokens =
+$0.042 plus 2,500 output tokens = $0.0625, about **$0.105**. Typical with a cache hit and
+~1,200 output tokens: about $0.045. Defaults: 40 requests per day (at most $4.20/day), 8 per
+IP per day (at most $0.84 per visitor), 500 lifetime (at most $52.50) per warm instance.
+Counters are in process memory, so on Vercel they are per warm instance: a strong brake
+rather than an accounting system. The hard $60 ceiling is the spend limit on the Anthropic
+Console workspace that owns the key; `ADVISOR_ENABLED=false` is the kill switch.
+
+**Latency.** Expected 8 to 30 seconds. Non-streaming by design: a structured verdict
+that appears whole reads better than JSON fragments, and the loading state says how long
+it takes.
 
 ## 7. Evaluation and measurement
 
-To be written with the feature. Foundation-phase measurements:
+**Evaluation set** (`eval/candidates.json`, 16 candidates): four near-duplicates of
+owned pieces (loafers, jeans, Sambas, chain), five plausible gap-fillers (overcoat,
+burgundy knit, oxford, suede chelsea, flannel trousers), three off-wardrobe novelties
+(neon shorts, sequin blazer, tie-dye hoodie), a second navy suit, a vague description,
+and two non-garment images (the portrait, a rooftop scene).
+
+**Deterministic scoring** (`scripts/lib/score.mjs`, unit-tested): verdict within the
+expected set; every cited id exists; expected duplicates found; minimum grounded
+pairings; expected pairings present; unlock counts and well-formedness; candidate
+null/not-null; caveats present; headline length; reasoning present. `npm run eval` runs
+the set against a running site (about $1 per run) and writes the run plus its score to
+`eval/runs/`.
+
+**Analytics events**: `advisor_submitted` (mode), `advisor_result` (verdict,
+confidence, latency, demo), `advisor_error` (kind), `advisor_feedback` (useful, verdict).
+Success metrics: submissions per visit to the page, share of verdicts marked useful,
+share of `unclear` verdicts on garment inputs (should be low), error rate, p50 latency.
+
+Foundation-phase measurements:
 
 | Metric | Before | After |
 |---|---|---|

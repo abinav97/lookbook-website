@@ -81,3 +81,28 @@ test("admin route is not served publicly", async ({ page }) => {
   const res = await page.goto("/admin");
   expect(res?.status()).toBe(404);
 });
+
+test("the advisor renders, reports its status, and handles a demo request", async ({ page }) => {
+  await page.goto("/before-you-buy");
+  await page.waitForLoadState("networkidle");
+  await expect(page.getByRole("button", { name: "ASK THE CLOSET" })).toBeDisabled();
+  await page.getByLabel("OR DESCRIBE IT").fill("Burgundy merino crewneck");
+  await expect(page.getByRole("button", { name: "ASK THE CLOSET" })).toBeEnabled();
+
+  const status = await page.request.get("/api/advise").then((r) => r.json());
+  expect(status).toEqual(expect.objectContaining({ model: expect.any(String), dailyCap: expect.any(Number) }));
+
+  await page.getByRole("button", { name: "A BURGUNDY MERINO CREWNECK" }).click();
+  // Either a real verdict (key configured / precomputed) or the editorial "paused" state.
+  await expect(page.locator("#verdict-heading, [role=status], [role=alert]").first()).toBeVisible({ timeout: 60_000 });
+  await expect(page.locator("text=THE VERDICT").or(page.locator("text=Live verdicts are switched off"))).toBeVisible({ timeout: 60_000 });
+});
+
+test("the advise route validates input and never leaks the key", async ({ request }) => {
+  const bad = await request.post("/api/advise", { data: {} });
+  expect(bad.status()).toBe(400);
+  const gif = await request.post("/api/advise", { data: { image: { mediaType: "image/gif", data: "x".repeat(32) } } });
+  expect(gif.status()).toBe(400);
+  const text = await (await request.get("/api/advise")).text();
+  expect(text).not.toMatch(/sk-ant/);
+});

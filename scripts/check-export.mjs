@@ -16,20 +16,25 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const OUT = path.join(ROOT, "out");
 const budgetArg = process.argv.find((a) => a.startsWith("--budget-kb="));
 const BUDGET_KB = budgetArg ? Number(budgetArg.split("=")[1]) : 1500;
 
-if (!fs.existsSync(OUT)) {
-  console.error("out/ not found — run `npm run build` first.");
+// Static export (out/) or a regular `next build` (.next/server/app + .next/static + public/).
+const EXPORT = path.join(ROOT, "out");
+const isExport = fs.existsSync(EXPORT);
+const PAGES = isExport ? EXPORT : path.join(ROOT, ".next/server/app");
+if (!fs.existsSync(PAGES)) {
+  console.error("No build output found — run `npm run build` first.");
   process.exit(1);
 }
+const STATIC_ROOTS = isExport ? [EXPORT] : [path.join(ROOT, "public")];
+const NEXT_STATIC = path.join(ROOT, ".next/static");
 
 function walk(dir, acc = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, entry.name);
     if (entry.isDirectory()) walk(p, acc);
-    else if (entry.name.endsWith(".html")) acc.push(p);
+    else if (entry.name.endsWith(".html") && !entry.name.startsWith("_")) acc.push(p);
   }
   return acc;
 }
@@ -37,11 +42,13 @@ function walk(dir, acc = []) {
 function resolveInternal(url) {
   const clean = decodeURIComponent(url.split("#")[0].split("?")[0]);
   if (!clean.startsWith("/")) return null; // external or relative
-  const candidates = [
-    path.join(OUT, clean),
-    path.join(OUT, `${clean}.html`),
-    path.join(OUT, clean, "index.html"),
-  ];
+  if (clean.startsWith("/api/")) return null; // server routes are not files
+  const candidates = [];
+  if (!isExport && clean.startsWith("/_next/static/")) {
+    candidates.push(path.join(NEXT_STATIC, clean.slice("/_next/static/".length)));
+  }
+  for (const root of STATIC_ROOTS) candidates.push(path.join(root, clean));
+  candidates.push(path.join(PAGES, `${clean}.html`), path.join(PAGES, clean, "index.html"), path.join(PAGES, clean === "/" ? "index.html" : `${clean}.html`));
   return candidates.find((c) => fs.existsSync(c) && fs.statSync(c).isFile()) ?? false;
 }
 
@@ -50,9 +57,9 @@ const decode = (s) => s.replace(/&amp;/g, "&").replace(/&#x27;/g, "'").replace(/
 let broken = 0;
 const report = [];
 
-for (const file of walk(OUT)) {
+for (const file of walk(PAGES)) {
   const html = fs.readFileSync(file, "utf8");
-  const page = "/" + path.relative(OUT, file).replace(/index\.html$/, "").replace(/\.html$/, "");
+  const page = "/" + path.relative(PAGES, file).replace(/index\.html$/, "").replace(/\.html$/, "");
   const initial = new Set([file]);
   const lazy = new Set();
 
