@@ -8,6 +8,7 @@ import { outfitSrcSet, SIZES } from "@/lib/images";
 import { useEntrance } from "@/lib/motion";
 
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
+import Hotspots from "./Hotspots";
 
 interface TagWithItem {
   tag: OutfitTag;
@@ -42,6 +43,9 @@ export default function OutfitDetailClient({
     if (item && !acc.find((i) => i.id === item.id)) acc.push(item);
     return acc;
   }, []);
+  const itemsById = Object.fromEntries(tagItems.map(({ tag, item }) => [tag.closetItemId, item]));
+  const heroTags = heroImage?.tags ?? [];
+  const taggedCount = heroTags.filter((t) => itemsById[t.closetItemId]).length;
 
   return (
     <div className="pb-20">
@@ -74,8 +78,16 @@ export default function OutfitDetailClient({
             )}
           </motion.div>
 
-          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+
+          {heroImage && <Hotspots tags={heroTags} items={itemsById} />}
         </div>
+
+        {taggedCount > 0 && (
+          <p className="max-w-4xl mx-auto px-[var(--page-margin)] md:px-0 mt-3 text-[9px] tracking-[0.18em] text-text-muted">
+            {taggedCount} {taggedCount === 1 ? "PIECE" : "PIECES"} TAGGED &middot; HOVER OR TAP THE MARKERS
+          </p>
+        )}
       </section>
 
       {/* ============================================ */}
