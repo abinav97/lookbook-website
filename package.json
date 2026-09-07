@@ -16,15 +16,19 @@
     "test:watch": "vitest",
     "check:export": "node scripts/check-export.mjs",
     "check": "npm run lint && npx tsc --noEmit && npm test && npm run build && npm run check:export",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "eval": "node scripts/eval-advisor.mjs",
+    "demos:precompute": "node scripts/precompute-demos.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.124.0",
     "@vercel/analytics": "^2.0.1",
     "motion": "^12.34.3",
     "next": "15.5.12",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "sharp": "^0.35.4"
+    "sharp": "^0.35.4",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

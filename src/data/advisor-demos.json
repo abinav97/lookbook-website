@@ -1,0 +1,21 @@
+[
+  {
+    "id": "black-loafers-again",
+    "label": "Another pair of black loafers",
+    "description": "Black leather penny loafers, plain apron toe, leather sole. Around $320.",
+    "imagePath": "/items/item-shared-black-loafers.webp",
+    "result": null
+  },
+  {
+    "id": "burgundy-knit",
+    "label": "A burgundy merino crewneck",
+    "description": "Burgundy merino wool crewneck sweater, slim fit, mid-weight. Around $140.",
+    "result": null
+  },
+  {
+    "id": "neon-shorts",
+    "label": "Neon green nylon shorts",
+    "description": "Neon green nylon running shorts with a white drawstring, 5 inch inseam.",
+    "result": null
+  }
+]
