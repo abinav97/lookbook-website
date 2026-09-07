@@ -51,8 +51,8 @@ export default function HomeClient({
             fetchPriority="high"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover object-[50%_20%]"
-            initial={fade({ scale: 1.08, opacity: 0 })}
-            animate={{ scale: 1, opacity: 1 }}
+            initial={fade({ scale: 1.08 })}
+            animate={{ scale: 1 }}
             transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
           />
         )}
