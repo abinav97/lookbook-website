@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ReactNode } from "react";
+import { useEntrance } from "@/lib/motion";
 
 interface ScrollFadeInProps {
   children: ReactNode;
@@ -26,10 +27,12 @@ export default function ScrollFadeIn({
     none: {},
   };
 
+  const initial = useEntrance({ opacity: 0, ...directionMap[direction] });
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, ...directionMap[direction] }}
+      initial={initial}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{

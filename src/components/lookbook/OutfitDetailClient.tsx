@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { Outfit, OutfitTag, ClosetItem, OutfitImage } from "@/lib/types";
 import { formatSeasonYear } from "@/lib/utils";
 import { outfitSrcSet, SIZES } from "@/lib/images";
+import { useEntrance } from "@/lib/motion";
 
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 
@@ -33,6 +34,8 @@ export default function OutfitDetailClient({
   const hasDetails = detailImages.length > 0;
   const colors = outfit.colorPalette || ["#C4A882", "#8B7355"];
   const gradient = `linear-gradient(160deg, ${colors.join(", ")})`;
+  const heroInitial = useEntrance({ scale: 1.05 });
+  const itemInitial = useEntrance({ opacity: 0, y: 15 });
 
   // Get unique items for the "items in this look" section
   const uniqueItems = tagItems.reduce<ClosetItem[]>((acc, { item }) => {
@@ -50,7 +53,7 @@ export default function OutfitDetailClient({
           <motion.div
             className="relative w-full"
             style={{ background: gradient }}
-            initial={{ scale: 1.05 }}
+            initial={heroInitial}
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
@@ -168,7 +171,7 @@ export default function OutfitDetailClient({
                   <motion.div
                     key={item.id}
                     className="group"
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={itemInitial}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
                       delay: 0.3 + i * 0.08,
@@ -289,10 +292,11 @@ function DetailImage({
 }) {
   const caption = getDetailCaption(image.alt);
   const fallbackGradient = `linear-gradient(135deg, ${colors.join(", ")})`;
+  const initial = useEntrance({ opacity: 0, y: 25 });
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 25 }}
+      initial={initial}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-30px" }}
       transition={{

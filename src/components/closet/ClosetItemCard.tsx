@@ -7,6 +7,7 @@ import { ClosetItem } from "@/lib/types";
 import { getItemOutfitCount, getOutfitsForItem } from "@/lib/data";
 import { formatSeasonYear } from "@/lib/utils";
 import { outfitThumb } from "@/lib/images";
+import { useEntrance } from "@/lib/motion";
 
 interface ClosetItemCardProps {
   item: ClosetItem;
@@ -17,13 +18,14 @@ export default function ClosetItemCard({ item, index = 0 }: ClosetItemCardProps)
   const outfitCount = getItemOutfitCount(item.id);
   const [showOutfits, setShowOutfits] = useState(false);
   const outfits = showOutfits ? getOutfitsForItem(item.id) : [];
+  const initial = useEntrance({ opacity: 0, y: 20 });
 
   return (
     <motion.div
       id={item.id}
       className="group cursor-pointer"
       onClick={() => outfitCount > 0 && setShowOutfits(!showOutfits)}
-      initial={{ opacity: 0, y: 20 }}
+      initial={initial}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-20px" }}
       transition={{

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { ClosetCategory, CATEGORY_LABELS } from "@/lib/types";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
+import { useEntrance } from "@/lib/motion";
 
 interface StyleDNAClientProps {
   allColors: string[];
@@ -42,6 +43,10 @@ export default function StyleDNAClient({
   totalItems,
 }: StyleDNAClientProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const riseIn = useEntrance({ opacity: 0, y: 15 });
+  const popIn = useEntrance({ opacity: 0, scale: 0.8 });
+  const slideIn = useEntrance({ opacity: 0, x: -20 });
+  const growIn = useEntrance({ scaleX: 0 });
   const totalCatItems = categoryStats.reduce((a, b) => a + b.count, 0);
 
   // Color constellation canvas
@@ -122,7 +127,7 @@ export default function StyleDNAClient({
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 15 }}
+              initial={riseIn}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -181,7 +186,7 @@ export default function StyleDNAClient({
                 key={`${color}-${i}`}
                 className="w-6 h-6 border border-border"
                 style={{ background: color }}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={popIn}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.03, duration: 0.3 }}
@@ -211,7 +216,7 @@ export default function StyleDNAClient({
                 return (
                   <motion.div
                     key={stat.category}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={slideIn}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -227,7 +232,7 @@ export default function StyleDNAClient({
                     <div className="h-1.5 bg-bg-alt border border-border overflow-hidden">
                       <motion.div
                         className="h-full bg-accent"
-                        initial={{ scaleX: 0 }}
+                        initial={growIn}
                         whileInView={{ scaleX: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 + i * 0.06, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -252,7 +257,7 @@ export default function StyleDNAClient({
                     <motion.div
                       key={key}
                       className="border border-border p-5"
-                      initial={{ opacity: 0, y: 15 }}
+                      initial={riseIn}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.08, duration: 0.5 }}

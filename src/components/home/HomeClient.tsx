@@ -6,6 +6,7 @@ import { Outfit } from "@/lib/types";
 import { formatSeasonYear } from "@/lib/utils";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 import { outfitSrcSet, SIZES } from "@/lib/images";
+import { useReducedMotion, type TargetAndTransition } from "motion/react";
 
 interface HomeClientProps {
   featured: Outfit[];
@@ -18,6 +19,8 @@ export default function HomeClient({
 }: HomeClientProps) {
   const heroOutfit = featured[0];
   const heroImage = heroOutfit?.images[0];
+  const reduced = useReducedMotion();
+  const fade = (from: TargetAndTransition) => (reduced ? false : from);
   const heroColors = heroOutfit?.colorPalette || ["#C19A6B", "#36454F", "#1A1A1A"];
   const heroGradient = `linear-gradient(160deg, ${heroColors[0]}CC, ${heroColors[1] || heroColors[0]}99, ${heroColors[2] || "#1A1A1A"})`;
 
@@ -31,7 +34,7 @@ export default function HomeClient({
         <motion.div
           className="absolute inset-0"
           style={{ background: heroGradient }}
-          initial={{ scale: 1.1 }}
+          initial={fade({ scale: 1.1 })}
           animate={{ scale: 1 }}
           transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
         />
@@ -48,7 +51,7 @@ export default function HomeClient({
             fetchPriority="high"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover object-[50%_20%]"
-            initial={{ scale: 1.08, opacity: 0 }}
+            initial={fade({ scale: 1.08, opacity: 0 })}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
           />
@@ -68,7 +71,7 @@ export default function HomeClient({
         {/* Hero content */}
         <div className="relative z-10 px-[var(--page-margin)] pb-16 md:pb-24 w-full">
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={fade({ opacity: 0 })}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
@@ -79,7 +82,7 @@ export default function HomeClient({
 
           <motion.h1
             className="font-serif text-white text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light leading-[0.9] tracking-[0.02em]"
-            initial={{ opacity: 0, y: 40 }}
+            initial={fade({ opacity: 0, y: 40 })}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
@@ -90,7 +93,7 @@ export default function HomeClient({
 
           <motion.div
             className="flex items-center gap-8 mt-8"
-            initial={{ opacity: 0, y: 20 }}
+            initial={fade({ opacity: 0, y: 20 })}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
@@ -111,7 +114,7 @@ export default function HomeClient({
           {/* Stats strip */}
           <motion.div
             className="flex gap-12 mt-12 text-white/40 text-[10px] tracking-[0.15em]"
-            initial={{ opacity: 0 }}
+            initial={fade({ opacity: 0 })}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
@@ -123,7 +126,7 @@ export default function HomeClient({
         {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
-          initial={{ opacity: 0 }}
+          initial={fade({ opacity: 0 })}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
         >

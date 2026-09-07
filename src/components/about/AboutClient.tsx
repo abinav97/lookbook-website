@@ -3,8 +3,12 @@
 import { motion } from "motion/react";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
 import { PORTRAIT_SRC, PORTRAIT_SRCSET, SIZES } from "@/lib/images";
+import { useEntrance } from "@/lib/motion";
 
 export default function AboutClient() {
+  const zoomIn = useEntrance({ scale: 1.05 });
+  const riseIn = useEntrance({ opacity: 0, y: 10 });
+
   return (
     <div className="pt-28 md:pt-36 pb-16 px-[var(--page-margin)]">
       <div className="max-w-3xl mx-auto">
@@ -31,7 +35,7 @@ export default function AboutClient() {
               height={852}
               alt="Abi adjusting a shirt cuff, photographed from the chest down"
               className="absolute inset-0 w-full h-full object-cover object-center"
-              initial={{ scale: 1.05 }}
+              initial={zoomIn}
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{
@@ -148,7 +152,7 @@ export default function AboutClient() {
                       : undefined
                   }
                   className="group block"
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={riseIn}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{

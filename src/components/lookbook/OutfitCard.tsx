@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { Outfit } from "@/lib/types";
 import { formatSeasonYear } from "@/lib/utils";
 import { outfitSrcSet, SIZES } from "@/lib/images";
+import { useEntrance } from "@/lib/motion";
 
 interface OutfitCardProps {
   outfit: Outfit;
@@ -17,11 +18,12 @@ export default function OutfitCard({ outfit, index = 0 }: OutfitCardProps) {
   const colors = outfit.colorPalette || ["#C4A882", "#8B7355"];
   const gradient = `linear-gradient(145deg, ${colors.join(", ")})`;
   const aspectRatio = image ? `${image.width}/${image.height}` : "3/4";
+  const initial = useEntrance({ opacity: 0, y: 30 });
 
   return (
     <motion.div
       className="masonry-item group"
-      initial={{ opacity: 0, y: 30 }}
+      initial={initial}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{
