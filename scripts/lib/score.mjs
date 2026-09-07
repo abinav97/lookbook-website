@@ -7,11 +7,15 @@
  *   duplicates         expected duplicate ids were found (or at least N found)
  *   pairs.min/include  enough grounded pairings; expected ids present anywhere
  *   unlocks.*          min/max respected; each unlock has ≥1 owned id and an occasion
+ *                      from the site's vocabulary
  *   candidate.*        null / not-null as expected
  *   caveats.min        at least N caveats
- *   shape.*            headline ≤ 12 words, reasoning non-empty
+ *   pairs.categories   pairings/unlocks include at least one piece of each listed category
+ *   shape.*            headline ≤ 12 words, reasoning non-empty, no raw item ids in prose
  */
-export function scoreCandidate(candidate, response, knownIds) {
+export const OCCASIONS = ["casual", "work", "dinner", "evening", "weekend", "brunch", "date", "travel"];
+
+export function scoreCandidate(candidate, response, knownIds, categories = new Map()) {
   const e = candidate.expect ?? {};
   const a = response?.advice;
   const checks = [];
@@ -43,14 +47,23 @@ export function scoreCandidate(candidate, response, knownIds) {
     const missing = e.pairsInclude.filter((id) => !ids.has(id));
     add("pairs.include", missing.length === 0, `missing ${missing.join(",")}`);
   }
+  if (e.pairsCategoriesInclude) {
+    const cats = new Set([...a.pairsWith.map((p) => p.itemId), ...a.unlocks.flatMap((u) => u.itemIds)].map((id) => categories.get(id)));
+    const missing = e.pairsCategoriesInclude.filter((c) => !cats.has(c));
+    add("pairs.categories", missing.length === 0, `missing ${missing.join(",")}`);
+  }
   if (e.minUnlocks != null) add("unlocks.min", a.unlocks.length >= e.minUnlocks, `${a.unlocks.length}`);
   if (e.maxUnlocks != null) add("unlocks.max", a.unlocks.length <= e.maxUnlocks, `${a.unlocks.length}`);
   add("unlocks.wellformed", a.unlocks.every((u) => u.itemIds.length >= 1 && u.occasion && u.title), "");
+  if (a.unlocks.length > 0)
+    add("unlocks.occasionVocab", a.unlocks.every((u) => OCCASIONS.includes(u.occasion)), a.unlocks.map((u) => u.occasion).join(","));
   if (e.candidateNull) add("candidate.null", a.candidate === null, "");
   if (e.candidateNotNull) add("candidate.notNull", a.candidate !== null, "");
   if (e.minCaveats != null) add("caveats.min", a.caveats.length >= e.minCaveats, `${a.caveats.length}`);
   add("shape.headline", a.headline.trim().split(/\s+/).length <= 12, a.headline);
   add("shape.reasoning", a.reasoning.trim().length > 0, "");
+  const prose = [a.headline, a.reasoning, a.gapFilled ?? "", ...a.caveats, ...a.duplicates.map((d) => d.why), ...a.pairsWith.map((p) => p.why), ...a.unlocks.flatMap((u) => [u.title, u.why])].join(" ");
+  add("shape.noIdsInProse", !/item-[a-z0-9-]+/i.test(prose), (prose.match(/item-[a-z0-9-]+/gi) ?? []).slice(0, 3).join(","));
 
   const passed = checks.filter((c) => c.pass).length;
   return { id: candidate.id, checks, passed, total: checks.length };

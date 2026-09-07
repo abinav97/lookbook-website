@@ -9,53 +9,59 @@ import { z } from "zod";
 export const VERDICTS = ["buy", "maybe", "pass", "unclear"] as const;
 export type Verdict = (typeof VERDICTS)[number];
 
+/**
+ * Prose lengths are guidance (in the descriptions and the system prompt), not
+ * parse-fatal constraints: constrained decoding does not enforce string
+ * length, and a verdict that runs a few words long is still a verdict.
+ * Structural limits (enums, array sizes) are clamped in ground.ts.
+ */
 const ItemRef = z.object({
   itemId: z.string().describe("A closet item id from the CLOSET list, exactly as written."),
-  why: z.string().max(220).describe("One sentence, editorial, specific to this piece."),
+  why: z.string().describe("One sentence, editorial, specific to this piece. Name pieces, never ids."),
 });
 
 export const AdviceSchema = z.object({
   verdict: z.enum(VERDICTS).describe(
     "buy = earns its place; maybe = depends on a stated condition; pass = duplicate or off-wardrobe; unclear = cannot judge from the input."
   ),
-  headline: z.string().max(90).describe("At most twelve words. A verdict a magazine editor would write."),
+  headline: z.string().describe("At most twelve words, no dashes. A verdict a magazine editor would write. Name pieces, never ids."),
   reasoning: z
     .string()
-    .max(600)
-    .describe("Two or three sentences grounded in the closet and prior looks. No generic advice."),
+    .describe("Two or three sentences grounded in the closet and prior looks. Name pieces by name, never by id. No generic advice."),
   candidate: z
     .object({
-      name: z.string().max(80),
-      category: z.string().max(40),
-      color: z.string().max(40),
-      formality: z.string().max(40).describe("e.g. casual, smart casual, tailored, occasion"),
+      name: z.string(),
+      category: z.string(),
+      color: z.string(),
+      formality: z.string().describe("e.g. casual, smart casual, tailored, occasion"),
     })
     .nullable()
     .describe("What the input appears to be. null when the input is not a garment or accessory."),
   duplicates: z
     .array(ItemRef)
     .max(3)
-    .describe("Owned pieces that do the same job. Empty when nothing close is owned."),
+    .describe(
+      "Only owned pieces that make the candidate redundant: same job, same register. Leave empty when nothing owned does; near-misses belong in pairsWith or nowhere."
+    ),
   pairsWith: z.array(ItemRef).min(0).max(5).describe("Owned pieces it would genuinely work with."),
   unlocks: z
     .array(
       z.object({
-        title: z.string().max(60).describe("Short editorial look title."),
-        occasion: z.string().max(30),
+        title: z.string().describe("Short editorial look title."),
+        occasion: z.string().describe("One of: casual, work, dinner, evening, weekend, brunch, date, travel."),
         itemIds: z.array(z.string()).min(1).max(5).describe("Owned closet item ids that complete the look with the candidate."),
-        why: z.string().max(220),
+        why: z.string(),
       })
     )
     .max(3)
     .describe("New looks the candidate makes possible using owned pieces. Empty if it adds nothing."),
   gapFilled: z
     .string()
-    .max(200)
     .nullable()
     .describe("The specific wardrobe gap it fills, referencing the utility data, or null."),
   confidence: z.enum(["high", "medium", "low"]),
   caveats: z
-    .array(z.string().max(160))
+    .array(z.string())
     .max(4)
     .describe("What cannot be judged from the input: fit, fabric, price, exact colour, etc."),
 });

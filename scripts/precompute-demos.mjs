@@ -4,7 +4,7 @@
  * /before-you-buy answer instantly and cost nothing per visitor.
  * Three model calls (about $0.15 worst case). Needs a running site with the key.
  *
- *   BASE_URL=http://localhost:3000 node scripts/precompute-demos.mjs
+ *   BASE_URL=http://localhost:3000 node scripts/precompute-demos.mjs [--only id1,id2]
  */
 import fs from "fs";
 import path from "path";
@@ -12,7 +12,9 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..")
 const BASE = process.env.BASE_URL ?? "http://localhost:3000";
 const file = path.join(ROOT, "src/data/advisor-demos.json");
 const demos = JSON.parse(fs.readFileSync(file, "utf8"));
+const only = process.argv.includes("--only") ? process.argv[process.argv.indexOf("--only") + 1].split(",") : null;
 for (const d of demos) {
+  if (only && !only.includes(d.id)) continue;
   const body = { description: d.description };
   if (d.imagePath) {
     const p = path.join(ROOT, "public", d.imagePath);

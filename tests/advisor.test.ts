@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { groundAdvice } from "@/lib/advisor/ground";
+import { groundAdvice, humanizeIds } from "@/lib/advisor/ground";
 import { RequestLimiter, estimateCostUsd, limitConfigFromEnv, WORST_CASE_USD_PER_REQUEST, MAX_OUTPUT_TOKENS } from "@/lib/advisor/limits";
 import { RequestSchema, AdviceSchema, type Advice } from "@/lib/advisor/schema";
 import { buildClosetContext, SYSTEM_PROMPT } from "@/lib/advisor/context";
@@ -43,6 +43,36 @@ describe("groundAdvice", () => {
     expect(g.advice.verdict).toBe("unclear");
     expect(g.advice.confidence).toBe("low");
     expect(g.advice.caveats[0]).toMatch(/could not connect/);
+  });
+
+  it("replaces raw item ids in prose with piece names, everywhere prose appears", () => {
+    const names = new Map([["item-shared-light-wash-jeans", "Light Wash Jeans"]]);
+    expect(humanizeIds("Wear item-shared-light-wash-jeans with it.", names)).toBe("Wear Light Wash Jeans with it.");
+    expect(humanizeIds("no ids here", names)).toBe("no ids here");
+    const leaky: Advice = {
+      ...base,
+      headline: "Pairs with item-shared-light-wash-jeans",
+      pairsWith: [{ itemId: "item-shared-light-wash-jeans", why: "item-shared-light-wash-jeans is the anchor." }],
+      unlocks: [{ title: "Denim day", occasion: "weekend", itemIds: ["item-shared-light-wash-jeans"], why: "With item-shared-light-wash-jeans." }],
+      caveats: ["Unknown item-ghost-9 stays as is."],
+    };
+    const g = groundAdvice(leaky, known, names);
+    expect(g.advice.headline).toBe("Pairs with Light Wash Jeans");
+    expect(g.advice.pairsWith[0].why).toBe("Light Wash Jeans is the anchor.");
+    expect(g.advice.unlocks[0].why).toBe("With Light Wash Jeans.");
+    expect(g.advice.caveats[0]).toBe("Unknown item-ghost-9 stays as is.");
+  });
+
+  it("clamps structural sizes even if the model overshoots", () => {
+    const many = (n: number) => Array.from({ length: n }, (_, i) => ({ itemId: "item-shared-light-wash-jeans", why: `${i}` }));
+    const g = groundAdvice(
+      { ...base, duplicates: [{ itemId: "item-shared-adidas-sambas", why: "" }, { itemId: "item-shared-gold-ring", why: "" }, { itemId: "item-shared-prada-sunglasses", why: "" }, { itemId: "item-shared-black-loafers", why: "" }], pairsWith: many(9), unlocks: Array.from({ length: 5 }, () => base.unlocks[0]), caveats: ["1", "2", "3", "4", "5", "6"] },
+      known
+    );
+    expect(g.advice.duplicates.length).toBeLessThanOrEqual(3);
+    expect(g.advice.pairsWith.length).toBeLessThanOrEqual(5);
+    expect(g.advice.unlocks.length).toBeLessThanOrEqual(3);
+    expect(g.advice.caveats.length).toBeLessThanOrEqual(4);
   });
 
   it("leaves a fully grounded answer untouched", () => {
@@ -111,6 +141,8 @@ describe("request and advice schemas", () => {
   it("validates a well-formed advice object", () => {
     expect(AdviceSchema.safeParse(base).success).toBe(true);
     expect(AdviceSchema.safeParse({ ...base, verdict: "yes" }).success).toBe(false);
+    // Long prose is guidance, not a parse failure (constrained decoding does not enforce string length).
+    expect(AdviceSchema.safeParse({ ...base, headline: "x".repeat(120) }).success).toBe(true);
   });
 });
 

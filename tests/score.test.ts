@@ -37,6 +37,25 @@ describe("scoreCandidate", () => {
     const failed = r.checks.filter((c) => !c.pass).map((c) => c.name);
     expect(failed).toEqual(expect.arrayContaining(["verdict", "grounding", "duplicates", "shape.headline"]));
   });
+  it("checks pairing categories and flags raw ids in prose", () => {
+    const categories = new Map([["a", "shoes"], ["b", "pants"], ["c", "tops"]]);
+    const ok = scoreCandidate({ id: "t", expect: { pairsCategoriesInclude: ["pants"] } }, advice(), known, categories);
+    expect(ok.checks.find((c) => c.name === "pairs.categories")?.pass).toBe(true);
+    const bad = scoreCandidate(
+      { id: "t", expect: { pairsCategoriesInclude: ["jackets"] } },
+      advice({ reasoning: "Wear it with item-b." }),
+      known,
+      categories
+    );
+    expect(bad.checks.find((c) => c.name === "pairs.categories")?.pass).toBe(false);
+    expect(bad.checks.find((c) => c.name === "shape.noIdsInProse")?.pass).toBe(false);
+  });
+
+  it("flags unlock occasions outside the site's vocabulary", () => {
+    const r = scoreCandidate({ id: "t", expect: {} }, advice({ unlocks: [{ title: "Run", occasion: "training", itemIds: ["b"], why: "" }] }), known);
+    expect(r.checks.find((c) => c.name === "unlocks.occasionVocab")?.pass).toBe(false);
+  });
+
   it("scores an error response as a single failed check", () => {
     const r = scoreCandidate({ id: "t", expect: { verdict: ["pass"] } }, { error: "disabled" }, known);
     expect(r).toMatchObject({ passed: 0, total: 1 });

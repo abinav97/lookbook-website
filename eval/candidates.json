@@ -1,18 +1,225 @@
 [
-  { "id": "dup-black-loafers", "description": "Black leather horsebit loafers, leather sole.", "imagePath": "/items/item-shared-black-loafers.webp", "expect": { "verdict": ["pass", "maybe"], "duplicatesInclude": ["item-shared-black-loafers"], "candidateNotNull": true } },
-  { "id": "dup-light-wash-jeans", "description": "Light wash straight-leg jeans, mid rise, 100% cotton.", "imagePath": "/items/item-shared-light-wash-jeans.webp", "expect": { "verdict": ["pass", "maybe"], "duplicatesInclude": ["item-shared-light-wash-jeans"], "candidateNotNull": true } },
-  { "id": "dup-sambas", "description": "Adidas Samba OG, white leather with black stripes and gum sole.", "expect": { "verdict": ["pass", "maybe"], "duplicatesInclude": ["item-shared-adidas-sambas"], "candidateNotNull": true } },
-  { "id": "dup-gold-chain", "description": "A thin gold curb chain necklace, 20 inches.", "expect": { "verdict": ["pass", "maybe"], "duplicatesInclude": ["item-shared-gold-chain-necklace"], "candidateNotNull": true } },
-  { "id": "gap-navy-overcoat", "description": "Navy wool single-breasted overcoat, knee length, notch lapel.", "expect": { "verdict": ["buy", "maybe"], "candidateNotNull": true, "minPairs": 2, "minUnlocks": 1 } },
-  { "id": "gap-burgundy-knit", "description": "Burgundy merino crewneck sweater, slim fit.", "expect": { "verdict": ["buy", "maybe"], "candidateNotNull": true, "minPairs": 2, "pairsInclude": ["item-shared-light-wash-jeans"] } },
-  { "id": "gap-white-oxford", "description": "White cotton oxford button-down shirt, regular fit.", "expect": { "verdict": ["buy", "maybe", "pass"], "candidateNotNull": true, "minPairs": 2 } },
-  { "id": "gap-brown-suede-chelsea", "description": "Brown suede chelsea boots, crepe sole.", "expect": { "verdict": ["buy", "maybe"], "candidateNotNull": true, "minPairs": 2, "minUnlocks": 1 } },
-  { "id": "gap-grey-flannel-trousers", "description": "Mid-grey flannel trousers, pleated, tapered.", "expect": { "verdict": ["buy", "maybe"], "candidateNotNull": true, "minPairs": 2 } },
-  { "id": "off-neon-shorts", "description": "Neon green nylon running shorts with a white drawstring.", "expect": { "verdict": ["pass", "maybe"], "candidateNotNull": true, "maxUnlocks": 1 } },
-  { "id": "off-sequin-blazer", "description": "Silver sequin blazer, oversized, satin lapel.", "expect": { "verdict": ["pass", "maybe"], "candidateNotNull": true } },
-  { "id": "off-tie-dye-hoodie", "description": "Rainbow tie-dye oversized hoodie in heavy fleece.", "expect": { "verdict": ["pass", "maybe"], "candidateNotNull": true } },
-  { "id": "occasion-navy-suit-2", "description": "A second navy wool suit, two-button, slim fit.", "expect": { "verdict": ["pass", "maybe"], "candidateNotNull": true, "minDuplicates": 1 } },
-  { "id": "vague-nice-shirt", "description": "a nice shirt", "expect": { "verdict": ["unclear", "maybe"], "minCaveats": 1 } },
-  { "id": "not-a-garment-portrait", "description": "", "imagePath": "/portrait/abi-portrait-640.webp", "expect": { "verdict": ["unclear"], "candidateNull": true, "minCaveats": 1 } },
-  { "id": "not-a-garment-scene", "description": "", "imagePath": "/outfits/sunset-rooftop-480.webp", "expect": { "minCaveats": 1 } }
+  {
+    "id": "dup-black-loafers",
+    "description": "Black leather horsebit loafers, leather sole.",
+    "imagePath": "/items/item-shared-black-loafers.webp",
+    "expect": {
+      "verdict": [
+        "pass",
+        "maybe"
+      ],
+      "duplicatesInclude": [
+        "item-shared-black-loafers"
+      ],
+      "candidateNotNull": true
+    }
+  },
+  {
+    "id": "dup-light-wash-jeans",
+    "description": "Light wash straight-leg jeans, mid rise, 100% cotton.",
+    "imagePath": "/items/item-shared-light-wash-jeans.webp",
+    "expect": {
+      "verdict": [
+        "pass",
+        "maybe"
+      ],
+      "duplicatesInclude": [
+        "item-shared-light-wash-jeans"
+      ],
+      "candidateNotNull": true
+    }
+  },
+  {
+    "id": "dup-sambas",
+    "description": "Adidas Samba OG, white leather with black stripes and gum sole.",
+    "expect": {
+      "verdict": [
+        "pass",
+        "maybe"
+      ],
+      "duplicatesInclude": [
+        "item-shared-adidas-sambas"
+      ],
+      "candidateNotNull": true
+    }
+  },
+  {
+    "id": "dup-gold-chain",
+    "description": "A thin gold curb chain necklace, 20 inches.",
+    "expect": {
+      "verdict": [
+        "pass",
+        "maybe"
+      ],
+      "duplicatesInclude": [
+        "item-shared-gold-chain-necklace"
+      ],
+      "candidateNotNull": true
+    }
+  },
+  {
+    "id": "gap-navy-overcoat",
+    "description": "Navy wool single-breasted overcoat, knee length, notch lapel.",
+    "expect": {
+      "verdict": [
+        "buy",
+        "maybe"
+      ],
+      "candidateNotNull": true,
+      "minPairs": 2,
+      "minUnlocks": 1
+    }
+  },
+  {
+    "id": "gap-burgundy-knit",
+    "description": "Burgundy merino crewneck sweater, slim fit.",
+    "expect": {
+      "verdict": [
+        "buy",
+        "maybe"
+      ],
+      "candidateNotNull": true,
+      "minPairs": 2,
+      "pairsCategoriesInclude": [
+        "pants"
+      ]
+    }
+  },
+  {
+    "id": "gap-white-oxford",
+    "description": "White cotton oxford button-down shirt, regular fit.",
+    "expect": {
+      "verdict": [
+        "buy",
+        "maybe",
+        "pass"
+      ],
+      "candidateNotNull": true,
+      "minPairs": 2
+    }
+  },
+  {
+    "id": "gap-brown-suede-chelsea",
+    "description": "Brown suede chelsea boots, crepe sole.",
+    "expect": {
+      "verdict": [
+        "buy",
+        "maybe"
+      ],
+      "candidateNotNull": true,
+      "minPairs": 2,
+      "minUnlocks": 1
+    }
+  },
+  {
+    "id": "gap-grey-flannel-trousers",
+    "description": "Mid-grey flannel trousers, pleated, tapered.",
+    "expect": {
+      "verdict": [
+        "buy",
+        "maybe"
+      ],
+      "candidateNotNull": true,
+      "minPairs": 2
+    }
+  },
+  {
+    "id": "off-neon-shorts",
+    "description": "Neon green nylon running shorts with a white drawstring.",
+    "expect": {
+      "verdict": [
+        "pass",
+        "maybe"
+      ],
+      "candidateNotNull": true,
+      "maxUnlocks": 2
+    },
+    "note": "Off-palette novelty. The baseline run argued a functional training use with two looks; more than two unlocked looks for a neon short would be over-selling."
+  },
+  {
+    "id": "off-sequin-blazer",
+    "description": "Silver sequin blazer, oversized, satin lapel.",
+    "expect": {
+      "verdict": [
+        "pass",
+        "maybe"
+      ],
+      "candidateNotNull": true
+    }
+  },
+  {
+    "id": "off-tie-dye-hoodie",
+    "description": "Rainbow tie-dye oversized hoodie in heavy fleece.",
+    "expect": {
+      "verdict": [
+        "pass",
+        "maybe"
+      ],
+      "candidateNotNull": true
+    }
+  },
+  {
+    "id": "occasion-navy-suit-2",
+    "description": "A second navy wool suit, two-button, slim fit.",
+    "expect": {
+      "verdict": [
+        "pass",
+        "maybe"
+      ],
+      "candidateNotNull": true,
+      "minDuplicates": 1
+    }
+  },
+  {
+    "id": "vague-nice-shirt",
+    "description": "a nice shirt",
+    "expect": {
+      "verdict": [
+        "unclear",
+        "maybe"
+      ],
+      "minCaveats": 1
+    }
+  },
+  {
+    "id": "worn-garment-photo",
+    "description": "",
+    "imagePath": "/portrait/abi-portrait-640.webp",
+    "expect": {
+      "candidateNotNull": true,
+      "minCaveats": 1,
+      "verdict": [
+        "pass",
+        "maybe",
+        "buy"
+      ]
+    },
+    "note": "A photo of Abi wearing a dark suit jacket. The model should read the jacket, not refuse."
+  },
+  {
+    "id": "scene-owned-shirt",
+    "description": "",
+    "imagePath": "/outfits/sunset-rooftop-480.webp",
+    "expect": {
+      "candidateNotNull": true,
+      "minCaveats": 1,
+      "duplicatesInclude": [
+        "item-1771888795068-0"
+      ]
+    },
+    "note": "A rooftop photo of Abi in the owned AllSaints tie-dye camp collar shirt: the model should recognise it as already owned."
+  },
+  {
+    "id": "not-a-garment-abstract",
+    "description": "",
+    "imagePath": "eval/fixtures/abstract.png",
+    "note": "Synthetic shapes, no clothing at all.",
+    "expect": {
+      "verdict": [
+        "unclear"
+      ],
+      "candidateNull": true,
+      "minCaveats": 1
+    }
+  }
 ]

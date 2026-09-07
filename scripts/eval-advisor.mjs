@@ -20,10 +20,12 @@ const scoreOnly = args.includes("--score") ? args[args.indexOf("--score") + 1] :
 const only = args.includes("--only") ? args[args.indexOf("--only") + 1] : null;
 
 const candidates = JSON.parse(fs.readFileSync(path.join(ROOT, "eval/candidates.json"), "utf8"));
-const knownIds = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/closet-items.json"), "utf8")).map((i) => i.id));
+const closet = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/closet-items.json"), "utf8"));
+const knownIds = new Set(closet.map((i) => i.id));
+const categories = new Map(closet.map((i) => [i.id, i.category]));
 
 function loadImage(imagePath) {
-  const file = path.join(ROOT, "public", imagePath);
+  const file = imagePath.startsWith("/") ? path.join(ROOT, "public", imagePath) : path.join(ROOT, imagePath);
   const ext = path.extname(file).slice(1).toLowerCase();
   return { mediaType: ext === "jpg" ? "image/jpeg" : `image/${ext}`, data: fs.readFileSync(file).toString("base64") };
 }
@@ -53,7 +55,7 @@ async function run() {
 
 function score(file) {
   const run = JSON.parse(fs.readFileSync(file, "utf8"));
-  const results = run.outputs.map((o) => scoreCandidate(candidates.find((c) => c.id === o.id), o.response, knownIds));
+  const results = run.outputs.map((o) => scoreCandidate(candidates.find((c) => c.id === o.id), o.response, knownIds, categories));
   const summary = summarize(results);
   fs.writeFileSync(file.replace(/\.json$/, ".score.json"), JSON.stringify({ summary, results }, null, 2));
   console.log("\nScore");

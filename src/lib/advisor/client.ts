@@ -22,7 +22,7 @@ export class AdvisorError extends Error {
 
 let client: Anthropic | null = null;
 function getClient() {
-  if (!client) client = new Anthropic({ timeout: 55_000, maxRetries: 1 });
+  if (!client) client = new Anthropic({ timeout: 50_000, maxRetries: 0 });
   return client;
 }
 
@@ -60,6 +60,11 @@ export async function adviseWithModel(req: AdviseRequest): Promise<ModelResult> 
   } catch (err) {
     if (err instanceof Anthropic.APIError) {
       throw new AdvisorError("upstream", `${err.status ?? "?"} ${err.name}`);
+    }
+    // The SDK validates the structured output against the schema client-side;
+    // a shape the model got wrong is a bad verdict, not a server failure.
+    if (err instanceof Error && /structured output/i.test(err.message)) {
+      throw new AdvisorError("unparseable", err.message.split("\n")[0].slice(0, 200));
     }
     throw err;
   }

@@ -83,8 +83,10 @@ export async function POST(req: Request) {
 
   try {
     const result = await adviseWithModel(input);
-    const known = new Set(getClosetItems().map((i) => i.id));
-    const grounded = groundAdvice(result.advice, known);
+    const closet = getClosetItems();
+    const known = new Set(closet.map((i) => i.id));
+    const names = new Map(closet.map((i) => [i.id, i.name]));
+    const grounded = groundAdvice(result.advice, known, names);
 
     // Metadata only. Never log the description or the image.
     console.info(
