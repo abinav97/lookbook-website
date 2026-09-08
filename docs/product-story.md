@@ -33,7 +33,7 @@ Full audit before any change. The deployed site matched the repository exactly.
 | Accessibility | Clickable divs, no pressed/expanded states, no skip link, no focus styles | Real buttons with ARIA state, skip link, focus-visible, live region for results |
 | SEO | No sitemap, robots, canonical, or OG image | All added; each look uses its own photo as og:image |
 | Measurement | Analytics never merged; zero recorded visits | Vercel Web Analytics plus a two-event custom vocabulary |
-| Testing | None | Vitest data-integrity suite (15), Playwright smoke suite at desktop and mobile (20), export checker for broken links and page weight |
+| Testing | None | Vitest suite (43 today: data integrity, helpers, insights, advisor grounding and caps, scorer), Playwright smoke suite at desktop and mobile (26), export checker for broken links and page weight |
 | Dead weight | Unused component, unused collections data, unused helpers, unused dependency, template assets, five one-off scripts | Deleted after verifying zero references |
 | Design | Home hero was a flat gradient | Featured look's photograph |
 
@@ -155,12 +155,16 @@ timeout 50 s with no retry).** Seven full runs over the 16-then-17-case set, arc
 | 04 no unverified counts or look attributions | 17 / 17 | 143 / 143 | 0 | 13.4 / 20.7 / 22.4 | $0.50 |
 | 05 piece names beside ids in the looks list | 16 / 17 | 142 / 143 | 0 | 12.8 / 19.9 / 19.9 | $0.52 |
 | 06 ranked utility table; candidate null only when unclear | 11 / 17 | 102 / 108 | 5 (rate_limited) | 16.3 / 21.6 / 22.0 | $0.41 |
-| 07 final, same code as 06, fresh instance | 15 / 17 | 131 / 133 | 1 (upstream) | 14.7 / 21.8 / 25.0 | $0.44 |
+| 07 same code as 06, fresh instance | 15 / 17 | 131 / 133 | 1 (upstream) | 14.7 / 21.8 / 25.0 | $0.44 |
+| 08 final: same code as 06, fresh instance, local caps raised so no limiter could interfere | 16 / 17 | 142 / 143 | 0 | 14.3 / 20.9 / 21.6 | $0.52 |
 
-Grounding was 100% in every run: across 115 verdicts the model never cited an item id
-that does not exist. Verdict agreement with the expected set was 100% in every run from
-02 onward. The two misses in run 07 are one 13-word headline and one call that ran past
-the 50 s client timeout and failed gracefully; runs 03 and 04 were clean.
+**Run 08 is the definitive final baseline.** Grounding was 100% in every run: across 132
+verdicts the model never cited an item id that does not exist. Verdict agreement with
+the expected set was 100% in every run from 02 onward. Run 08's single miss is a
+13-word headline on the light-wash-jeans duplicate ("You already live in the Light Wash
+Jeans; this is the same jean"); the verdict, duplicate, and grounding were all correct.
+Forcing shorter headlines with truncation would damage the prose, and further prompt
+pressure would be tuning to the fixture, so it is recorded as accepted variance.
 
 What the baseline exposed, and what changed (each change was followed by a full rerun):
 
@@ -185,19 +189,22 @@ What the baseline exposed, and what changed (each change was followed by a full 
   pair with a bottom); the neon-shorts unlock ceiling went from one to two after the
   model argued a functional training use.
 
-Latency: p50 about 13 s, p90 about 22 s; 2 of 115 calls exceeded 50 s. Those fail
+Latency: p50 about 13 to 15 s, p90 about 21 to 22 s; 2 of 132 calls exceeded 50 s. Those fail
 gracefully inside Vercel's 60 s function budget and refund the allowance. Follow-ups:
 enable Fluid compute for a longer budget, or evaluate effort "low".
 
 Cost: about 7,100 to 8,500 cached tokens read per call; uncached input 40 to 60 tokens
 for text and about 900 with a photo. Average $0.029 per verdict. Total evaluation and
-demo spend for this phase: about $3.50 (evaluation $3.20, demos $0.31).
+demo spend for this phase: about $4.06 (evaluation $3.71, demos $0.35).
 
 **Demo examples** (`src/data/advisor-demos.json`, precomputed from real inference):
 black loafers again (pass, high), burgundy merino crewneck (buy, medium), neon shorts
 (maybe, medium). Every factual claim in the three texts was checked by hand against the
-closet and look data; the one soft phrase left is "pants are among your lowest re-use
-categories" (pants rank seventh of ten). The UI serves the examples with no inference
+closet and look data. Two phrases were corrected by hand to the exact figures and the
+edits are recorded in the fixture's `edits` field: the neon-shorts gap line now gives
+pants' exact rank (3 of 12 re-worn, sixth of ten), and the burgundy reasoning names hats
+alongside shirts and jackets at zero re-use. A later regeneration of the neon-shorts
+text was rejected because it called the charcoal pair "the only shorts in the closet". The UI serves the examples with no inference
 and no allowance consumed, and the precomputed path still works when the advisor is
 paused.
 
@@ -213,7 +220,7 @@ Foundation-phase measurements:
 | Lookbook page weight, full scroll | ~61 MB | ~3.9 MB (retina), ~1.4 MB initial |
 | Static export size | 138 MB | 28 MB |
 | Broken internal links in export | not measured | 0 of 38 pages |
-| Automated tests | 0 | 15 unit + 20 browser smoke |
+| Automated tests | 0 | 43 unit + 26 browser smoke |
 | Publicly exposed admin | yes | no |
 
 ## 8. Limitations and next steps
@@ -234,5 +241,9 @@ Foundation-phase measurements:
   no "Optimized images" line, the `prebuild` hook did not run.
 - Dependency audit reports issues in the build-time image tooling (sharp/libvips chain);
   nothing affected ships to the browser. Fixing requires a major sharp bump.
-- Next: wire the photo hotspots, add a wardrobe-utility view to Style DNA, reframe About
-  as the product story, then build the purchase assistant behind a server route.
+- Done since the audit: photo hotspots, wardrobe-utility view, About as the product story,
+  and the purchase assistant behind a single server route with an evaluated prompt.
+- Next: enable Fluid compute (or evaluate effort "low") to remove the rare 50 s timeout;
+  move request caps to a shared store (Upstash or Vercel KV) if traffic ever justifies it;
+  collect the useful yes/no signal and read it against verdict type before touching the
+  prompt again; the approval-gated git history cleanup above.

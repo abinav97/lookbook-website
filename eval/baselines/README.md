@@ -12,5 +12,8 @@ Files: NN.run.json (raw responses, no inputs or images), NN.score.json (determin
 | 05 | 16/17 | 142/143 | 0 | 12.8 / 19.9 / 19.9 | $0.52 |
 | 06 | 11/17 | 102/108 | 5 | 16.3 / 21.6 / 22.0 | $0.41 |
 | 07 | 15/17 | 131/133 | 1 | 14.7 / 21.8 / 25.0 | $0.44 |
+| 08 (final) | 16/17 | 142/143 | 0 | 14.3 / 20.9 / 21.6 | $0.52 |
 
-Total eval spend across runs: $3.20.
+**Run 08 is the definitive final baseline.** Runs 01 to 07 document the iteration that led to it.
+
+Total eval spend across runs: $3.71.

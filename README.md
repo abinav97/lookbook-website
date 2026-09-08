@@ -9,7 +9,7 @@ the problem, decisions, and evaluation approach.
 
 ## Stack
 
-- Next.js 15 (App Router, static export), React 19, TypeScript strict
+- Next.js 15 (App Router; pages statically prerendered, one server route), React 19, TypeScript strict
 - Tailwind CSS v4 (`@theme inline` in `src/app/globals.css`), Motion for animation
 - Data lives in JSON under `src/data/` and is typed by `src/lib/types.ts`
 - Vercel hosting with Web Analytics

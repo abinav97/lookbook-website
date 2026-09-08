@@ -1,0 +1,94 @@
+{
+  "run": "08",
+  "note": "DEFINITIVE FINAL BASELINE: same code as runs 06/07, fresh instance, temporary local caps of 1000 so no limiter could interfere (production defaults unchanged)",
+  "ranAt": "2026-09-08T00-16-06-423Z",
+  "cases": 17,
+  "estimatedUsd": 0.517,
+  "nonOk": [],
+  "latencyMs": {
+    "p50": 14307,
+    "p90": 20882,
+    "max": 21639
+  },
+  "tokens": {
+    "in": 3602,
+    "cr": 138784,
+    "out": 15016
+  },
+  "avgUsdPerVerdict": 0.0304,
+  "summary": {
+    "candidates": 17,
+    "candidatesFullyPassing": 16,
+    "checksPassed": 142,
+    "checksTotal": 143,
+    "byCheck": {
+      "verdict": {
+        "pass": 16,
+        "total": 16
+      },
+      "grounding": {
+        "pass": 17,
+        "total": 17
+      },
+      "duplicates": {
+        "pass": 5,
+        "total": 5
+      },
+      "unlocks.wellformed": {
+        "pass": 17,
+        "total": 17
+      },
+      "candidate.notNull": {
+        "pass": 15,
+        "total": 15
+      },
+      "shape.headline": {
+        "pass": 16,
+        "total": 17
+      },
+      "shape.reasoning": {
+        "pass": 17,
+        "total": 17
+      },
+      "shape.noIdsInProse": {
+        "pass": 17,
+        "total": 17
+      },
+      "pairs.min": {
+        "pass": 5,
+        "total": 5
+      },
+      "unlocks.min": {
+        "pass": 2,
+        "total": 2
+      },
+      "unlocks.occasionVocab": {
+        "pass": 7,
+        "total": 7
+      },
+      "pairs.categories": {
+        "pass": 1,
+        "total": 1
+      },
+      "unlocks.max": {
+        "pass": 1,
+        "total": 1
+      },
+      "duplicates.min": {
+        "pass": 1,
+        "total": 1
+      },
+      "caveats.min": {
+        "pass": 4,
+        "total": 4
+      },
+      "candidate.null": {
+        "pass": 1,
+        "total": 1
+      }
+    }
+  },
+  "failures": [
+    "dup-light-wash-jeans: shape.headline (You already live in the Light Wash Jeans; this is the same jean)"
+  ]
+}

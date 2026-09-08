@@ -171,3 +171,19 @@ describe("demos", () => {
     }
   });
 });
+
+describe("timeout handling contract", () => {
+  it("a client timeout is an APIError, so the route maps it to 'upstream' (502) and refunds", async () => {
+    const Anthropic = (await import("@anthropic-ai/sdk")).default;
+    const err = new Anthropic.APIConnectionTimeoutError({ message: "Request timed out." });
+    expect(err instanceof Anthropic.APIError).toBe(true);
+    // Route budget must exceed the client timeout so the failure is ours, not the platform's.
+    const route = await import("fs").then((fs) => fs.readFileSync("src/app/api/advise/route.ts", "utf8"));
+    const client = await import("fs").then((fs) => fs.readFileSync("src/lib/advisor/client.ts", "utf8"));
+    const maxDuration = Number(route.match(/maxDuration = (\d+)/)?.[1]);
+    const timeoutMs = Number(client.match(/timeout: (\d[\d_]*)/)?.[1].replace(/_/g, ""));
+    expect(maxDuration).toBe(60);
+    expect(timeoutMs).toBeLessThan(maxDuration * 1000);
+    expect(client).toMatch(/maxRetries: 0/);
+  });
+});

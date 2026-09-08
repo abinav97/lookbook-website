@@ -9,6 +9,8 @@ export interface AdvisorDemo {
   imagePath?: string;
   /** Precomputed by scripts/precompute-demos.mjs; null until then. */
   result: AdviceResponse | null;
+  /** Hand corrections applied to the generated text, each strictly supported by the data. */
+  edits?: string[];
 }
 
 export function getDemos(): AdvisorDemo[] {
