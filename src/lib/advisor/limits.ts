@@ -19,12 +19,14 @@
  * Caps (env-overridable):
  *   ADVISOR_DAILY_CAP    default 40  -> ≤ 40 × $0.105 = $4.20 per day per warm instance
  *   ADVISOR_IP_CAP       default 8   -> one visitor cannot spend more than $0.84 a day
- *   ADVISOR_LIFETIME_CAP default 500 -> ≤ $52.50 worst case per instance, under the $60 ceiling
+ *   ADVISOR_LIFETIME_CAP default 500 -> ≤ $52.50 worst case per instance.
+ *     Production recommendation: 350 (≤ $36.75 worst case), which stays under
+ *     the agreed $40 Console spend limit even on a single long-lived instance.
  *
  * Counters live in process memory. On Vercel that means per warm instance, so
  * they are a strong brake, not an accounting system. The hard ceiling is the
  * spend limit set on the Anthropic Console workspace that owns the key; set it
- * to $60 there. ADVISOR_ENABLED=false is the kill switch.
+ * to $40 there. ADVISOR_ENABLED=false is the kill switch.
  */
 
 export const PRICE = { inputPerM: 5, outputPerM: 25, cacheReadPerM: 0.5, cacheWritePerM: 6.25 } as const;

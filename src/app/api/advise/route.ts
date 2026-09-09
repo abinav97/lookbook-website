@@ -14,9 +14,21 @@ export const dynamic = "force-dynamic";
 
 const enabled = () => process.env.ADVISOR_ENABLED !== "false" && Boolean(process.env.ANTHROPIC_API_KEY);
 
+/** Base64 of a 4 MB image is ~5.4 MB; allow JSON overhead and reject anything larger before parsing. */
+const MAX_BODY_BYTES = 6 * 1024 * 1024;
+
+/**
+ * Vercel sets x-vercel-forwarded-for from the connection it terminated, so it
+ * cannot be spoofed by the client. x-forwarded-for is client-supplied on the
+ * first hop, so when we must fall back to it we take the LAST entry (the one
+ * added by the nearest trusted proxy), never the first.
+ */
 function clientIp(req: Request): string {
+  const vercel = req.headers.get("x-vercel-forwarded-for");
+  if (vercel) return vercel.split(",")[0].trim();
   const fwd = req.headers.get("x-forwarded-for");
-  return (fwd?.split(",")[0] ?? req.headers.get("x-real-ip") ?? "local").trim();
+  if (fwd) return fwd.split(",").map((s) => s.trim()).filter(Boolean).at(-1) ?? "unknown";
+  return req.headers.get("x-real-ip")?.trim() || "unknown";
 }
 
 function loadDemoImage(imagePath: string): AdviseRequest["image"] | undefined {
@@ -42,6 +54,10 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+  const declared = Number(req.headers.get("content-length") ?? 0);
+  if (declared > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "image_too_large" }, { status: 413 });
+  }
   let body: unknown;
   try {
     body = await req.json();
@@ -81,8 +97,11 @@ export async function POST(req: Request) {
     );
   }
 
+  // Only refund allowance for failures that happened before Anthropic billed the call.
+  let billed = false;
   try {
     const result = await adviseWithModel(input);
+    billed = true;
     const closet = getClosetItems();
     const known = new Set(closet.map((i) => i.id));
     const names = new Map(closet.map((i) => [i.id, i.name]));
@@ -123,8 +142,8 @@ export async function POST(req: Request) {
       console.warn(JSON.stringify({ evt: "advise_error", kind: err.kind, message: err.message }));
       return NextResponse.json({ error: err.kind }, { status: err.kind === "upstream" ? 502 : 422 });
     }
-    limiter.refund(ip);
-    console.error(JSON.stringify({ evt: "advise_error", kind: "unknown", message: (err as Error).message }));
+    if (!billed) limiter.refund(ip);
+    console.error(JSON.stringify({ evt: "advise_error", kind: "unknown", billed, message: (err as Error).message }));
     return NextResponse.json({ error: "unknown" }, { status: 500 });
   }
 }

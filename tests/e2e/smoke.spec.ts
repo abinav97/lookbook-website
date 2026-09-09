@@ -106,3 +106,40 @@ test("the advise route validates input and never leaks the key", async ({ reques
   const text = await (await request.get("/api/advise")).text();
   expect(text).not.toMatch(/sk-ant/);
 });
+
+test.describe("advisor route states that never touch the model", () => {
+  test("rejects an invalid body with 400 and an empty request with 400", async ({ request }) => {
+    const bad = await request.post("/api/advise", { data: "not json", headers: { "content-type": "application/json" } });
+    expect(bad.status()).toBe(400);
+    const empty = await request.post("/api/advise", { data: {} });
+    expect(empty.status()).toBe(400);
+    expect((await empty.json()).error).toBe("invalid_request");
+  });
+
+  test("rejects an oversized body before parsing (413)", async ({ request }) => {
+    // A real 7 MB body: the guard reads the declared content-length before JSON parsing.
+    const res = await request.post("/api/advise", {
+      data: { description: "x".repeat(7 * 1024 * 1024) },
+    });
+    expect(res.status()).toBe(413);
+    expect((await res.json()).error).toBe("image_too_large");
+  });
+
+  test("unknown demo is 404; precomputed demo is 200 with the demo flag and no allowance used", async ({ request }) => {
+    const before = (await (await request.get("/api/advise")).json()).remainingToday;
+    const missing = await request.post("/api/advise", { data: { demoId: "does-not-exist" } });
+    expect(missing.status()).toBe(404);
+    const demo = await request.post("/api/advise", { data: { demoId: "black-loafers-again" } });
+    expect(demo.status()).toBe(200);
+    const json = await demo.json();
+    expect(json.meta.demo).toBe(true);
+    expect(json.advice.verdict).toBe("pass");
+    const after = (await (await request.get("/api/advise")).json()).remainingToday;
+    expect(after).toBe(before);
+  });
+
+  test("status endpoint never exposes the key", async ({ request }) => {
+    const text = await (await request.get("/api/advise")).text();
+    expect(text).not.toMatch(/sk-ant|ANTHROPIC/);
+  });
+});
