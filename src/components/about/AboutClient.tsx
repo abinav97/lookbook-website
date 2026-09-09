@@ -105,51 +105,39 @@ export default function AboutClient({ totalLooks, totalItems, wornOnce, workhors
           </div>
         </ScrollFadeIn>
 
-        {/* The product story */}
+        {/* The archive */}
         <div id="story" className="mt-20 border-t border-border pt-12 scroll-mt-28">
           <ScrollFadeIn>
             <div className="section-divider">
               <span className="text-[10px] tracking-[0.25em] text-text-muted font-light">
-                THE PRODUCT STORY
+                THE ARCHIVE
               </span>
             </div>
           </ScrollFadeIn>
 
           {[
             {
-              label: "THE PROBLEM",
-              lead: `${wornOnce} of the ${totalItems} pieces in this closet have appeared in exactly one documented look.`,
+              label: "WHY IT EXISTS",
+              lead: `${wornOnce} of the ${totalItems} pieces here have been worn in exactly one photographed look.`,
               body: (
                 <>
-                  Most people who care about clothes still buy on the strength of the piece alone,
-                  not on what it will do next to everything they already own. The evidence is in my
-                  own data: {totalLooks} looks over four years, and the majority of purchases wore
-                  once on camera.
+                  I started documenting to see my wardrobe as it is, not as I imagine it, and the
+                  habit changed how I buy. Most of what I own was bought for the piece itself, not
+                  for what it would do beside everything already hanging here. The archive says so
+                  plainly: {totalLooks} looks over four years, most pieces photographed once
                   {workhorse && (
-                    <> Meanwhile one pair of {workhorse.name.toLowerCase()} carries {workhorse.looks} of them.</>
-                  )}{" "}
+                    <>, while one pair of {workhorse.name.toLowerCase()} carries {workhorse.looks} of them</>
+                  )}
+                  .{" "}
                   <Link href="/style-dna#utility" className="text-accent-dark hover:text-text transition-colors">
-                    The utility data &rarr;
+                    The utility data&nbsp;&rarr;
                   </Link>
                 </>
               ),
             },
             {
-              label: "THE THESIS",
-              lead: "The archive is the ground truth a purchase decision needs.",
-              body: (
-                <>
-                  A lookbook that tags every piece to every look is a wear history. Reasoning over
-                  it, rather than over generic style advice, is what makes an honest answer to
-                  &ldquo;should I buy this?&rdquo; possible. The judgment involved is semantic and
-                  visual: formality, silhouette, colour, season, duplication. That is a job for a
-                  model grounded in this closet, not for a filter.
-                </>
-              ),
-            },
-            {
-              label: "WHAT IS BUILT",
-              lead: "Fashion first. The product thinking sits underneath.",
+              label: "WHAT IT IS",
+              lead: "A wear history, not a wish list.",
               body: (
                 <>
                   Every look is photographed and tagged, with{" "}
@@ -160,41 +148,29 @@ export default function AboutClient({ totalLooks, totalItems, wornOnce, workhors
                   <Link href="/closet" className="text-text border-b border-border hover:border-text transition-colors">
                     closet
                   </Link>{" "}
-                  links back to the looks it appears in.{" "}
+                  links back to the looks it has appeared in, and{" "}
                   <Link href="/style-dna" className="text-text border-b border-border hover:border-text transition-colors">
                     Style DNA
                   </Link>{" "}
-                  turns that graph into wardrobe-utility insight. And{" "}
+                  reads that record for the patterns I would not notice on my own.
+                </>
+              ),
+            },
+            {
+              label: "BEFORE YOU BUY",
+              lead: "A second opinion that knows the closet.",
+              body: (
+                <>
+                  Because the archive records what I own and how it actually gets worn, it can
+                  stand in for the context a purchase decision needs.{" "}
                   <Link href="/before-you-buy" className="text-text border-b border-border hover:border-text transition-colors">
                     Before You Buy
                   </Link>{" "}
-                  is the assistant built on top of it.
+                  reads this wardrobe rather than general fashion advice: show it a piece and it
+                  says whether something here already does that job, what it would pair with, and
+                  what it would make possible. It only speaks about pieces that exist in this
+                  closet, and it says what it cannot tell from a photograph.
                 </>
-              ),
-            },
-            {
-              label: "HOW IT IS BUILT",
-              lead: "The smallest architecture that gives a credible result.",
-              body: (
-                <>
-                  Next.js and TypeScript, outfits and pieces as typed JSON, a build-time image
-                  pipeline, and a test suite that checks the data and the pages on desktop and
-                  mobile. The assistant will run behind a single server route with the model key
-                  held privately and the whole closet passed as context. No vector database, no
-                  agent framework, nothing uploaded is retained.
-                </>
-              ),
-            },
-            {
-              label: "DECISIONS",
-              lead: "A few calls worth explaining.",
-              body: (
-                <ul className="flex flex-col gap-2 list-none">
-                  <li>Photographs render before JavaScript does. A visible page beats an entrance animation.</li>
-                  <li>The site stays static until a feature genuinely needs a server. The assistant is the first.</li>
-                  <li>Every claim the assistant makes must cite a piece or a look that exists. Anything it cannot see, it says so.</li>
-                  <li>The full write-up, audit, and evaluation approach live with the source.</li>
-                </ul>
               ),
             },
           ].map((block, i) => (
