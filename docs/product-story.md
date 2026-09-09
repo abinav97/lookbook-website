@@ -241,7 +241,7 @@ Foundation-phase measurements:
   no "Optimized images" line, the `prebuild` hook did not run.
 - Dependency audit reports issues in the build-time image tooling (sharp/libvips chain);
   nothing affected ships to the browser. Fixing requires a major sharp bump.
-- Done since the audit: photo hotspots, wardrobe-utility view, About as the product story,
+- Done since the audit: photo hotspots, wardrobe-utility view, About rewritten in the site's editorial voice (the case-study detail stays in this document),
   and the purchase assistant behind a single server route with an evaluated prompt.
 - Next: enable Fluid compute (or evaluate effort "low") to remove the rare 50 s timeout;
   move request caps to a shared store (Upstash or Vercel KV) if traffic ever justifies it;

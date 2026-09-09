@@ -6,7 +6,7 @@ import { computeUtilityInsights } from "@/lib/insights";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Abi, the lookbook, and the product story behind it: the problem, the thesis, the decisions.",
+    "Abi, the archive of looks and pieces behind this lookbook, and why it exists.",
   alternates: { canonical: "/about" },
 };
 
