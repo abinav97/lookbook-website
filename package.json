@@ -4,22 +4,36 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "predev": "node scripts/optimize-images.mjs",
     "build": "next build",
+    "prebuild": "node scripts/optimize-images.mjs",
     "start": "next start",
     "lint": "eslint",
+    "images": "node scripts/optimize-images.mjs",
     "generate-images": "node scripts/generate-images.mjs",
-    "generate-images:dry": "node scripts/generate-images.mjs --dry-run"
+    "generate-images:dry": "node scripts/generate-images.mjs --dry-run",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check:export": "node scripts/check-export.mjs",
+    "check": "npm run lint && npx tsc --noEmit && npm test && npm run build && npm run check:export",
+    "test:e2e": "playwright test",
+    "eval": "node scripts/eval-advisor.mjs",
+    "demos:precompute": "node scripts/precompute-demos.mjs"
   },
   "dependencies": {
-    "colorthief": "^2.6.0",
+    "@anthropic-ai/sdk": "^0.124.0",
+    "@vercel/analytics": "^2.0.1",
     "motion": "^12.34.3",
     "next": "15.5.12",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "sharp": "^0.35.4",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@imgly/background-removal-node": "^1.4.5",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -28,8 +42,8 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.12",
     "openai": "^6.25.0",
-    "sharp": "^0.34.5",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.11"
   }
 }

@@ -4,8 +4,11 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { Outfit, OutfitTag, ClosetItem, OutfitImage } from "@/lib/types";
 import { formatSeasonYear } from "@/lib/utils";
+import { outfitSrcSet, SIZES } from "@/lib/images";
+import { useEntrance } from "@/lib/motion";
 
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
+import Hotspots from "./Hotspots";
 
 interface TagWithItem {
   tag: OutfitTag;
@@ -32,12 +35,17 @@ export default function OutfitDetailClient({
   const hasDetails = detailImages.length > 0;
   const colors = outfit.colorPalette || ["#C4A882", "#8B7355"];
   const gradient = `linear-gradient(160deg, ${colors.join(", ")})`;
+  const heroInitial = useEntrance({ scale: 1.05 });
+  const itemInitial = useEntrance({ opacity: 0, y: 15 });
 
   // Get unique items for the "items in this look" section
   const uniqueItems = tagItems.reduce<ClosetItem[]>((acc, { item }) => {
     if (item && !acc.find((i) => i.id === item.id)) acc.push(item);
     return acc;
   }, []);
+  const itemsById = Object.fromEntries(tagItems.map(({ tag, item }) => [tag.closetItemId, item]));
+  const heroTags = heroImage?.tags ?? [];
+  const taggedCount = heroTags.filter((t) => itemsById[t.closetItemId]).length;
 
   return (
     <div className="pb-20">
@@ -49,14 +57,20 @@ export default function OutfitDetailClient({
           <motion.div
             className="relative w-full"
             style={{ background: gradient }}
-            initial={{ scale: 1.05 }}
+            initial={heroInitial}
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
             {heroImage?.src ? (
               <img
                 src={heroImage.src}
+                srcSet={outfitSrcSet(heroImage.src)}
+                sizes={SIZES.detailHero}
                 alt={heroImage.alt}
+                width={heroImage.width}
+                height={heroImage.height}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-auto block"
               />
             ) : (
@@ -64,8 +78,16 @@ export default function OutfitDetailClient({
             )}
           </motion.div>
 
-          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+
+          {heroImage && <Hotspots tags={heroTags} items={itemsById} />}
         </div>
+
+        {taggedCount > 0 && (
+          <p className="max-w-4xl mx-auto px-[var(--page-margin)] md:px-0 mt-3 text-[9px] tracking-[0.18em] text-text-muted">
+            {taggedCount} {taggedCount === 1 ? "PIECE" : "PIECES"} TAGGED &middot; HOVER OR TAP THE MARKERS
+          </p>
+        )}
       </section>
 
       {/* ============================================ */}
@@ -161,7 +183,7 @@ export default function OutfitDetailClient({
                   <motion.div
                     key={item.id}
                     className="group"
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={itemInitial}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
                       delay: 0.3 + i * 0.08,
@@ -175,8 +197,11 @@ export default function OutfitDetailClient({
                         <img
                           src={item.images[0]}
                           alt={`${item.name}${item.brand ? ` by ${item.brand}` : ""}`}
+                          width={800}
+                          height={800}
                           className="absolute inset-0 w-full h-full object-cover"
                           loading="lazy"
+                          decoding="async"
                         />
                       ) : (
                         <div
@@ -279,10 +304,11 @@ function DetailImage({
 }) {
   const caption = getDetailCaption(image.alt);
   const fallbackGradient = `linear-gradient(135deg, ${colors.join(", ")})`;
+  const initial = useEntrance({ opacity: 0, y: 25 });
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 25 }}
+      initial={initial}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-30px" }}
       transition={{
@@ -304,7 +330,13 @@ function DetailImage({
           {image.src && (
             <img
               src={image.src}
+              srcSet={outfitSrcSet(image.src)}
+              sizes={SIZES.detailGallery}
               alt={image.alt}
+              width={image.width}
+              height={image.height}
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 w-full h-full object-cover"
             />
           )}

@@ -1,12 +1,11 @@
 import outfitsData from "@/data/outfits.json";
 import closetItemsData from "@/data/closet-items.json";
-import collectionsData from "@/data/collections.json";
 import {
   Outfit,
   ClosetItem,
-  Collection,
   ClosetCategory,
   CATEGORY_ORDER,
+  OutfitRef,
 } from "./types";
 
 export function getOutfits(): Outfit[] {
@@ -19,12 +18,6 @@ export function getOutfitBySlug(slug: string): Outfit | undefined {
 
 export function getFeaturedOutfits(): Outfit[] {
   return getOutfits().filter((o) => o.featured);
-}
-
-export function getOutfitsBySeason(
-  season: Outfit["season"]
-): Outfit[] {
-  return getOutfits().filter((o) => o.season === season);
 }
 
 export function getClosetItems(): ClosetItem[] {
@@ -72,20 +65,29 @@ export function getItemOutfitCount(itemId: string): number {
   return count;
 }
 
+export function toOutfitRef(outfit: Outfit): OutfitRef {
+  const img = outfit.images[0];
+  return {
+    id: outfit.id,
+    slug: outfit.slug,
+    title: outfit.title,
+    season: outfit.season,
+    date: outfit.date,
+    image: img ? { src: img.src, alt: img.alt } : undefined,
+    colorPalette: outfit.colorPalette,
+  };
+}
+
+export function getOutfitRefsForItem(itemId: string): OutfitRef[] {
+  return getOutfitsForItem(itemId).map(toOutfitRef);
+}
+
 export function getOutfitsForItem(itemId: string): Outfit[] {
   return getOutfits().filter((outfit) =>
     outfit.images.some((image) =>
       image.tags.some((tag) => tag.closetItemId === itemId)
     )
   );
-}
-
-export function getCollections(): Collection[] {
-  return collectionsData as Collection[];
-}
-
-export function getCollectionBySlug(slug: string): Collection | undefined {
-  return getCollections().find((c) => c.slug === slug);
 }
 
 export function getActiveCategories(): ClosetCategory[] {

@@ -1,0 +1,933 @@
+{
+  "base": "http://localhost:3000",
+  "ranAt": "2026-09-07T21-42-17-308Z",
+  "estimatedUsd": 0.3579,
+  "outputs": [
+    {
+      "id": "dup-black-loafers",
+      "status": 500,
+      "response": {
+        "error": "unknown"
+      }
+    },
+    {
+      "id": "dup-light-wash-jeans",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "pass",
+          "headline": "You already own these jeans, and wear them constantly",
+          "reasoning": "The Light Wash Jeans are the hardest working piece in this closet, appearing in seven looks from Refined Casual Elegance to Streetwear Business Casual, and this candidate is the same wash, same rise, same job. Nothing changes in the rotation by adding a second pair. If denim is the itch, the thinner ground is a darker or wider leg; the Black Denim Jeans and Dark Wash Jorts already cover the other ends, so a rigid ecru or true indigo straight would actually earn new looks.",
+          "candidate": {
+            "name": "Light Wash Straight-Leg Jeans",
+            "category": "pants",
+            "color": "Light Blue",
+            "formality": "casual"
+          },
+          "duplicates": [
+            {
+              "itemId": "item-shared-light-wash-jeans",
+              "why": "The same light wash straight-leg denim, already worn seven ways from the denim jacket to the knit tie, making a second pair pure repetition."
+            }
+          ],
+          "pairsWith": [
+            {
+              "itemId": "item-shared-brown-leather-blazer",
+              "why": "The brown leather blazer flatters pale denim, though it does that already over the Light Wash Jeans in Refined Casual Elegance."
+            },
+            {
+              "itemId": "item-shared-black-loafers",
+              "why": "The black horsebit loafers are the proven finish for this exact wash."
+            }
+          ],
+          "unlocks": [],
+          "gapFilled": null,
+          "confidence": "high",
+          "caveats": [
+            "Cut differences from the owned pair, wider leg, higher rise, heavier rigid cotton, are hard to confirm from a flat lay.",
+            "Price, fabric weight, and true wash depth cannot be judged here."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 10443,
+          "inputTokens": 905,
+          "outputTokens": 559,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0221
+        }
+      }
+    },
+    {
+      "id": "dup-sambas",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "pass",
+          "headline": "You already own Sambas, and they work in four looks",
+          "reasoning": "The cream and blue Adidas Sambas are one of the hardest working pieces in this closet, carrying Relaxed Weekend Vibes, Sunny Color Block, Retro Polo Sophistication and Relaxed Stripes. A white and black pair does the exact same job in the exact same register, and the Sacai x Nike Blazer Low already covers the white sneaker slot. With shoes re-used in only three of seven pairs, the closet needs a different kind of shoe, not a second Samba.",
+          "candidate": {
+            "name": "Adidas Samba OG, white leather with black stripes",
+            "category": "shoes",
+            "color": "White and Black",
+            "formality": "casual"
+          },
+          "duplicates": [
+            {
+              "itemId": "item-shared-adidas-sambas",
+              "why": "The cream and blue Sambas are the same silhouette in the same casual register and already anchor four documented looks."
+            },
+            {
+              "itemId": "item-shared-sacai-blazer-low",
+              "why": "The white Sacai Blazer Low already handles the white leather sneaker moment with more visual interest."
+            }
+          ],
+          "pairsWith": [
+            {
+              "itemId": "item-shared-light-wash-jeans",
+              "why": "The light wash Levi's take any low-profile sneaker, which is exactly why the existing Sambas keep reappearing with them."
+            },
+            {
+              "itemId": "item-shared-dark-wash-jorts",
+              "why": "The Carhartt jorts and crew socks are a proven summer base for a flat gum-soled sneaker."
+            }
+          ],
+          "unlocks": [],
+          "gapFilled": null,
+          "confidence": "high",
+          "caveats": [
+            "Colour aside, I cannot judge whether the fit or comfort differs meaningfully from the pair already owned.",
+            "Price and condition of the current cream and blue pair are unknown; a worn-out replacement is a different conversation."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 10518,
+          "inputTokens": 60,
+          "outputTokens": 675,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0208
+        }
+      }
+    },
+    {
+      "id": "dup-gold-chain",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "pass",
+          "headline": "The gold chain necklace already owns this job, three looks deep",
+          "reasoning": "Abi already wears a gold chain necklace across Relaxed Weekend Vibes, Tailored Statement and Sunset Rooftop, making it one of the few genuinely re-worn pieces in the closet. A second thin gold curb chain at 20 inches sits in the same register and near the same length, so it would read as a swap rather than an addition. Jewelry is the one category already pulling its weight here, while shirts and jackets sit at zero re-use.",
+          "candidate": {
+            "name": "Thin Gold Curb Chain Necklace, 20in",
+            "category": "jewelry",
+            "color": "Gold",
+            "formality": "casual"
+          },
+          "duplicates": [
+            {
+              "itemId": "item-shared-gold-chain-necklace",
+              "why": "The gold chain necklace already does exactly this, and it is one of the closet's most re-worn pieces across casual and evening looks."
+            }
+          ],
+          "pairsWith": [
+            {
+              "itemId": "item-1771863790940-1",
+              "why": "The black turtleneck is the classic blank canvas for a fine gold chain at the neckline."
+            },
+            {
+              "itemId": "item-1771888795068-0",
+              "why": "The pastel tie-dye camp collar shirt, worn open, is where a chain like this actually shows."
+            },
+            {
+              "itemId": "item-shared-gold-watch",
+              "why": "The gold watch keeps metals consistent, as it already does in Sunset Rooftop."
+            }
+          ],
+          "unlocks": [],
+          "gapFilled": null,
+          "confidence": "high",
+          "caveats": [
+            "Cannot judge the exact length difference from the owned gold chain, which is the only thing that would justify layering the two.",
+            "Weight, karat and clasp quality are invisible in a description."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 10691,
+          "inputTokens": 55,
+          "outputTokens": 663,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0205
+        }
+      }
+    },
+    {
+      "id": "gap-navy-overcoat",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "buy",
+          "headline": "No topcoat exists here, and the navy suit is waiting",
+          "reasoning": "Every jacket in this closet is casual or edgy: the black leather biker, the indigo carpenter jacket, the keyboard puffer, the medium wash denim jacket. Nothing covers the navy BOSS suit in December, which is exactly the hole a knee length navy wool overcoat fills. It also elevates the quieter tailoring, from the black turtleneck and brown leather blazer to the white linen button-up with the charcoal knit tie, without competing on colour.",
+          "candidate": {
+            "name": "Navy Wool Single-Breasted Overcoat",
+            "category": "jackets",
+            "color": "Navy",
+            "formality": "tailored"
+          },
+          "duplicates": [],
+          "pairsWith": [
+            {
+              "itemId": "item-1771890586081-0",
+              "why": "A knee length navy topcoat is the missing final layer over the BOSS suit jacket, matched in register and tone."
+            },
+            {
+              "itemId": "item-1771863790940-1",
+              "why": "The black J.Crew turtleneck under navy wool is the cleanest cold-weather formula this closet can build."
+            },
+            {
+              "itemId": "item-shared-black-loafers",
+              "why": "The black horsebit loafers keep the coat sharp rather than stiff, as they already do with light wash jeans."
+            },
+            {
+              "itemId": "item-1771890586081-3",
+              "why": "The brown leather belt and navy wool are a quietly rich pairing for tailored trousers."
+            },
+            {
+              "itemId": "item-1771890586081-2",
+              "why": "The red silk scarf gives the navy expanse one deliberate flash of colour at the collar."
+            }
+          ],
+          "unlocks": [
+            {
+              "title": "Winter Statement Suit",
+              "occasion": "evening",
+              "itemIds": [
+                "item-1771890586081-0",
+                "item-1771890586081-4",
+                "item-1771890586081-5",
+                "item-1771890586081-2"
+              ],
+              "why": "The suit finally becomes a cold-weather look instead of a fair-weather one, with the red scarf breaking the navy."
+            },
+            {
+              "title": "Black Turtleneck, Navy Coat",
+              "occasion": "dinner",
+              "itemIds": [
+                "item-1771863790940-1",
+                "item-1771888795068-3",
+                "item-shared-black-loafers",
+                "item-shared-gold-watch"
+              ],
+              "why": "Turtleneck, black trousers and loafers under navy wool: the most grown-up evening look available here."
+            },
+            {
+              "title": "Coat Over Denim",
+              "occasion": "weekend",
+              "itemIds": [
+                "item-shared-light-wash-jeans",
+                "item-1771865251140-2",
+                "item-shared-black-loafers"
+              ],
+              "why": "Cream ribbed knit and light wash jeans get a tailored top layer, dressing up the closet's most re-worn pieces."
+            }
+          ],
+          "gapFilled": "Outerwear is the least re-used category, zero of six jackets repeat, and none of them are tailored; this is the closet's first proper cold-weather topcoat.",
+          "confidence": "high",
+          "caveats": [
+            "Shoulder fit over a suit jacket cannot be judged from a description.",
+            "Wool weight and content, and whether it reads true navy or nearly black, are unknown.",
+            "Knee length can overwhelm cropped pieces like the oversized hoodies."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 17149,
+          "inputTokens": 61,
+          "outputTokens": 1123,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.032
+        }
+      }
+    },
+    {
+      "id": "gap-burgundy-knit",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "buy",
+          "headline": "A slim burgundy knit your neutrals have been quietly asking for",
+          "reasoning": "Your knitwear runs cold and neutral: the cream ribbed sweater, the black turtleneck, the dark green turtleneck. A slim burgundy merino crewneck does a different job from any of them, warm-toned, fine gauge, and thin enough to go under the navy suit jacket or the brown leather blazer without bulk. Given tops are the least re-worn category here, the value is that this one works across the light wash jeans and the black trousers alike.",
+          "candidate": {
+            "name": "Burgundy Merino Crewneck Sweater",
+            "category": "tops",
+            "color": "Burgundy",
+            "formality": "smart casual"
+          },
+          "duplicates": [],
+          "pairsWith": [
+            {
+              "itemId": "item-shared-brown-leather-blazer",
+              "why": "Burgundy and brown is the richest pairing in this closet, and the blazer already carries three looks."
+            },
+            {
+              "itemId": "item-shared-light-wash-jeans",
+              "why": "Your hardest-working trouser; a warm knit keeps it out of the cold-neutral rut."
+            },
+            {
+              "itemId": "item-1771890586081-0",
+              "why": "Slim merino sits cleanly under the navy suit jacket for a tieless evening version of the statement suit."
+            },
+            {
+              "itemId": "item-shared-wrancher-dress-jean",
+              "why": "Brown dress jean and burgundy is the same tonal logic that made the tailored statement look work."
+            },
+            {
+              "itemId": "item-shared-black-loafers",
+              "why": "Finishes the knit-and-denim register without tipping into streetwear."
+            }
+          ],
+          "unlocks": [
+            {
+              "title": "Burgundy Hour",
+              "occasion": "dinner",
+              "itemIds": [
+                "item-shared-brown-leather-blazer",
+                "item-shared-wrancher-dress-jean",
+                "item-shared-black-loafers",
+                "item-shared-gold-ring"
+              ],
+              "why": "An all-warm-tone evening look, softer than the cream sweater version and better suited to cold nights."
+            },
+            {
+              "title": "Suit, Undone",
+              "occasion": "evening",
+              "itemIds": [
+                "item-1771890586081-0",
+                "item-1771890586081-4",
+                "item-1771890586081-5",
+                "item-shared-gold-watch"
+              ],
+              "why": "Swapping the french cuff shirt for a fine knit turns the navy suit into something you would wear twice as often."
+            },
+            {
+              "title": "Weekend Knit",
+              "occasion": "brunch",
+              "itemIds": [
+                "item-shared-light-wash-jeans",
+                "item-shared-adidas-sambas",
+                "item-shared-gold-chain-necklace"
+              ],
+              "why": "Uses your three most re-worn pieces with a colour they have never been photographed against."
+            }
+          ],
+          "gapFilled": "Your only fine-gauge crewneck is the cream ribbed sweater; this adds the first warm-toned knit and gives the least re-worn category, tops, a genuine workhorse.",
+          "confidence": "high",
+          "caveats": [
+            "Slim fit on a closet that leans oversized in the hoodies and cropped shirts; check it layers under the navy suit jacket.",
+            "Merino weight and burgundy depth cannot be judged from a description alone.",
+            "A true wine tone flatters the brown leather blazer; a bright cherry would fight it."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 21095,
+          "inputTokens": 56,
+          "outputTokens": 1449,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0401
+        }
+      }
+    },
+    {
+      "id": "gap-white-oxford",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "pass",
+          "headline": "You already own three white button-ups worn once each",
+          "reasoning": "The white linen button-up from Quince carried Streetwear Business Casual, the Abercrombie white linen short sleeve did Summer Street Style, and the Calvin Klein dress shirt and French cuff shirt handle anything formal. Shirts are the deadest category here: ten owned, zero re-worn across twenty-one looks. A plain white oxford would land in the same slot as the Quince linen shirt and the light blue Uniqlo x JW Anderson boxy shirt, both of which already tuck into the light wash jeans with the black horsebit loafers.",
+          "candidate": {
+            "name": "White Cotton Oxford Button-Down Shirt",
+            "category": "shirts",
+            "color": "White",
+            "formality": "smart casual"
+          },
+          "duplicates": [
+            {
+              "itemId": "item-1771889479369-0",
+              "why": "The white linen button-up already plays the crisp neutral shirt under a tie or blazer, exactly the oxford's job in warmer months."
+            },
+            {
+              "itemId": "item-1771888456725-1",
+              "why": "The Calvin Klein white dress shirt covers the sharper end of white button-ups, from the mint linen blazer to the navy BOSS suit."
+            },
+            {
+              "itemId": "item-1771889238070-0",
+              "why": "The light blue Uniqlo x JW Anderson boxy shirt owns the casual oxford register with a more interesting cut."
+            }
+          ],
+          "pairsWith": [
+            {
+              "itemId": "item-shared-brown-leather-blazer",
+              "why": "The brown leather blazer is one of the few repeat performers and would take a white oxford cleanly, but it already does that with the cream ribbed sweater and black turtleneck."
+            },
+            {
+              "itemId": "item-1771890586081-4",
+              "why": "The navy BOSS trousers would read sharp with an oxford, though the French cuff shirt is the more deliberate partner there."
+            }
+          ],
+          "unlocks": [],
+          "gapFilled": null,
+          "confidence": "high",
+          "caveats": [
+            "A regular fit can read boxy or limp depending on the collar roll and fabric weight, which the description does not settle.",
+            "Price and whether the white is bright or ecru would change how it sits beside the Quince linen shirt."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 12669,
+          "inputTokens": 55,
+          "outputTokens": 728,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0221
+        }
+      }
+    },
+    {
+      "id": "gap-brown-suede-chelsea",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "buy",
+          "headline": "A brown suede Chelsea is the one shoe this closet lacks",
+          "reasoning": "Seven pairs of shoes and not one brown boot: the Docs are heavy black leather, the horsebit loafers and navy tassels are dress shoes, and the Sambas and Sacai Blazers are sneakers, so the brown leather blazer and Wrancher dress jean currently default to loafers every time. A crepe sole Chelsea slots straight into the fall rotation the Light Wash Jeans and Indigo Carpenter Jacket already anchor, and it warms up the Taupe Wide-Leg Trousers the way Lisbon Layers wanted. Shoes are the thinnest re-worn category here, and this is the pair that would actually repeat.",
+          "candidate": {
+            "name": "Brown Suede Chelsea Boots",
+            "category": "shoes",
+            "color": "Brown",
+            "formality": "smart casual"
+          },
+          "duplicates": [],
+          "pairsWith": [
+            {
+              "itemId": "item-shared-wrancher-dress-jean",
+              "why": "Brown on brown, the exact western-leaning register the Tailored Statement look was reaching for."
+            },
+            {
+              "itemId": "item-shared-brown-leather-blazer",
+              "why": "The closet's most re-worn outer layer finally gets a footwear match in the same tonal family."
+            },
+            {
+              "itemId": "item-1771862436917-3",
+              "why": "Taupe wide-leg trousers break better over a Chelsea's clean shaft than over combat boots."
+            },
+            {
+              "itemId": "item-1771890871135-1",
+              "why": "The indigo carpenter jacket's workwear weight is grounded, not costumed, by suede rather than sneakers."
+            },
+            {
+              "itemId": "item-shared-light-wash-jeans",
+              "why": "The hardest-working trouser in the closet, currently limited to loafers and sneakers."
+            }
+          ],
+          "unlocks": [
+            {
+              "title": "Autumn Carpenter",
+              "occasion": "casual/weekend",
+              "itemIds": [
+                "item-1771890871135-1",
+                "item-1771862436917-0",
+                "item-1771890871135-3",
+                "item-shared-gold-ring"
+              ],
+              "why": "Black denim and forest green under indigo, with brown suede warming the whole thing from the ground up."
+            },
+            {
+              "title": "Lisbon, Revisited",
+              "occasion": "travel/dinner",
+              "itemIds": [
+                "item-shared-brown-leather-blazer",
+                "item-1771863790940-1",
+                "item-1771862436917-3",
+                "item-shared-gold-watch"
+              ],
+              "why": "The same tonal formula as Lisbon Layers, but softer at the foot than the combat boots allowed."
+            },
+            {
+              "title": "Off-Duty Tailoring",
+              "occasion": "work/brunch",
+              "itemIds": [
+                "item-1771889479369-0",
+                "item-shared-wrancher-dress-jean",
+                "item-shared-gold-chain-necklace"
+              ],
+              "why": "White linen and brown denim need a shoe with polish and no shine; this is it."
+            }
+          ],
+          "gapFilled": "The only brown, non-athletic, non-dress shoe in a closet whose seven pairs skew black leather or sneaker, and whose shoe category re-use is just three of seven.",
+          "confidence": "high",
+          "caveats": [
+            "Suede colour reads differently in person; a reddish tan would fight the burgundy mojari and the brown leather blazer.",
+            "Crepe soles scuff and mark in rain, worth knowing given the travel-heavy looks.",
+            "Cannot judge shaft height or elastic tension, which decides whether it works under wide-leg trousers."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 19390,
+          "inputTokens": 54,
+          "outputTokens": 1314,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0368
+        }
+      }
+    },
+    {
+      "id": "gap-grey-flannel-trousers",
+      "status": 500,
+      "response": {
+        "error": "unknown"
+      }
+    },
+    {
+      "id": "off-neon-shorts",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "maybe",
+          "headline": "Fine for the gym, invisible in the wardrobe you document",
+          "reasoning": "Nothing owned does this job: the charcoal tailored shorts are dressed-up and the dark wash jorts are streetwear, so a true training short is a genuine hole next to the Flyknit Runners and baggy sweats. But nothing in twenty-one looks is neon, and the closet's summer language is cream, taupe, white linen and washed indigo, so this stays a functional purchase rather than a photographed one. Worth it only if Abi actually runs; as a style piece it would fight the pastel tie-dye camp shirt and everything else she reaches for.",
+          "candidate": {
+            "name": "Neon Green Nylon Running Shorts",
+            "category": "pants",
+            "color": "Neon Green",
+            "formality": "casual"
+          },
+          "duplicates": [],
+          "pairsWith": [
+            {
+              "itemId": "item-1771863385130-6",
+              "why": "The white Flyknit Runners are the only truly athletic shoe here and the obvious partner for a nylon training short."
+            },
+            {
+              "itemId": "item-1771888648991-3",
+              "why": "The white Kirkland base layer tee is the plainest top in the closet and lets the neon do all the talking."
+            },
+            {
+              "itemId": "item-1771864195524-0",
+              "why": "The black Atlanta Dri-FIT cap is the one hat built for sweat rather than styling."
+            },
+            {
+              "itemId": "item-shared-white-crew-socks",
+              "why": "White crew socks are already a repeat player and keep the neon looking intentional rather than stray."
+            }
+          ],
+          "unlocks": [
+            {
+              "title": "Morning Miles",
+              "occasion": "training",
+              "itemIds": [
+                "item-1771888648991-3",
+                "item-1771864195524-0",
+                "item-shared-white-crew-socks",
+                "item-1771863385130-6"
+              ],
+              "why": "A complete run kit the closet cannot currently assemble; the white base layer tee and Dri-FIT cap keep the neon as the single accent."
+            },
+            {
+              "title": "Post Run Coffee",
+              "occasion": "casual weekend",
+              "itemIds": [
+                "item-1771888369546-2",
+                "item-1771863385130-6",
+                "item-shared-prada-sunglasses"
+              ],
+              "why": "The black oversized cropped hoodie flattens the brightness into something wearable off the track, with the Prada sunglasses doing the rest."
+            }
+          ],
+          "gapFilled": "An actual athletic bottom. The closet has the Flyknit Runners and Dri-FIT cap but only tailored shorts and jorts below the waist, and pants re-use sits at three of twelve.",
+          "confidence": "medium",
+          "caveats": [
+            "A description cannot confirm inseam, liner, or how loud the green reads in daylight.",
+            "No documented look is athletic, so real wear frequency is a guess.",
+            "Fabric quality and price unknown."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 19231,
+          "inputTokens": 55,
+          "outputTokens": 1196,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0338
+        }
+      }
+    },
+    {
+      "id": "off-sequin-blazer",
+      "status": 500,
+      "response": {
+        "error": "unknown"
+      }
+    },
+    {
+      "id": "off-tie-dye-hoodie",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "pass",
+          "headline": "Two oversized hoodies already sit unworn; rainbow tie-dye adds noise",
+          "reasoning": "The dark brown and black MOOJIMOOJI oversized hoodies already cover the slouchy heavy-knit slot, and only one of seven tops in this closet has ever been re-worn, so a third oversized hoodie is arriving into the least-used category. Tie-dye is also spoken for by the pastel camp collar shirt, which carried Sunset Rooftop on its own. Rainbow fleece would fight the muted greens, creams, browns and indigos that make looks like Utility Layers and Urban Edge hang together.",
+          "candidate": {
+            "name": "Rainbow Tie-Dye Oversized Hoodie",
+            "category": "tops",
+            "color": "Multicolour tie-dye",
+            "formality": "casual"
+          },
+          "duplicates": [
+            {
+              "itemId": "item-1771888369546-2",
+              "why": "The black oversized cropped hoodie is the same heavy casual layer and already anchors both Urban Winter Nights and Utility Layers."
+            },
+            {
+              "itemId": "item-1771887596161-1",
+              "why": "The dark brown oversized cropped hoodie fills the identical slouchy-hood role, just in a warmer, easier colour."
+            },
+            {
+              "itemId": "item-1771888795068-0",
+              "why": "The pastel tie-dye camp collar shirt already handles the tie-dye statement in this wardrobe, in a lighter register."
+            }
+          ],
+          "pairsWith": [
+            {
+              "itemId": "item-1771888369546-3",
+              "why": "The black baggy sweats would absorb the noise and keep a full tie-dye fit from tipping over."
+            },
+            {
+              "itemId": "item-1771890871135-3",
+              "why": "Black denim jeans give the loudest print a flat, quiet base."
+            },
+            {
+              "itemId": "item-shared-sacai-blazer-low",
+              "why": "The white Sacai Blazer Lows carry deconstructed streetwear energy without adding another colour."
+            }
+          ],
+          "unlocks": [],
+          "gapFilled": null,
+          "confidence": "high",
+          "caveats": [
+            "Cannot judge fleece weight, crop length or how saturated the rainbow reads in person from a text description.",
+            "Price and brand are unknown, so value against the two hoodies already owned is unclear."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 12995,
+          "inputTokens": 61,
+          "outputTokens": 836,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0248
+        }
+      }
+    },
+    {
+      "id": "occasion-navy-suit-2",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "pass",
+          "headline": "You already own the navy suit, and it works beautifully",
+          "reasoning": "The BOSS navy suit jacket and matching trousers already cover this exact job, and they carried Statement Suit with the French cuff shirt, brown leather belt, navy tassel loafers and gold cufflinks. Tailoring is one of the thinnest re-worn categories here, but that is because the one navy suit gets called on rarely, not because it needs a twin. If formal wear needs depth, a charcoal or mid-grey suit, or a standalone odd jacket to sit beside the pale mint linen blazer and brown leather blazer, would earn far more wear.",
+          "candidate": {
+            "name": "Navy Wool Two-Button Suit, Slim Fit",
+            "category": "suits",
+            "color": "Navy",
+            "formality": "tailored"
+          },
+          "duplicates": [
+            {
+              "itemId": "item-1771890586081-0",
+              "why": "The BOSS navy suit jacket is the same colour, same button stance, same register, and already proven in Statement Suit."
+            },
+            {
+              "itemId": "item-1771890586081-4",
+              "why": "The matching BOSS navy trousers cover every occasion a second navy suit could, from work to evening dinners."
+            }
+          ],
+          "pairsWith": [
+            {
+              "itemId": "item-1771890586081-1",
+              "why": "The French cuff shirt is the natural partner under any navy tailoring, with the gold cufflinks."
+            },
+            {
+              "itemId": "item-1771890586081-5",
+              "why": "The navy tassel loafers are the tonal shoe this suit would ask for."
+            },
+            {
+              "itemId": "item-1771889479369-1",
+              "why": "The charcoal knit tie would soften navy worsted into something less boardroom."
+            }
+          ],
+          "unlocks": [],
+          "gapFilled": null,
+          "confidence": "high",
+          "caveats": [
+            "Cannot judge cloth weight, shade of navy, or how the slim cut differs from the BOSS suit already hanging there.",
+            "Price and tailoring quality are unknown from the description alone."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 10929,
+          "inputTokens": 54,
+          "outputTokens": 683,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.021
+        }
+      }
+    },
+    {
+      "id": "vague-nice-shirt",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "unclear",
+          "headline": "Too vague to judge; shirts are the least worn category here",
+          "reasoning": "\"A nice shirt\" could mean the crisp white linen button-up Abi already owns twice over, or something genuinely new like a striped rugby or a silk camp collar. Worth noting before anything else: all ten shirts in this closet appear in exactly one look each, from the white dress shirt to the pastel tie-dye camp collar, so the bar for another one is high. Send a photo, a colour, and a fabric and I can tell you whether it beats the boxy Oxford cropped shirt for a spot in rotation.",
+          "candidate": null,
+          "duplicates": [],
+          "pairsWith": [],
+          "unlocks": [],
+          "gapFilled": null,
+          "confidence": "low",
+          "caveats": [
+            "No photo, colour, collar style, fabric, or fit given, so redundancy against the existing shirts cannot be assessed.",
+            "Shirts are the closet's deadest category: zero of ten have been re-worn across documented looks."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 6820,
+          "inputTokens": 43,
+          "outputTokens": 338,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0123
+        }
+      }
+    },
+    {
+      "id": "worn-garment-photo",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "pass",
+          "headline": "The navy BOSS jacket already owns this job in your closet",
+          "reasoning": "The black tailored jacket lands in exactly the register the navy BOSS suit jacket already covers, and that suit has been out exactly once, for the Statement Suit look. Tailoring is also the thinnest-worn corner here: blazers show one re-wear across three pieces, while the brown leather blazer does all the actual evening lifting with the cream ribbed sweater and Wrancher dress jean. Black on black with the Nordstrom trousers is handsome, but it is a second formal option before the first one has earned its keep.",
+          "candidate": {
+            "name": "Black Tailored Suit Jacket",
+            "category": "blazers",
+            "color": "Black",
+            "formality": "tailored"
+          },
+          "duplicates": [
+            {
+              "itemId": "item-1771890586081-0",
+              "why": "The navy BOSS suit jacket already handles every dinner, wedding and evening moment this piece would be bought for."
+            },
+            {
+              "itemId": "item-shared-brown-leather-blazer",
+              "why": "The brown leather blazer is the proven sharp-shoulder layer here, worn across three looks from Lisbon to the tailored statement."
+            }
+          ],
+          "pairsWith": [
+            {
+              "itemId": "item-1771888795068-3",
+              "why": "The black Nordstrom trousers would read as a convincing near-suit under low evening light."
+            },
+            {
+              "itemId": "item-shared-black-loafers",
+              "why": "The black horsebit loafers are the only shoe with the polish to finish black tailoring properly."
+            },
+            {
+              "itemId": "item-1771863790940-1",
+              "why": "The black J.Crew turtleneck under a black jacket is the one styling this piece would do better than the navy suit."
+            }
+          ],
+          "unlocks": [
+            {
+              "title": "All Black, No Tie",
+              "occasion": "evening",
+              "itemIds": [
+                "item-1771863790940-1",
+                "item-1771888795068-3",
+                "item-shared-black-loafers",
+                "item-shared-gold-ring"
+              ],
+              "why": "A monochrome column the navy suit cannot do, with the gold ring as the only warm note."
+            }
+          ],
+          "gapFilled": null,
+          "confidence": "medium",
+          "caveats": [
+            "Cannot tell from the photo whether this is a standalone blazer or half of a suit, which changes its usefulness.",
+            "Fabric, shoulder construction and price are unreadable here.",
+            "True black versus very dark charcoal matters for pairing with the Nordstrom trousers."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 18376,
+          "inputTokens": 407,
+          "outputTokens": 1152,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0345
+        }
+      }
+    },
+    {
+      "id": "scene-owned-shirt",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "pass",
+          "headline": "You already own this shirt, it starred at sunset rooftop",
+          "reasoning": "This is a pastel tie-dye camp collar shirt in peach and blue, which is exactly the ALLSAINTS camp collar shirt already hanging in the closet and worn with the black trousers, gold chain necklace and gold watch for Sunset Rooftop. Even setting the near-identical print aside, the soft-pastel resort shirt lane is crowded here with the pastel colour block polo and the cream polo with green collar, and shirts are the least re-worn category in the wardrobe at zero out of ten. Money is better spent on shoes or a second bag, which stay thin.",
+          "candidate": {
+            "name": "Pastel Tie-Dye Camp Collar Shirt",
+            "category": "shirts",
+            "color": "Peach and Blue Tie-Dye",
+            "formality": "smart casual"
+          },
+          "duplicates": [
+            {
+              "itemId": "item-1771888795068-0",
+              "why": "The same peach-and-blue tie-dye camp collar shirt, already styled for evenings with the black trousers and gold jewellery."
+            },
+            {
+              "itemId": "item-1771887908949-1",
+              "why": "Covers the same pastel, print-forward warm-weather shirt role for brunch and travel days."
+            }
+          ],
+          "pairsWith": [
+            {
+              "itemId": "item-1771888795068-3",
+              "why": "The black trousers ground the wash of pastel exactly as they did on the rooftop."
+            },
+            {
+              "itemId": "item-shared-gold-chain-necklace",
+              "why": "The gold chain reads beautifully against an open, unstructured collar."
+            },
+            {
+              "itemId": "item-shared-light-wash-jeans",
+              "why": "The hardest-working jeans in the closet would take this shirt casual in a second."
+            }
+          ],
+          "unlocks": [],
+          "gapFilled": null,
+          "confidence": "high",
+          "caveats": [
+            "A photo cannot confirm whether this is a different size, cut or fabric weight than the shirt already owned.",
+            "Exact tie-dye pattern and colour saturation are hard to verify in sunset light.",
+            "Price and fit through the shoulder are unknown."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 12676,
+          "inputTokens": 273,
+          "outputTokens": 787,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0247
+        }
+      }
+    },
+    {
+      "id": "not-a-garment-abstract",
+      "status": 200,
+      "response": {
+        "advice": {
+          "verdict": "unclear",
+          "headline": "This image shows shapes, not a garment I can judge",
+          "reasoning": "The photo is an abstract composition of a grey rectangle, a tan circle and a white curve on a gradient background, with no visible garment, shoe, bag or accessory. Nothing here can be measured against the light wash jeans, the brown leather blazer or the rest of the closet. Send a clear photo of the piece itself, or a short description, and I will tell you whether it earns its place.",
+          "candidate": null,
+          "duplicates": [],
+          "pairsWith": [],
+          "unlocks": [],
+          "gapFilled": null,
+          "confidence": "high",
+          "caveats": [
+            "No garment, shoe, bag or accessory is visible in the image.",
+            "Category, colour, fabric, fit and price all unknown from this input."
+          ]
+        },
+        "grounding": {
+          "droppedItemIds": [],
+          "droppedUnlocks": 0
+        },
+        "meta": {
+          "model": "claude-opus-5",
+          "latencyMs": 5775,
+          "inputTokens": 453,
+          "outputTokens": 262,
+          "cacheReadTokens": 7264,
+          "estimatedCostUsd": 0.0124
+        }
+      }
+    }
+  ]
+}

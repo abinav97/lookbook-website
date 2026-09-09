@@ -1,0 +1,101 @@
+{
+  "run": "07",
+  "note": "final: same code as run 06 on a fresh instance. 1 call exceeded the 50 s timeout and failed gracefully (502, allowance refunded)",
+  "ranAt": "2026-09-07T22-12-46-537Z",
+  "cases": 17,
+  "estimatedUsd": 0.443,
+  "nonOk": [
+    "gap-brown-suede-chelsea:upstream"
+  ],
+  "latencyMs": {
+    "p50": 14676,
+    "p90": 21774,
+    "max": 25024
+  },
+  "tokens": {
+    "in": 3548,
+    "cr": 138784,
+    "out": 14217
+  },
+  "avgUsdPerVerdict": 0.0277,
+  "summary": {
+    "candidates": 17,
+    "candidatesFullyPassing": 15,
+    "checksPassed": 131,
+    "checksTotal": 133,
+    "byCheck": {
+      "verdict": {
+        "pass": 15,
+        "total": 15
+      },
+      "grounding": {
+        "pass": 16,
+        "total": 16
+      },
+      "duplicates": {
+        "pass": 5,
+        "total": 5
+      },
+      "unlocks.wellformed": {
+        "pass": 16,
+        "total": 16
+      },
+      "candidate.notNull": {
+        "pass": 14,
+        "total": 14
+      },
+      "shape.headline": {
+        "pass": 15,
+        "total": 16
+      },
+      "shape.reasoning": {
+        "pass": 16,
+        "total": 16
+      },
+      "shape.noIdsInProse": {
+        "pass": 16,
+        "total": 16
+      },
+      "pairs.min": {
+        "pass": 4,
+        "total": 4
+      },
+      "unlocks.min": {
+        "pass": 1,
+        "total": 1
+      },
+      "unlocks.occasionVocab": {
+        "pass": 5,
+        "total": 5
+      },
+      "pairs.categories": {
+        "pass": 1,
+        "total": 1
+      },
+      "response": {
+        "pass": 0,
+        "total": 1
+      },
+      "unlocks.max": {
+        "pass": 1,
+        "total": 1
+      },
+      "duplicates.min": {
+        "pass": 1,
+        "total": 1
+      },
+      "caveats.min": {
+        "pass": 4,
+        "total": 4
+      },
+      "candidate.null": {
+        "pass": 1,
+        "total": 1
+      }
+    }
+  },
+  "failures": [
+    "dup-light-wash-jeans: shape.headline (You already live in the Light Wash Jeans; this is the same denim)",
+    "gap-brown-suede-chelsea: response (upstream)"
+  ]
+}

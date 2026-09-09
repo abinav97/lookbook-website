@@ -1,6 +1,6 @@
 "use client";
 
-import { ClosetCategory, ClosetItem, CATEGORY_LABELS } from "@/lib/types";
+import { ClosetCategory, ClosetItem, CATEGORY_LABELS, OutfitRef } from "@/lib/types";
 import CategoryNav from "./CategoryNav";
 import ClosetItemCard from "./ClosetItemCard";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
@@ -10,6 +10,7 @@ interface ClosetCategoryClientProps {
   items: ClosetItem[];
   categories: ClosetCategory[];
   counts: Record<string, number>;
+  appearsIn: Record<string, OutfitRef[]>;
 }
 
 export default function ClosetCategoryClient({
@@ -17,6 +18,7 @@ export default function ClosetCategoryClient({
   items,
   categories,
   counts,
+  appearsIn,
 }: ClosetCategoryClientProps) {
   const label = CATEGORY_LABELS[category];
 
@@ -44,7 +46,7 @@ export default function ClosetCategoryClient({
         <div className="w-full lg:flex-1 lg:min-w-0">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8">
             {items.map((item, i) => (
-              <ClosetItemCard key={item.id} item={item} index={i} />
+              <ClosetItemCard key={item.id} item={item} appearsIn={appearsIn[item.id] ?? []} index={i} />
             ))}
           </div>
         </div>

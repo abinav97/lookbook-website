@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import { SITE } from "@/lib/site";
+import { getFeaturedOutfits } from "@/lib/data";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -18,18 +21,28 @@ const inter = Inter({
   display: "swap",
 });
 
+const heroImage = getFeaturedOutfits()[0]?.images[0];
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: {
-    default: "Abi's Lookbook",
-    template: "%s — Abi's Lookbook",
+    default: SITE.name,
+    template: `%s — ${SITE.name}`,
   },
-  description:
-    "A living fashion portfolio. Curated outfits, personal style, and the closet behind it all.",
+  description: SITE.description,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Abi's Lookbook",
-    description: "A living fashion portfolio.",
+    siteName: SITE.name,
+    title: SITE.name,
+    description: SITE.description,
     type: "website",
+    url: "/",
+    images: heroImage
+      ? [{ url: heroImage.src, width: 1600, height: 2133, alt: heroImage.alt }]
+      : [],
   },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -42,9 +55,13 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${inter.variable} bg-bg text-text antialiased`}
       >
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <Navigation />
-        <main className="min-h-screen">{children}</main>
+        <main id="main" className="min-h-screen">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

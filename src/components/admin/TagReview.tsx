@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { AITagResult, AIDetectedItem } from "@/lib/ai-tagger";
 import { CATEGORY_LABELS, ClosetCategory } from "@/lib/types";
 import { slugify } from "@/lib/utils";
+import { OCCASIONS } from "@/lib/constants";
 
 interface TagReviewProps {
   imageBase64: string;
@@ -28,16 +29,7 @@ export default function TagReview({
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
   const [saved, setSaved] = useState(false);
 
-  const allOccasions = [
-    "casual",
-    "work",
-    "dinner",
-    "evening",
-    "weekend",
-    "brunch",
-    "date",
-    "travel",
-  ];
+  const allOccasions = OCCASIONS;
 
   const toggleOccasion = (occ: string) => {
     setOccasion((prev) =>

@@ -5,18 +5,19 @@ import { motion, AnimatePresence } from "motion/react";
 import { Outfit } from "@/lib/types";
 import OutfitCard from "./OutfitCard";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
+import { SEASONS, OCCASIONS, type Season } from "@/lib/constants";
+import { track, EVENTS } from "@/lib/analytics";
+import { useEntrance } from "@/lib/motion";
+import Notice from "@/components/ui/Notice";
 
-type SeasonFilter = "all" | "spring" | "summer" | "fall" | "winter";
+type SeasonFilter = "all" | Season;
 
-const SEASONS: { value: SeasonFilter; label: string }[] = [
+const SEASON_OPTIONS: { value: SeasonFilter; label: string }[] = [
   { value: "all", label: "ALL" },
-  { value: "spring", label: "SPRING" },
-  { value: "summer", label: "SUMMER" },
-  { value: "fall", label: "FALL" },
-  { value: "winter", label: "WINTER" },
+  ...SEASONS.map((s) => ({ value: s, label: s.toUpperCase() })),
 ];
 
-const OCCASIONS = ["all", "casual", "work", "dinner", "evening", "weekend", "brunch", "date", "travel"];
+const OCCASION_OPTIONS = ["all", ...OCCASIONS];
 
 interface LookbookClientProps {
   outfits: Outfit[];
@@ -25,6 +26,7 @@ interface LookbookClientProps {
 export default function LookbookClient({ outfits }: LookbookClientProps) {
   const [seasonFilter, setSeasonFilter] = useState<SeasonFilter>("all");
   const [occasionFilter, setOccasionFilter] = useState("all");
+  const gridInitial = useEntrance({ opacity: 0 });
 
   const filtered = useMemo(() => {
     return outfits.filter((outfit) => {
@@ -54,17 +56,22 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
 
       {/* Filters */}
       <ScrollFadeIn delay={0.1}>
-        <div className="flex flex-col sm:flex-row sm:flex-nowrap sm:items-center gap-6 mb-12">
+        <div className="flex flex-col lg:flex-row lg:flex-wrap lg:items-center gap-6 lg:gap-x-10 mb-12">
           {/* Season filter */}
-          <div className="flex items-start sm:items-center gap-2">
-            <span className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-1.5 sm:pt-0">
+          <div className="flex items-start gap-2" role="group" aria-labelledby="filter-season">
+            <span id="filter-season" className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-2.5">
               SEASON
             </span>
-            <div className="flex flex-wrap sm:flex-nowrap gap-1">
-              {SEASONS.map((s) => (
+            <div className="flex flex-wrap gap-1">
+              {SEASON_OPTIONS.map((s) => (
                 <button
                   key={s.value}
-                  onClick={() => setSeasonFilter(s.value)}
+                  type="button"
+                  aria-pressed={seasonFilter === s.value}
+                  onClick={() => {
+                    setSeasonFilter(s.value);
+                    track(EVENTS.filterApplied, { kind: "season", value: s.value });
+                  }}
                   className={`px-3 py-1.5 text-[10px] tracking-[0.12em] border transition-colors duration-300 whitespace-nowrap ${
                     seasonFilter === s.value
                       ? "bg-text text-bg border-text"
@@ -78,15 +85,20 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
           </div>
 
           {/* Occasion filter */}
-          <div className="flex items-start sm:items-center gap-2">
-            <span className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-1.5 sm:pt-0">
+          <div className="flex items-start gap-2" role="group" aria-labelledby="filter-occasion">
+            <span id="filter-occasion" className="text-[9px] tracking-[0.15em] text-text-muted shrink-0 pt-2.5">
               OCCASION
             </span>
-            <div className="flex flex-wrap sm:flex-nowrap gap-1">
-              {OCCASIONS.map((o) => (
+            <div className="flex flex-wrap gap-1">
+              {OCCASION_OPTIONS.map((o) => (
                 <button
                   key={o}
-                  onClick={() => setOccasionFilter(o)}
+                  type="button"
+                  aria-pressed={occasionFilter === o}
+                  onClick={() => {
+                    setOccasionFilter(o);
+                    track(EVENTS.filterApplied, { kind: "occasion", value: o });
+                  }}
                   className={`px-3 py-1.5 text-[10px] tracking-[0.12em] border transition-colors duration-300 whitespace-nowrap ${
                     occasionFilter === o
                       ? "bg-text text-bg border-text"
@@ -102,16 +114,16 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
       </ScrollFadeIn>
 
       {/* Results count */}
-      <div className="mb-8 text-[10px] tracking-[0.15em] text-text-muted">
+      <p className="mb-8 text-[10px] tracking-[0.15em] text-text-muted" aria-live="polite">
         {filtered.length} {filtered.length === 1 ? "LOOK" : "LOOKS"}
-      </div>
+      </p>
 
       {/* Masonry grid */}
       <AnimatePresence mode="wait">
         <motion.div
           key={`${seasonFilter}-${occasionFilter}`}
           className="masonry-grid"
-          initial={{ opacity: 0 }}
+          initial={gridInitial}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
@@ -123,19 +135,20 @@ export default function LookbookClient({ outfits }: LookbookClientProps) {
       </AnimatePresence>
 
       {filtered.length === 0 && (
-        <div className="text-center py-20">
-          <p className="font-serif text-2xl font-light text-text-muted">
-            No looks match these filters.
-          </p>
-          <button
-            onClick={() => {
-              setSeasonFilter("all");
-              setOccasionFilter("all");
+        <div className="py-10">
+          <Notice
+            label="NO LOOKS"
+            title="Nothing documented for that combination yet."
+            action={{
+              label: "CLEAR FILTERS",
+              onClick: () => {
+                setSeasonFilter("all");
+                setOccasionFilter("all");
+              },
             }}
-            className="mt-4 text-[11px] tracking-[0.15em] text-accent-dark hover:text-text transition-colors"
           >
-            CLEAR FILTERS
-          </button>
+            Try a single filter, or browse every look.
+          </Notice>
         </div>
       )}
     </div>

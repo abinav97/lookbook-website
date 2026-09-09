@@ -1,0 +1,226 @@
+[
+  {
+    "id": "black-loafers-again",
+    "label": "Another pair of black loafers",
+    "description": "Black leather penny loafers, plain apron toe, leather sole. Around $320.",
+    "imagePath": "/items/item-shared-black-loafers.webp",
+    "result": {
+      "advice": {
+        "verdict": "pass",
+        "headline": "You already own these; the Blackstock and Weber pair does this job",
+        "reasoning": "This is the same shoe as the black leather horsebit loafers you already wear hardest, right down to the gold bit and lug-ish sole, and those have carried three looks from Refined Casual Elegance to Streetwear Business Casual. Spending $320 to duplicate a shoe that's already in rotation does nothing for a closet where 49 of 65 pieces have been photographed once. If you want a shoe purchase to earn its place, the gap is elsewhere: something between the black leather combat boots and the navy tassel loafers, like a brown suede or a rugged derby for the indigo carpenter jacket and black denim jeans.",
+        "candidate": {
+          "name": "Black Leather Horsebit Loafers",
+          "category": "shoes",
+          "color": "Black",
+          "formality": "smart casual"
+        },
+        "duplicates": [
+          {
+            "itemId": "item-shared-black-loafers",
+            "why": "Your Blackstock and Weber horsebit loafers are the same black leather, same gold hardware, same smart casual register, and they already anchor three documented looks."
+          }
+        ],
+        "pairsWith": [
+          {
+            "itemId": "item-shared-light-wash-jeans",
+            "why": "The light wash Levi's are your most-worn piece and the natural partner for a black loafer, but they're already handled by the horsebit pair."
+          },
+          {
+            "itemId": "item-1771888795068-3",
+            "why": "The black Nordstrom trousers would read sleek with a black loafer for Sunset Rooftop style evenings."
+          }
+        ],
+        "unlocks": [],
+        "gapFilled": null,
+        "confidence": "high",
+        "caveats": [
+          "A photo can't confirm whether the leather grain, sole weight, or last differ meaningfully from your Blackstock and Weber pair.",
+          "Comfort and break-in on a leather sole are unknowable here.",
+          "If your current loafers are genuinely worn out, this becomes a replacement rather than an addition."
+        ]
+      },
+      "grounding": {
+        "droppedItemIds": [],
+        "droppedUnlocks": 0
+      },
+      "meta": {
+        "model": "claude-opus-5",
+        "latencyMs": 13903,
+        "inputTokens": 907,
+        "outputTokens": 717,
+        "cacheReadTokens": 7198,
+        "estimatedCostUsd": 0.0261
+      }
+    }
+  },
+  {
+    "id": "burgundy-knit",
+    "label": "A burgundy merino crewneck",
+    "description": "Burgundy merino wool crewneck sweater, slim fit, mid-weight. Around $140.",
+    "result": {
+      "advice": {
+        "verdict": "buy",
+        "headline": "Burgundy merino earns its place beside the cream ribbed sweater",
+        "reasoning": "Your knitwear runs thin and monochrome: the cream ribbed sweater is the only fine-gauge piece doing this job, and the two turtlenecks sit at a different neckline and register. A burgundy crewneck slots straight into the formula that already works for you, knit under the brown leather blazer with the Wrancher dress jean, and it gives the navy suit jacket a softer weekend life. Tops are your least re-worn category after shirts, jackets and hats, so this only pays off if it becomes a repeat layer rather than a one-photo piece.",
+        "candidate": {
+          "name": "Burgundy Merino Crewneck Sweater",
+          "category": "tops",
+          "color": "Burgundy",
+          "formality": "smart casual"
+        },
+        "duplicates": [],
+        "pairsWith": [
+          {
+            "itemId": "item-shared-brown-leather-blazer",
+            "why": "Burgundy under brown leather is the warmest version of the layering you already lean on."
+          },
+          {
+            "itemId": "item-shared-wrancher-dress-jean",
+            "why": "The brown dress jean gives the sweater an autumnal, slightly dressed base."
+          },
+          {
+            "itemId": "item-shared-light-wash-jeans",
+            "why": "Your hardest-working denim lightens the sweater for daytime."
+          },
+          {
+            "itemId": "item-1771890586081-0",
+            "why": "A merino crew under the navy suit jacket softens the suit into something dinner-ready."
+          },
+          {
+            "itemId": "item-shared-black-loafers",
+            "why": "The horsebit loafers keep the knit from reading too casual."
+          }
+        ],
+        "unlocks": [
+          {
+            "title": "Burgundy and Brown",
+            "occasion": "dinner",
+            "itemIds": [
+              "item-shared-brown-leather-blazer",
+              "item-shared-wrancher-dress-jean",
+              "item-shared-black-loafers",
+              "item-shared-gold-ring"
+            ],
+            "why": "A richer, warmer rerun of the tailored knit-and-leather formula you already photograph well."
+          },
+          {
+            "title": "Soft Suiting",
+            "occasion": "work",
+            "itemIds": [
+              "item-1771890586081-0",
+              "item-1771890586081-4",
+              "item-1771890586081-5",
+              "item-shared-gold-watch"
+            ],
+            "why": "Swapping the French cuff shirt for merino turns the navy suit into something you would actually wear twice."
+          },
+          {
+            "title": "Weekend Knit",
+            "occasion": "weekend",
+            "itemIds": [
+              "item-shared-light-wash-jeans",
+              "item-shared-adidas-sambas",
+              "item-shared-prada-sunglasses"
+            ],
+            "why": "Your most re-worn denim and sneakers carry the sweater on an easy day."
+          }
+        ],
+        "gapFilled": "A second fine-gauge crewneck knit; right now only the cream ribbed sweater plays that role, and tops are re-worn in just 1 of 7 pieces.",
+        "confidence": "medium",
+        "caveats": [
+          "Slim fit may fight the oversized cut of the hoodies and cropped shirts you favour.",
+          "Cannot judge how the burgundy reads against the brown leather blazer without seeing them together.",
+          "Merino weight and pilling resistance are not verifiable from the description."
+        ]
+      },
+      "grounding": {
+        "droppedItemIds": [],
+        "droppedUnlocks": 0
+      },
+      "meta": {
+        "model": "claude-opus-5",
+        "latencyMs": 20406,
+        "inputTokens": 69,
+        "outputTokens": 1303,
+        "cacheReadTokens": 8674,
+        "estimatedCostUsd": 0.0373
+      }
+    },
+    "edits": [
+      "reasoning: \"after shirts and jackets\" became \"after shirts, jackets and hats\"; hats are also at zero re-use (0 of 3). Text otherwise as generated by claude-opus-5 on 2026-09-07."
+    ]
+  },
+  {
+    "id": "neon-shorts",
+    "label": "Neon green nylon shorts",
+    "description": "Neon green nylon running shorts with a white drawstring, 5 inch inseam.",
+    "result": {
+      "advice": {
+        "verdict": "maybe",
+        "headline": "Fine for running, but neon fights your muted, tailored palette",
+        "reasoning": "Nothing in your closet does the job of a true athletic short, the Charcoal Tailored Shorts read smart casual and the Dark Wash Jorts are pure weekend denim, so there is a real gap here. The trouble is colour: your documented looks live in cream, sage, taupe, olive, navy and black, and neon green only ties back to the Atlanta Dri-FIT Cap and Flyknit Runners, the two pieces that have barely resurfaced. Buy it if it is strictly for training, because as a styling piece it will sit as unworn as most of your shirts and jackets.",
+        "candidate": {
+          "name": "Neon Green Nylon Running Shorts",
+          "category": "pants",
+          "color": "Neon Green",
+          "formality": "casual"
+        },
+        "duplicates": [],
+        "pairsWith": [
+          {
+            "itemId": "item-1771863385130-6",
+            "why": "The Flyknit Runners are the only shoe in your closet built for the same activity, and white keeps the neon from feeling costume."
+          },
+          {
+            "itemId": "item-1771888648991-3",
+            "why": "The White Base Layer Tee is the neutral top that lets a loud short be the only bright thing in the outfit."
+          },
+          {
+            "itemId": "item-1771864195524-0",
+            "why": "The Atlanta Dri-FIT Cap is your one genuinely athletic accessory and shares the same performance register."
+          },
+          {
+            "itemId": "item-shared-white-crew-socks",
+            "why": "The White Crew Socks already anchor your short-hem looks and do the same here."
+          }
+        ],
+        "unlocks": [
+          {
+            "title": "Morning Miles",
+            "occasion": "casual",
+            "itemIds": [
+              "item-1771888648991-3",
+              "item-1771864195524-0",
+              "item-1771863385130-6",
+              "item-shared-white-crew-socks"
+            ],
+            "why": "A clean training kit you currently cannot assemble, since the White Base Layer Tee and Flyknit Runners have no proper short to sit with."
+          }
+        ],
+        "gapFilled": "Athletic bottoms: your only casual shorts are the Charcoal Tailored Shorts and the Dark Wash Jorts, and pants sit at 3 of 12 pieces re-worn, sixth of ten categories.",
+        "confidence": "medium",
+        "caveats": [
+          "Cannot judge the fabric weight, liner, or how the nylon photographs against skin tone",
+          "Exact shade of neon and how it reads next to your White Crew Socks is unclear from a description",
+          "Fit through the thigh at a 5 inch inseam is unknown"
+        ]
+      },
+      "grounding": {
+        "droppedItemIds": [],
+        "droppedUnlocks": 0
+      },
+      "meta": {
+        "model": "claude-opus-5",
+        "latencyMs": 18004,
+        "inputTokens": 64,
+        "outputTokens": 1123,
+        "cacheReadTokens": 8674,
+        "estimatedCostUsd": 0.0327
+      }
+    },
+    "edits": [
+      "gapFilled: replaced \"pants are among your lowest re-use categories at 3 of 12\" with the exact rank from the utility data (3 of 12 re-worn, sixth of ten categories). Text otherwise as generated by claude-opus-5 on 2026-09-07."
+    ]
+  }
+]

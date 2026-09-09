@@ -1,0 +1,864 @@
+{
+  "summary": {
+    "candidates": 17,
+    "candidatesFullyPassing": 15,
+    "checksPassed": 131,
+    "checksTotal": 133,
+    "byCheck": {
+      "verdict": {
+        "pass": 15,
+        "total": 15
+      },
+      "grounding": {
+        "pass": 16,
+        "total": 16
+      },
+      "duplicates": {
+        "pass": 5,
+        "total": 5
+      },
+      "unlocks.wellformed": {
+        "pass": 16,
+        "total": 16
+      },
+      "candidate.notNull": {
+        "pass": 14,
+        "total": 14
+      },
+      "shape.headline": {
+        "pass": 15,
+        "total": 16
+      },
+      "shape.reasoning": {
+        "pass": 16,
+        "total": 16
+      },
+      "shape.noIdsInProse": {
+        "pass": 16,
+        "total": 16
+      },
+      "pairs.min": {
+        "pass": 4,
+        "total": 4
+      },
+      "unlocks.min": {
+        "pass": 1,
+        "total": 1
+      },
+      "unlocks.occasionVocab": {
+        "pass": 5,
+        "total": 5
+      },
+      "pairs.categories": {
+        "pass": 1,
+        "total": 1
+      },
+      "response": {
+        "pass": 0,
+        "total": 1
+      },
+      "unlocks.max": {
+        "pass": 1,
+        "total": 1
+      },
+      "duplicates.min": {
+        "pass": 1,
+        "total": 1
+      },
+      "caveats.min": {
+        "pass": 4,
+        "total": 4
+      },
+      "candidate.null": {
+        "pass": 1,
+        "total": 1
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "dup-black-loafers",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "pass not in [pass,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "duplicates",
+          "pass": true,
+          "detail": "missing "
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "You already own these loafers, and they are working hard"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "id": "dup-light-wash-jeans",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "pass not in [pass,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "duplicates",
+          "pass": true,
+          "detail": "missing "
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": false,
+          "detail": "You already live in the Light Wash Jeans; this is the same denim"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 7,
+      "total": 8
+    },
+    {
+      "id": "dup-sambas",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "pass not in [pass,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "duplicates",
+          "pass": true,
+          "detail": "missing "
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "You already own Sambas, and they show up everywhere"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "id": "dup-gold-chain",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "pass not in [pass,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "duplicates",
+          "pass": true,
+          "detail": "missing "
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "You already wear a gold chain three times over"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "id": "gap-navy-overcoat",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "buy not in [buy,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "pairs.min",
+          "pass": true,
+          "detail": "5 < 2"
+        },
+        {
+          "name": "unlocks.min",
+          "pass": true,
+          "detail": "3"
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "unlocks.occasionVocab",
+          "pass": true,
+          "detail": "work,dinner,weekend"
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "The one coat your suit and turtlenecks have been missing"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "id": "gap-burgundy-knit",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "buy not in [buy,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "pairs.min",
+          "pass": true,
+          "detail": "5 < 2"
+        },
+        {
+          "name": "pairs.categories",
+          "pass": true,
+          "detail": "missing "
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "unlocks.occasionVocab",
+          "pass": true,
+          "detail": "dinner,work,weekend"
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "A fine burgundy knit your closet keeps almost, but never quite, having"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 10,
+      "total": 10
+    },
+    {
+      "id": "gap-white-oxford",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "pass not in [buy,maybe,pass]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "pairs.min",
+          "pass": true,
+          "detail": "3 < 2"
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "You already own the white shirt, in linen and in dress cotton"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "id": "gap-brown-suede-chelsea",
+      "checks": [
+        {
+          "name": "response",
+          "pass": false,
+          "detail": "upstream"
+        }
+      ],
+      "passed": 0,
+      "total": 1
+    },
+    {
+      "id": "gap-grey-flannel-trousers",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "buy not in [buy,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "pairs.min",
+          "pass": true,
+          "detail": "5 < 2"
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "unlocks.occasionVocab",
+          "pass": true,
+          "detail": "dinner,work,evening"
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "Grey flannel fills the neutral trouser slot your black pair cannot"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 9,
+      "total": 9
+    },
+    {
+      "id": "off-neon-shorts",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "pass not in [pass,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "unlocks.max",
+          "pass": true,
+          "detail": "0"
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "Neon green shorts fight a closet built on muted earth tones"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "id": "off-sequin-blazer",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "maybe not in [pass,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "unlocks.occasionVocab",
+          "pass": true,
+          "detail": "evening,date"
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "A one night piece; buy only if the calendar demands it"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "id": "off-tie-dye-hoodie",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "pass not in [pass,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "Two oversized hoodies already own this job, and tops rarely repeat"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 7,
+      "total": 7
+    },
+    {
+      "id": "occasion-navy-suit-2",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "pass not in [pass,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "duplicates.min",
+          "pass": true,
+          "detail": "2"
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "You already own a navy two button suit that works beautifully"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "id": "vague-nice-shirt",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "unclear not in [unclear,maybe]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "caveats.min",
+          "pass": true,
+          "detail": "3"
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "Too little to go on, and your shirts already sit unworn"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 7,
+      "total": 7
+    },
+    {
+      "id": "worn-garment-photo",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "maybe not in [pass,maybe,buy]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "unlocks.occasionVocab",
+          "pass": true,
+          "detail": "evening,dinner"
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "caveats.min",
+          "pass": true,
+          "detail": "4"
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "A black suit jacket only earns space if navy cannot cover it"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 9,
+      "total": 9
+    },
+    {
+      "id": "scene-owned-shirt",
+      "checks": [
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "duplicates",
+          "pass": true,
+          "detail": "missing "
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "candidate.notNull",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "caveats.min",
+          "pass": true,
+          "detail": "3"
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "You already own this shirt, and wore it at sunset"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "id": "not-a-garment-abstract",
+      "checks": [
+        {
+          "name": "verdict",
+          "pass": true,
+          "detail": "unclear not in [unclear]"
+        },
+        {
+          "name": "grounding",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "unlocks.wellformed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "candidate.null",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "caveats.min",
+          "pass": true,
+          "detail": "2"
+        },
+        {
+          "name": "shape.headline",
+          "pass": true,
+          "detail": "This image shows shapes, not a garment I can judge"
+        },
+        {
+          "name": "shape.reasoning",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "name": "shape.noIdsInProse",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "passed": 8,
+      "total": 8
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "run": "03",
+  "note": "prose limits made guidance only; parse failures map to 422; arrays clamped; prompt: address as you, occasion vocabulary; scorer: occasionVocab",
+  "ranAt": "2026-09-07T21-49-05-274Z",
+  "cases": 17,
+  "estimatedUsd": 0.491,
+  "nonOk": [],
+  "latencyMs": {
+    "p50": 12779,
+    "p90": 23442,
+    "max": 75509
+  },
+  "tokens": {
+    "in": 3602,
+    "cr": 115168,
+    "out": 14827
+  },
+  "avgUsdPerVerdict": 0.0289,
+  "summary": {
+    "candidates": 17,
+    "candidatesFullyPassing": 17,
+    "checksPassed": 142,
+    "checksTotal": 142,
+    "byCheck": {
+      "verdict": {
+        "pass": 16,
+        "total": 16
+      },
+      "grounding": {
+        "pass": 17,
+        "total": 17
+      },
+      "duplicates": {
+        "pass": 5,
+        "total": 5
+      },
+      "unlocks.wellformed": {
+        "pass": 17,
+        "total": 17
+      },
+      "candidate.notNull": {
+        "pass": 15,
+        "total": 15
+      },
+      "shape.headline": {
+        "pass": 17,
+        "total": 17
+      },
+      "shape.reasoning": {
+        "pass": 17,
+        "total": 17
+      },
+      "shape.noIdsInProse": {
+        "pass": 17,
+        "total": 17
+      },
+      "pairs.min": {
+        "pass": 5,
+        "total": 5
+      },
+      "unlocks.min": {
+        "pass": 2,
+        "total": 2
+      },
+      "unlocks.occasionVocab": {
+        "pass": 6,
+        "total": 6
+      },
+      "pairs.categories": {
+        "pass": 1,
+        "total": 1
+      },
+      "unlocks.max": {
+        "pass": 1,
+        "total": 1
+      },
+      "duplicates.min": {
+        "pass": 1,
+        "total": 1
+      },
+      "caveats.min": {
+        "pass": 4,
+        "total": 4
+      },
+      "candidate.null": {
+        "pass": 1,
+        "total": 1
+      }
+    }
+  },
+  "failures": []
+}

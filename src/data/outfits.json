@@ -23,40 +23,40 @@
             "id": "tag-1771862436917-0",
             "closetItemId": "item-1771862436917-0",
             "position": {
-              "x": 50.5,
-              "y": 38.5
+              "x": 67,
+              "y": 46
             }
           },
           {
             "id": "tag-1771862436917-1",
             "closetItemId": "item-shared-brown-leather-blazer",
             "position": {
-              "x": 50.5,
-              "y": 43.5
+              "x": 76,
+              "y": 58
             }
           },
           {
             "id": "tag-1771862436917-2",
             "closetItemId": "item-1771862436917-2",
             "position": {
-              "x": 50.5,
-              "y": 51.5
+              "x": 63,
+              "y": 55
             }
           },
           {
             "id": "tag-1771862436917-3",
             "closetItemId": "item-1771862436917-3",
             "position": {
-              "x": 50.5,
-              "y": 70
+              "x": 67,
+              "y": 72
             }
           },
           {
             "id": "tag-1771862436917-4",
             "closetItemId": "item-1771862436917-4",
             "position": {
-              "x": 50.5,
-              "y": 91.5
+              "x": 68,
+              "y": 88
             }
           }
         ]
@@ -94,56 +94,56 @@
             "id": "tag-1771863385130-0",
             "closetItemId": "item-1771863385130-0",
             "position": {
-              "x": 51.6,
-              "y": 13.5
+              "x": 61,
+              "y": 27
             }
           },
           {
             "id": "tag-1771863385130-1",
             "closetItemId": "item-1771888369546-0",
             "position": {
-              "x": 51.6,
-              "y": 18.5
+              "x": 62,
+              "y": 31
             }
           },
           {
             "id": "tag-1771863385130-2",
             "closetItemId": "item-1771863385130-2",
             "position": {
-              "x": 51.6,
-              "y": 38.5
+              "x": 69,
+              "y": 39
             }
           },
           {
             "id": "tag-1771863385130-3",
             "closetItemId": "item-1771863385130-3",
             "position": {
-              "x": 51.6,
-              "y": 51.5
+              "x": 57,
+              "y": 42
             }
           },
           {
             "id": "tag-1771863385130-4",
             "closetItemId": "item-1771863385130-4",
             "position": {
-              "x": 51.6,
-              "y": 70
+              "x": 64,
+              "y": 51
             }
           },
           {
             "id": "tag-1771863385130-5",
             "closetItemId": "item-shared-white-crew-socks",
             "position": {
-              "x": 51.6,
-              "y": 83.5
+              "x": 68,
+              "y": 70
             }
           },
           {
             "id": "tag-1771863385130-6",
             "closetItemId": "item-1771863385130-6",
             "position": {
-              "x": 51.6,
-              "y": 91.5
+              "x": 70,
+              "y": 76
             }
           }
         ]
@@ -182,40 +182,40 @@
             "id": "tag-1771863790941-1",
             "closetItemId": "item-1771863790940-1",
             "position": {
-              "x": 49.1,
-              "y": 38.5
+              "x": 47,
+              "y": 27
             }
           },
           {
             "id": "tag-1771863790941-0",
             "closetItemId": "item-shared-brown-leather-blazer",
             "position": {
-              "x": 49.1,
-              "y": 43.5
+              "x": 34,
+              "y": 38
             }
           },
           {
             "id": "tag-1771863790941-2",
             "closetItemId": "item-1771863790940-2",
             "position": {
-              "x": 49.1,
-              "y": 57.5
+              "x": 47,
+              "y": 46
             }
           },
           {
             "id": "tag-1771863790941-3",
             "closetItemId": "item-shared-light-wash-jeans",
             "position": {
-              "x": 49.1,
-              "y": 70
+              "x": 45,
+              "y": 64
             }
           },
           {
             "id": "tag-1771863790941-4",
             "closetItemId": "item-shared-black-loafers",
             "position": {
-              "x": 49.1,
-              "y": 91.5
+              "x": 40,
+              "y": 87
             }
           }
         ]
@@ -253,24 +253,24 @@
             "id": "tag-1771864195524-0",
             "closetItemId": "item-1771864195524-0",
             "position": {
-              "x": 50.4,
-              "y": 10
+              "x": 33,
+              "y": 24
             }
           },
           {
             "id": "tag-1771864195524-1",
             "closetItemId": "item-1771864195524-1",
             "position": {
-              "x": 50.4,
-              "y": 43
+              "x": 58,
+              "y": 52
             }
           },
           {
             "id": "tag-1771864195524-2",
             "closetItemId": "item-shared-light-wash-jeans",
             "position": {
-              "x": 50.4,
-              "y": 70
+              "x": 28,
+              "y": 80
             }
           }
         ]
@@ -308,7 +308,7 @@
             "id": "tag-1771864777486-0",
             "closetItemId": "item-1771864777486-0",
             "position": {
-              "x": 51.1,
+              "x": 43,
               "y": 10
             }
           },
@@ -316,32 +316,32 @@
             "id": "tag-1771864777486-1",
             "closetItemId": "item-shared-gold-chain-necklace",
             "position": {
-              "x": 51.1,
-              "y": 30
+              "x": 49,
+              "y": 20
             }
           },
           {
             "id": "tag-1771864777486-2",
             "closetItemId": "item-1771864777486-2",
             "position": {
-              "x": 51.1,
-              "y": 38.5
+              "x": 57,
+              "y": 32
             }
           },
           {
             "id": "tag-1771864777486-3",
             "closetItemId": "item-shared-light-wash-jeans",
             "position": {
-              "x": 51.1,
-              "y": 70
+              "x": 54,
+              "y": 62
             }
           },
           {
             "id": "tag-1771864777486-4",
             "closetItemId": "item-shared-adidas-sambas",
             "position": {
-              "x": 51.1,
-              "y": 91.5
+              "x": 50,
+              "y": 80
             }
           }
         ]
@@ -379,32 +379,32 @@
             "id": "tag-1771864970516-0",
             "closetItemId": "item-1771864970516-0",
             "position": {
-              "x": 48.7,
-              "y": 38.5
+              "x": 35,
+              "y": 53
             }
           },
           {
             "id": "tag-1771864970516-1",
             "closetItemId": "item-shared-dark-wash-jorts",
             "position": {
-              "x": 48.7,
-              "y": 70
+              "x": 37,
+              "y": 68
             }
           },
           {
             "id": "tag-1771864970516-2",
             "closetItemId": "item-shared-white-crew-socks",
             "position": {
-              "x": 48.7,
-              "y": 83.5
+              "x": 42,
+              "y": 81
             }
           },
           {
             "id": "tag-1771864970516-3",
             "closetItemId": "item-shared-sacai-blazer-low",
             "position": {
-              "x": 48.7,
-              "y": 91.5
+              "x": 40,
+              "y": 88
             }
           }
         ]
@@ -441,48 +441,48 @@
             "id": "tag-1771865251140-0",
             "closetItemId": "item-shared-prada-sunglasses",
             "position": {
-              "x": 48.9,
-              "y": 18.5
+              "x": 53,
+              "y": 33
             }
           },
           {
             "id": "tag-1771865251140-1",
             "closetItemId": "item-shared-gold-chain-necklace",
             "position": {
-              "x": 48.9,
-              "y": 30
+              "x": 52,
+              "y": 44
             }
           },
           {
             "id": "tag-1771865251140-2",
             "closetItemId": "item-1771865251140-2",
             "position": {
-              "x": 48.9,
-              "y": 38.5
+              "x": 57,
+              "y": 49
             }
           },
           {
             "id": "tag-1771865251140-3",
             "closetItemId": "item-shared-brown-leather-blazer",
             "position": {
-              "x": 48.9,
-              "y": 43.5
+              "x": 40,
+              "y": 58
             }
           },
           {
             "id": "tag-1771865251140-4",
             "closetItemId": "item-shared-gold-ring",
             "position": {
-              "x": 48.9,
-              "y": 63.5
+              "x": 48,
+              "y": 72
             }
           },
           {
             "id": "tag-1771865251140-5",
             "closetItemId": "item-shared-wrancher-dress-jean",
             "position": {
-              "x": 48.9,
-              "y": 70
+              "x": 55,
+              "y": 85
             }
           }
         ]
@@ -519,23 +519,23 @@
             "id": "tag-1771887596161-0",
             "closetItemId": "item-shared-orange-lens-sunglasses",
             "position": {
-              "x": 51.9,
-              "y": 18.5
+              "x": 41,
+              "y": 32
             }
           },
           {
             "id": "tag-1771887596161-1",
             "closetItemId": "item-1771887596161-1",
             "position": {
-              "x": 51.9,
-              "y": 38.5
+              "x": 55,
+              "y": 45
             }
           },
           {
             "id": "tag-1771887596161-2",
             "closetItemId": "item-1771887596161-2",
             "position": {
-              "x": 52,
+              "x": 50,
               "y": 70
             }
           },
@@ -543,8 +543,8 @@
             "id": "tag-1771887596161-3",
             "closetItemId": "item-shared-sacai-blazer-low",
             "position": {
-              "x": 52,
-              "y": 91.5
+              "x": 58,
+              "y": 93
             }
           }
         ]
@@ -584,32 +584,32 @@
             "id": "tag-1771887760261-0",
             "closetItemId": "item-shared-orange-lens-sunglasses",
             "position": {
-              "x": 50.1,
-              "y": 18.5
+              "x": 53,
+              "y": 40
             }
           },
           {
             "id": "tag-1771887760261-1",
             "closetItemId": "item-1771887760261-1",
             "position": {
-              "x": 50.1,
-              "y": 43
+              "x": 54,
+              "y": 51
             }
           },
           {
             "id": "tag-1771887760261-2",
             "closetItemId": "item-shared-light-wash-jeans",
             "position": {
-              "x": 50.1,
-              "y": 70
+              "x": 54,
+              "y": 68
             }
           },
           {
             "id": "tag-1771887760261-3",
             "closetItemId": "item-shared-black-loafers",
             "position": {
-              "x": 50.1,
-              "y": 91.5
+              "x": 52,
+              "y": 81
             }
           }
         ]
@@ -647,40 +647,40 @@
             "id": "tag-1771887908949-0",
             "closetItemId": "item-shared-prada-sunglasses",
             "position": {
-              "x": 51.9,
-              "y": 18.5
+              "x": 40,
+              "y": 44
             }
           },
           {
             "id": "tag-1771887908949-1",
             "closetItemId": "item-1771887908949-1",
             "position": {
-              "x": 51.9,
-              "y": 38.5
+              "x": 38,
+              "y": 53
             }
           },
           {
             "id": "tag-1771887908949-3",
             "closetItemId": "item-shared-gold-watch",
             "position": {
-              "x": 51.9,
-              "y": 56.5
+              "x": 41,
+              "y": 63
             }
           },
           {
             "id": "tag-1771887908949-2",
             "closetItemId": "item-shared-light-wash-jeans",
             "position": {
-              "x": 51.9,
-              "y": 70
+              "x": 36,
+              "y": 74
             }
           },
           {
             "id": "tag-1771887908949-4",
             "closetItemId": "item-shared-adidas-sambas",
             "position": {
-              "x": 51.9,
-              "y": 91.5
+              "x": 31,
+              "y": 94
             }
           }
         ]
@@ -719,32 +719,32 @@
             "id": "tag-1771888369546-0",
             "closetItemId": "item-1771888369546-0",
             "position": {
-              "x": 51.6,
-              "y": 18.5
+              "x": 47,
+              "y": 48
             }
           },
           {
             "id": "tag-1771888369546-2",
             "closetItemId": "item-1771888369546-2",
             "position": {
-              "x": 51.6,
-              "y": 38.5
+              "x": 47,
+              "y": 53
             }
           },
           {
             "id": "tag-1771888369546-1",
             "closetItemId": "item-1771888369546-1",
             "position": {
-              "x": 51.6,
-              "y": 43.5
+              "x": 55,
+              "y": 62
             }
           },
           {
             "id": "tag-1771888369546-3",
             "closetItemId": "item-1771888369546-3",
             "position": {
-              "x": 51.6,
-              "y": 70
+              "x": 52,
+              "y": 82
             }
           }
         ]
@@ -782,40 +782,40 @@
             "id": "tag-1771888456725-2",
             "closetItemId": "item-1771888456725-2",
             "position": {
-              "x": 48.8,
-              "y": 37.5
+              "x": 68,
+              "y": 52
             }
           },
           {
             "id": "tag-1771888456725-1",
             "closetItemId": "item-1771888456725-1",
             "position": {
-              "x": 48.8,
-              "y": 42.5
+              "x": 55,
+              "y": 45
             }
           },
           {
             "id": "tag-1771888456725-0",
             "closetItemId": "item-1771888456724-0",
             "position": {
-              "x": 48.8,
-              "y": 47.5
+              "x": 76,
+              "y": 62
             }
           },
           {
             "id": "tag-1771888456725-3",
             "closetItemId": "item-shared-gold-ring",
             "position": {
-              "x": 48.8,
-              "y": 63.5
+              "x": 48,
+              "y": 76
             }
           },
           {
             "id": "tag-1771888456725-4",
             "closetItemId": "item-1771888456725-4",
             "position": {
-              "x": 48.8,
-              "y": 70
+              "x": 58,
+              "y": 92
             }
           }
         ]
@@ -852,48 +852,48 @@
             "id": "tag-1771888648991-0",
             "closetItemId": "item-shared-prada-sunglasses",
             "position": {
-              "x": 51.9,
-              "y": 18.5
+              "x": 39,
+              "y": 29
             }
           },
           {
             "id": "tag-1771888648991-3",
             "closetItemId": "item-1771888648991-3",
             "position": {
-              "x": 51.9,
-              "y": 38.5
+              "x": 41,
+              "y": 69
             }
           },
           {
             "id": "tag-1771888648991-1",
             "closetItemId": "item-1771888648991-1",
             "position": {
-              "x": 51.9,
-              "y": 43.5
+              "x": 41,
+              "y": 48
             }
           },
           {
             "id": "tag-1771888648991-2",
             "closetItemId": "item-1771888648991-2",
             "position": {
-              "x": 51.9,
-              "y": 48.5
+              "x": 25,
+              "y": 48
             }
           },
           {
             "id": "tag-1771888648991-5",
             "closetItemId": "item-shared-gold-ring",
             "position": {
-              "x": 51.9,
-              "y": 63.5
+              "x": 50,
+              "y": 38
             }
           },
           {
             "id": "tag-1771888648991-4",
             "closetItemId": "item-shared-light-wash-jeans",
             "position": {
-              "x": 51.9,
-              "y": 70
+              "x": 33,
+              "y": 78
             }
           }
         ]
@@ -931,32 +931,32 @@
             "id": "tag-1771888795068-1",
             "closetItemId": "item-shared-gold-chain-necklace",
             "position": {
-              "x": 51.6,
-              "y": 30
+              "x": 43,
+              "y": 48
             }
           },
           {
             "id": "tag-1771888795068-0",
             "closetItemId": "item-1771888795068-0",
             "position": {
-              "x": 51.6,
-              "y": 38.5
+              "x": 40,
+              "y": 60
             }
           },
           {
             "id": "tag-1771888795068-2",
             "closetItemId": "item-shared-gold-watch",
             "position": {
-              "x": 51.6,
-              "y": 56.5
+              "x": 49,
+              "y": 70
             }
           },
           {
             "id": "tag-1771888795068-3",
             "closetItemId": "item-1771888795068-3",
             "position": {
-              "x": 51.6,
-              "y": 70
+              "x": 42,
+              "y": 82
             }
           }
         ]
@@ -996,31 +996,31 @@
             "id": "tag-1771888932436-0",
             "closetItemId": "item-shared-prada-sunglasses",
             "position": {
-              "x": 51.8,
-              "y": 18.5
+              "x": 47,
+              "y": 19
             }
           },
           {
             "id": "tag-1771888932436-1",
             "closetItemId": "item-1771888932436-1",
             "position": {
-              "x": 51.8,
-              "y": 38.5
+              "x": 42,
+              "y": 33
             }
           },
           {
             "id": "tag-1771888932436-2",
             "closetItemId": "item-1771863385130-3",
             "position": {
-              "x": 51.8,
-              "y": 51.5
+              "x": 58,
+              "y": 42
             }
           },
           {
             "id": "tag-1771888932436-3",
             "closetItemId": "item-shared-wrancher-dress-jean",
             "position": {
-              "x": 51.8,
+              "x": 50,
               "y": 70
             }
           },
@@ -1028,8 +1028,8 @@
             "id": "tag-1771888932436-4",
             "closetItemId": "item-shared-adidas-sambas",
             "position": {
-              "x": 51.8,
-              "y": 91.5
+              "x": 44,
+              "y": 91
             }
           }
         ]
@@ -1068,16 +1068,16 @@
             "id": "tag-1771889025545-0",
             "closetItemId": "item-1771889025544-0",
             "position": {
-              "x": 48.4,
-              "y": 43
+              "x": 60,
+              "y": 65
             }
           },
           {
             "id": "tag-1771889025545-1",
             "closetItemId": "item-shared-gold-ring",
             "position": {
-              "x": 48.4,
-              "y": 63.5
+              "x": 42,
+              "y": 78
             }
           }
         ]
@@ -1113,24 +1113,24 @@
             "id": "tag-1771889104255-0",
             "closetItemId": "item-1771889104255-0",
             "position": {
-              "x": 51,
-              "y": 38.5
+              "x": 46,
+              "y": 55
             }
           },
           {
             "id": "tag-1771889104255-1",
             "closetItemId": "item-1771889104255-1",
             "position": {
-              "x": 51,
-              "y": 70
+              "x": 47,
+              "y": 85
             }
           },
           {
             "id": "tag-1771889104255-2",
             "closetItemId": "item-1771889104255-2",
             "position": {
-              "x": 51,
-              "y": 91.5
+              "x": 50,
+              "y": 94
             }
           }
         ]
@@ -1168,15 +1168,15 @@
             "id": "tag-1771889238070-0",
             "closetItemId": "item-1771889238070-0",
             "position": {
-              "x": 51.1,
-              "y": 38.5
+              "x": 52,
+              "y": 57
             }
           },
           {
             "id": "tag-1771889238070-1",
             "closetItemId": "item-shared-dark-wash-jorts",
             "position": {
-              "x": 51.1,
+              "x": 55,
               "y": 70
             }
           },
@@ -1184,16 +1184,16 @@
             "id": "tag-1771889238070-2",
             "closetItemId": "item-shared-white-crew-socks",
             "position": {
-              "x": 51.1,
-              "y": 83.5
+              "x": 45,
+              "y": 79
             }
           },
           {
             "id": "tag-1771889238070-3",
             "closetItemId": "item-shared-adidas-sambas",
             "position": {
-              "x": 51.1,
-              "y": 91.5
+              "x": 49,
+              "y": 86
             }
           }
         ]
@@ -1231,32 +1231,32 @@
             "id": "tag-1771889479369-0",
             "closetItemId": "item-1771889479369-0",
             "position": {
-              "x": 50.7,
-              "y": 38.5
+              "x": 37,
+              "y": 32
             }
           },
           {
             "id": "tag-1771889479369-1",
             "closetItemId": "item-1771889479369-1",
             "position": {
-              "x": 50.7,
-              "y": 43.5
+              "x": 47,
+              "y": 29
             }
           },
           {
             "id": "tag-1771889479369-2",
             "closetItemId": "item-shared-light-wash-jeans",
             "position": {
-              "x": 50.7,
-              "y": 70
+              "x": 47,
+              "y": 52
             }
           },
           {
             "id": "tag-1771889479369-3",
             "closetItemId": "item-shared-black-loafers",
             "position": {
-              "x": 50.7,
-              "y": 91.5
+              "x": 45,
+              "y": 66
             }
           }
         ]
@@ -1294,48 +1294,48 @@
             "id": "tag-1771890586081-1",
             "closetItemId": "item-1771890586081-1",
             "position": {
-              "x": 51.2,
-              "y": 38.5
+              "x": 33,
+              "y": 24
             }
           },
           {
             "id": "tag-1771890586081-2",
             "closetItemId": "item-1771890586081-2",
             "position": {
-              "x": 51.2,
-              "y": 43.5
+              "x": 38,
+              "y": 20
             }
           },
           {
             "id": "tag-1771890586081-0",
             "closetItemId": "item-1771890586081-0",
             "position": {
-              "x": 51.2,
-              "y": 48.5
+              "x": 50,
+              "y": 32
             }
           },
           {
             "id": "tag-1771890586081-3",
             "closetItemId": "item-1771890586081-3",
             "position": {
-              "x": 51.2,
-              "y": 57.5
+              "x": 36,
+              "y": 40
             }
           },
           {
             "id": "tag-1771890586081-4",
             "closetItemId": "item-1771890586081-4",
             "position": {
-              "x": 51.2,
-              "y": 70
+              "x": 38,
+              "y": 62
             }
           },
           {
             "id": "tag-1771890586081-5",
             "closetItemId": "item-1771890586081-5",
             "position": {
-              "x": 51.2,
-              "y": 91.5
+              "x": 44,
+              "y": 91
             }
           }
         ]
@@ -1349,7 +1349,10 @@
           {
             "id": "tag-1771890586081-2d",
             "closetItemId": "item-1771890586081-2",
-            "position": { "x": 50, "y": 50 }
+            "position": {
+              "x": 50,
+              "y": 50
+            }
           }
         ]
       },
@@ -1362,7 +1365,10 @@
           {
             "id": "tag-1771890586081-6d",
             "closetItemId": "item-1771890586081-6",
-            "position": { "x": 50, "y": 50 }
+            "position": {
+              "x": 50,
+              "y": 50
+            }
           }
         ]
       }
@@ -1399,24 +1405,24 @@
             "id": "tag-1771890871135-0",
             "closetItemId": "item-1771890871135-0",
             "position": {
-              "x": 48.9,
-              "y": 10
+              "x": 40,
+              "y": 8
             }
           },
           {
             "id": "tag-1771890871135-2",
             "closetItemId": "item-1771888369546-2",
             "position": {
-              "x": 48.9,
-              "y": 38.5
+              "x": 36,
+              "y": 33
             }
           },
           {
             "id": "tag-1771890871135-1",
             "closetItemId": "item-1771890871135-1",
             "position": {
-              "x": 48.9,
-              "y": 43.5
+              "x": 22,
+              "y": 40
             }
           },
           {
@@ -1424,15 +1430,15 @@
             "closetItemId": "item-shared-gold-ring",
             "position": {
               "x": 49,
-              "y": 63.5
+              "y": 32
             }
           },
           {
             "id": "tag-1771890871135-3",
             "closetItemId": "item-1771890871135-3",
             "position": {
-              "x": 48.9,
-              "y": 70
+              "x": 40,
+              "y": 72
             }
           }
         ]

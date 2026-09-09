@@ -2,7 +2,9 @@ import {
   getClosetItemsByCategory,
   getActiveCategories,
   getClosetItemsGroupedByCategory,
+  getOutfitRefsForItem,
 } from "@/lib/data";
+import type { OutfitRef } from "@/lib/types";
 import { ClosetCategory, CATEGORY_LABELS, CATEGORY_ORDER } from "@/lib/types";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -24,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${label} — Abi's Closet`,
     description: `Browse ${label.toLowerCase()} in Abi's wardrobe.`,
+    alternates: { canonical: `/closet/${category}` },
   };
 }
 
@@ -41,6 +44,10 @@ export default async function ClosetCategoryPage({ params }: Props) {
   for (const [cat, catItems] of Object.entries(grouped)) {
     counts[cat] = catItems.length;
   }
+  const appearsIn: Record<string, OutfitRef[]> = {};
+  for (const item of items) {
+    appearsIn[item.id] = getOutfitRefsForItem(item.id);
+  }
 
   return (
     <ClosetCategoryClient
@@ -48,6 +55,7 @@ export default async function ClosetCategoryPage({ params }: Props) {
       items={items}
       categories={categories}
       counts={counts}
+      appearsIn={appearsIn}
     />
   );
 }

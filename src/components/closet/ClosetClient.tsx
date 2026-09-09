@@ -1,6 +1,6 @@
 "use client";
 
-import { ClosetCategory, ClosetItem, CATEGORY_LABELS } from "@/lib/types";
+import { ClosetCategory, ClosetItem, CATEGORY_LABELS, OutfitRef } from "@/lib/types";
 import CategoryNav from "./CategoryNav";
 import ClosetItemCard from "./ClosetItemCard";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
@@ -9,6 +9,7 @@ interface ClosetClientProps {
   grouped: Record<string, ClosetItem[]>;
   categories: ClosetCategory[];
   counts: Record<string, number>;
+  appearsIn: Record<string, OutfitRef[]>;
   totalCount: number;
 }
 
@@ -16,6 +17,7 @@ export default function ClosetClient({
   grouped,
   categories,
   counts,
+  appearsIn,
   totalCount,
 }: ClosetClientProps) {
   return (
@@ -41,17 +43,17 @@ export default function ClosetClient({
           {Object.entries(grouped).map(([category, items]) => (
             <section key={category} id={category} className="mb-16">
               <ScrollFadeIn>
-                <div className="section-divider">
+                <h2 className="section-divider">
                   <span className="text-[10px] tracking-[0.25em] text-text-muted font-light">
                     {CATEGORY_LABELS[category as ClosetCategory]?.toUpperCase() ||
                       category.toUpperCase()}
                   </span>
-                </div>
+                </h2>
               </ScrollFadeIn>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8 mt-6">
                 {items.map((item, i) => (
-                  <ClosetItemCard key={item.id} item={item} index={i} />
+                  <ClosetItemCard key={item.id} item={item} appearsIn={appearsIn[item.id] ?? []} index={i} />
                 ))}
               </div>
             </section>

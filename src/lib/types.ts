@@ -39,7 +39,17 @@ export interface Outfit {
   images: OutfitImage[];
   colorPalette?: string[];
   featured?: boolean;
-  collectionId?: string;
+}
+
+/** Lightweight outfit reference passed to client components (avoids shipping outfits.json). */
+export interface OutfitRef {
+  id: string;
+  slug: string;
+  title: string;
+  season: Outfit["season"];
+  date: string;
+  image?: { src: string; alt: string };
+  colorPalette?: string[];
 }
 
 export interface ClosetItem {
@@ -54,16 +64,6 @@ export interface ClosetItem {
   imageUrl?: string;
   purchaseUrl?: string;
   notes?: string;
-}
-
-export interface Collection {
-  id: string;
-  slug: string;
-  title: string;
-  description: string;
-  heroImage: string;
-  season?: string;
-  outfitIds: string[];
 }
 
 export const CATEGORY_LABELS: Record<ClosetCategory, string> = {

@@ -5,6 +5,8 @@ import { motion } from "motion/react";
 import { Outfit } from "@/lib/types";
 import { formatSeasonYear } from "@/lib/utils";
 import ScrollFadeIn from "@/components/ui/ScrollFadeIn";
+import { outfitSrcSet, SIZES } from "@/lib/images";
+import { useReducedMotion, type TargetAndTransition } from "motion/react";
 
 interface HomeClientProps {
   featured: Outfit[];
@@ -16,6 +18,9 @@ export default function HomeClient({
   totalOutfits,
 }: HomeClientProps) {
   const heroOutfit = featured[0];
+  const heroImage = heroOutfit?.images[0];
+  const reduced = useReducedMotion();
+  const fade = (from: TargetAndTransition) => (reduced ? false : from);
   const heroColors = heroOutfit?.colorPalette || ["#C19A6B", "#36454F", "#1A1A1A"];
   const heroGradient = `linear-gradient(160deg, ${heroColors[0]}CC, ${heroColors[1] || heroColors[0]}99, ${heroColors[2] || "#1A1A1A"})`;
 
@@ -29,10 +34,28 @@ export default function HomeClient({
         <motion.div
           className="absolute inset-0"
           style={{ background: heroGradient }}
-          initial={{ scale: 1.1 }}
+          initial={fade({ scale: 1.1 })}
           animate={{ scale: 1 }}
           transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
         />
+
+        {/* Hero photograph */}
+        {heroImage?.src && (
+          <motion.img
+            src={heroImage.src}
+            srcSet={outfitSrcSet(heroImage.src)}
+            sizes={SIZES.hero}
+            alt={heroImage.alt}
+            width={heroImage.width}
+            height={heroImage.height}
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover object-[50%_20%]"
+            initial={fade({ scale: 1.08 })}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+          />
+        )}
 
         {/* Noise texture */}
         <div
@@ -43,12 +66,12 @@ export default function HomeClient({
         />
 
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/35" />
 
         {/* Hero content */}
         <div className="relative z-10 px-[var(--page-margin)] pb-16 md:pb-24 w-full">
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={fade({ opacity: 0 })}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
@@ -59,7 +82,7 @@ export default function HomeClient({
 
           <motion.h1
             className="font-serif text-white text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light leading-[0.9] tracking-[0.02em]"
-            initial={{ opacity: 0, y: 40 }}
+            initial={fade({ opacity: 0, y: 40 })}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
@@ -70,7 +93,7 @@ export default function HomeClient({
 
           <motion.div
             className="flex items-center gap-8 mt-8"
-            initial={{ opacity: 0, y: 20 }}
+            initial={fade({ opacity: 0, y: 20 })}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
@@ -91,7 +114,7 @@ export default function HomeClient({
           {/* Stats strip */}
           <motion.div
             className="flex gap-12 mt-12 text-white/40 text-[10px] tracking-[0.15em]"
-            initial={{ opacity: 0 }}
+            initial={fade({ opacity: 0 })}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
@@ -103,7 +126,7 @@ export default function HomeClient({
         {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
-          initial={{ opacity: 0 }}
+          initial={fade({ opacity: 0 })}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.8 }}
         >
@@ -165,7 +188,13 @@ export default function HomeClient({
                       {outfit.images[0]?.src && (
                         <img
                           src={outfit.images[0].src}
+                          srcSet={outfitSrcSet(outfit.images[0].src)}
+                          sizes={i === 0 ? SIZES.featuredLarge : SIZES.featuredSmall}
                           alt={outfit.images[0].alt}
+                          width={outfit.images[0].width}
+                          height={outfit.images[0].height}
+                          loading={i === 0 ? "eager" : "lazy"}
+                          decoding="async"
                           className="absolute inset-0 w-full h-full object-cover"
                         />
                       )}
@@ -231,6 +260,32 @@ export default function HomeClient({
             >
               EXPLORE ABI&apos;S CLOSET &rarr;
             </Link>
+          </div>
+        </ScrollFadeIn>
+      </section>
+
+      {/* ============================================ */}
+      {/* BEFORE YOU BUY — quiet entry point */}
+      {/* ============================================ */}
+      <section className="px-[var(--page-margin)] pb-8 md:pb-16">
+        <ScrollFadeIn>
+          <div className="border-t border-b border-border py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center">
+            <div className="md:col-span-3">
+              <p className="text-[10px] tracking-[0.25em] text-text-muted">BEFORE YOU BUY</p>
+            </div>
+            <div className="md:col-span-6">
+              <p className="font-serif text-2xl md:text-3xl font-light leading-snug">
+                Should I buy this? A second opinion, grounded in the closet.
+              </p>
+            </div>
+            <div className="md:col-span-3 md:text-right">
+              <Link
+                href="/before-you-buy"
+                className="inline-block text-[11px] tracking-[0.2em] text-text border-b border-text pb-1 hover:text-accent hover:border-accent transition-colors duration-300"
+              >
+                HOW IT WORKS &rarr;
+              </Link>
+            </div>
           </div>
         </ScrollFadeIn>
       </section>

@@ -8,7 +8,7 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
-const RAW_DIR = path.resolve('public/items/raw');
+const RAW_DIR = path.resolve('raw-photos');
 const ITEMS_DIR = path.resolve('public/items');
 const DATA_PATH = path.resolve('src/data/closet-items.json');
 const BG = { r: 240, g: 240, b: 240, alpha: 1 };

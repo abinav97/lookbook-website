@@ -1,3 +1,5 @@
+import { SITE } from "@/lib/site";
+
 export default function Footer() {
   return (
     <footer className="border-t border-border mt-24">
@@ -12,11 +14,14 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 text-[11px] tracking-[0.15em] text-text-muted">
-          <a href="mailto:abinav@wharton.upenn.edu" className="hover:text-text transition-colors duration-300">
+          <a href={`mailto:${SITE.email}`} className="hover:text-text transition-colors duration-300">
             CONTACT
           </a>
-          <a href="https://www.linkedin.com/in/abinav-bharadwaj/" target="_blank" rel="noopener noreferrer" className="hover:text-text transition-colors duration-300">
+          <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-text transition-colors duration-300">
             LINKEDIN
+          </a>
+          <a href={SITE.github} target="_blank" rel="noopener noreferrer" className="hover:text-text transition-colors duration-300">
+            SOURCE
           </a>
         </div>
       </div>

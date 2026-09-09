@@ -1,0 +1,101 @@
+{
+  "run": "02",
+  "note": "prompt: names not ids in prose, headline 12 words; schema headline max 70 chars (parse-fatal, caused 3 x 500); scorer: noIdsInProse, pairs.categories; eval set relabelled + abstract fixture",
+  "ranAt": "2026-09-07T21-42-17-308Z",
+  "cases": 17,
+  "estimatedUsd": 0.358,
+  "nonOk": [
+    "dup-black-loafers:unknown",
+    "gap-grey-flannel-trousers:unknown",
+    "off-sequin-blazer:unknown"
+  ],
+  "latencyMs": {
+    "p50": 12676,
+    "p90": 19390,
+    "max": 21095
+  },
+  "tokens": {
+    "in": 2592,
+    "cr": 101696,
+    "out": 11765
+  },
+  "avgUsdPerVerdict": 0.0256,
+  "summary": {
+    "candidates": 17,
+    "candidatesFullyPassing": 13,
+    "checksPassed": 112,
+    "checksTotal": 116,
+    "byCheck": {
+      "response": {
+        "pass": 0,
+        "total": 3
+      },
+      "verdict": {
+        "pass": 13,
+        "total": 13
+      },
+      "grounding": {
+        "pass": 14,
+        "total": 14
+      },
+      "duplicates": {
+        "pass": 4,
+        "total": 4
+      },
+      "unlocks.wellformed": {
+        "pass": 14,
+        "total": 14
+      },
+      "candidate.notNull": {
+        "pass": 12,
+        "total": 12
+      },
+      "shape.headline": {
+        "pass": 14,
+        "total": 14
+      },
+      "shape.reasoning": {
+        "pass": 14,
+        "total": 14
+      },
+      "shape.noIdsInProse": {
+        "pass": 14,
+        "total": 14
+      },
+      "pairs.min": {
+        "pass": 4,
+        "total": 4
+      },
+      "unlocks.min": {
+        "pass": 2,
+        "total": 2
+      },
+      "pairs.categories": {
+        "pass": 1,
+        "total": 1
+      },
+      "unlocks.max": {
+        "pass": 0,
+        "total": 1
+      },
+      "duplicates.min": {
+        "pass": 1,
+        "total": 1
+      },
+      "caveats.min": {
+        "pass": 4,
+        "total": 4
+      },
+      "candidate.null": {
+        "pass": 1,
+        "total": 1
+      }
+    }
+  },
+  "failures": [
+    "dup-black-loafers: response (unknown)",
+    "gap-grey-flannel-trousers: response (unknown)",
+    "off-neon-shorts: unlocks.max (2)",
+    "off-sequin-blazer: response (unknown)"
+  ]
+}

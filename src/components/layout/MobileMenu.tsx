@@ -7,6 +7,7 @@ const LINKS = [
   { href: "/lookbook", label: "Lookbook" },
   { href: "/closet", label: "Closet" },
   { href: "/style-dna", label: "Style DNA" },
+  { href: "/before-you-buy", label: "Before You Buy" },
   { href: "/about", label: "About" },
 ];
 
@@ -17,13 +18,17 @@ interface MobileMenuProps {
 export default function MobileMenu({ onClose }: MobileMenuProps) {
   return (
     <motion.div
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menu"
       className="fixed inset-0 z-40 bg-bg flex flex-col justify-center px-[var(--page-margin)]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
     >
-      <nav className="flex flex-col gap-2">
+      <nav aria-label="Mobile" className="flex flex-col gap-2">
         {LINKS.map((link, i) => (
           <motion.div
             key={link.href}
@@ -39,7 +44,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
             <Link
               href={link.href}
               onClick={onClose}
-              className="block font-serif text-5xl sm:text-6xl font-light text-text tracking-[0.08em] py-3 hover:text-accent transition-colors duration-300"
+              className="block font-serif text-4xl sm:text-6xl font-light text-text tracking-[0.08em] py-2.5 sm:py-3 hover:text-accent transition-colors duration-300"
             >
               {link.label}
             </Link>

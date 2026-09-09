@@ -5,6 +5,7 @@ import LookbookClient from "@/components/lookbook/LookbookClient";
 export const metadata: Metadata = {
   title: "Lookbook",
   description: "Browse the full collection of curated outfits.",
+  alternates: { canonical: "/lookbook" },
 };
 
 export default function LookbookPage() {

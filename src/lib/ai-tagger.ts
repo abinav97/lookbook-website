@@ -60,7 +60,7 @@ export async function analyzeOutfitPhoto(
       "anthropic-dangerous-direct-browser-access": "true",
     },
     body: JSON.stringify({
-      model: "claude-sonnet-4-5-20250929",
+      model: "claude-opus-5",
       max_tokens: 2048,
       system: SYSTEM_PROMPT,
       messages: [
@@ -93,7 +93,11 @@ export async function analyzeOutfitPhoto(
   }
 
   const data = await response.json();
-  const text = data.content?.[0]?.text || "";
+  // Opus 5 may return a thinking block first; read the text block explicitly.
+  const text: string =
+    (data.content as { type: string; text?: string }[] | undefined)?.find(
+      (b) => b.type === "text"
+    )?.text || "";
 
   // Parse JSON — handle potential markdown code fences
   const cleaned = text.replace(/```json?\s*/g, "").replace(/```\s*/g, "").trim();
@@ -105,51 +109,4 @@ export async function analyzeOutfitPhoto(
   }
 }
 
-export function imageFileToBase64(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result as string);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
-
-/**
- * Resize an image to fit within maxDimension while preserving aspect ratio.
- * Returns a base64 JPEG string. This keeps the payload under the API's ~5MB limit
- * even for large phone photos (10MB+).
- */
-export function resizeImageForAPI(
-  base64: string,
-  maxDimension: number = 1568
-): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => {
-      let { width, height } = img;
-
-      // Only resize if the image exceeds maxDimension
-      if (width > maxDimension || height > maxDimension) {
-        const scale = maxDimension / Math.max(width, height);
-        width = Math.round(width * scale);
-        height = Math.round(height * scale);
-      }
-
-      const canvas = document.createElement("canvas");
-      canvas.width = width;
-      canvas.height = height;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) {
-        reject(new Error("Failed to get canvas context"));
-        return;
-      }
-      ctx.drawImage(img, 0, 0, width, height);
-
-      // Use JPEG at 85% quality — good balance of size and detail
-      const resized = canvas.toDataURL("image/jpeg", 0.85);
-      resolve(resized);
-    };
-    img.onerror = () => reject(new Error("Failed to load image for resizing"));
-    img.src = base64;
-  });
-}
+export { fileToDataUrl as imageFileToBase64, resizeImage as resizeImageForAPI } from "./image-client";
