@@ -33,10 +33,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     siteName: SITE.name,
-    title: SITE.name,
-    description: SITE.description,
     type: "website",
-    url: "/",
     images: heroImage
       ? [{ url: heroImage.src, width: 1600, height: 2133, alt: heroImage.alt }]
       : [],
